@@ -24,12 +24,13 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-10-14)
+## Latest highlights (as of 2026-10-15)
 
+- **Lumma-Fev-27B** — FrontiersMind decision model (choices + probabilities)
+- **MiniCPM-V 4.7** — first open MoE VLM with strong on-device performance + DSpark heads
 - **Gemini 4 Argon** GA — 1M-token frontier model for long-horizon work
 - **Meta Muse Wonder** — frontier agent models with Active Memory & Focus
 - **LFM2.5-24B-A2B** — open on-device MoE agent model (Liquid AI)
-- **Qwen-Image-2.1-Turbo** — trending 8-step image generation/editing
 - Free compute stack: Colab, Kaggle, HF ZeroGPU, Lightning, NVIDIA free endpoints
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.
