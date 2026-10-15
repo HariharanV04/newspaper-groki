@@ -1,6 +1,6 @@
 # Current AI Briefing
 
-**Last updated:** 2026-10-14
+**Last updated:** 2026-10-15
 
 This file is always overwritten with the latest full snapshot. For history and refined topic tracking, see `topics/` and `archive/`.
 
@@ -23,24 +23,33 @@ This file is always overwritten with the latest full snapshot. For history and r
 - **Pricing (Wonder API):** ~$4 / 1M input, $20 / 1M output; cached $0.20.
 - Competitive with Claude Opus 5.5 / Fable 5.1 and GPT-6 Astra on Artificial Analysis Intelligence Index and agent benchmarks. Strong on MemoryBench.
 
-### Other Notable Releases (Oct 12–13)
+### Other Notable Releases (Oct 12–15)
 - **Liquid AI LFM2.5-24B-A2B** (Oct 13): Open-weight MoE (24B total / ~2B active). Reasoning-only model optimized for on-device agents and tool use. 131K context, strong agentic/tool benchmarks. Fast edge inference (~184 tok/s on Apple M5 Max). On Hugging Face.
-- **Qwen-Image-2.1-Turbo**: Accelerated 7B checkpoint for text-to-image generation and editing in 8 denoising steps. Open weights; Diffusers / ComfyUI ready.
+- **OpenBMB MiniCPM-V 4.7** (Oct 12, with Oct 15 updates): First MoE multimodal in the MiniCPM-V series (35B-A3B + 1B dense). Claims new performance-efficiency Pareto frontier. 35B-A3B runs smoothly on-device (13+ tok/s in ~3 GB on iPhone 17 Pro Max) via Lookahead Expert Scheduling (LES). DSpark speculative decoding heads released Oct 15 (BF16 + GGUF). Apache 2.0. Strong on MMBench, MMMU, OCRBench, OmniDocBench.
+- **FrontiersMind Lumma-Fev-27B** (Oct 14): 27B-parameter decision model. Returns explicit choices and calibrated probabilities instead of generated labels/text. Designed for automated workflows; evaluate calibration, task fit, multilingual limits, and cost. Blog + model on Hugging Face.
+- **Grok Voice 3.0** (xAI, Oct 14): New voice model topping speech-to-speech indices in early reports (~$0.08/min).
+- **Ultramarine 1 Flash** (Paper Instruments, Oct 14).
+- **Fish Audio Drama 3**: TTS with script-directed voices; downloadable weights (commercial limits apply).
+- **Qwen-Image-2.1-Turbo**: Accelerated 7B checkpoint for text-to-image generation and editing in 8 denoising steps. Open weights; Diffusers / ComfyUI ready. Still highly trending.
 - **TencentDB Agent Memory** (v2.0.3-beta.1): MIT-licensed persistent memory for agents (local SQLite + team memory hub).
-- **OpenBMB MiniCPM-V 4.7**: First MoE multimodal in the MiniCPM-V series.
 - NVIDIA open-sourced **Run:ai** (Kubernetes GPU orchestration).
 
 ## Hugging Face & Ecosystem
-- Qwen-Image-2.1-Turbo highly trending.
+- Decision models surging: Lumma-Fev-27B, AutoTrust JEV-27B-VL / GEV-26B-Decide (previously top trending), and related System 1/System 2 decision heads.
+- MiniCPM-V 4.7 35B-A3B and related quantizations gaining traction.
+- LFM2.5-24B-A2B and DeepSeek-V4.1-Flash remain strong risers.
+- **HF tooling:** Tensor viewer for large sharded models sped up dramatically (fetches all shard headers in one request; e.g. DeepSeek-V3.2 loads in 0.45s vs 9.2s).
 - Transformers v5.19: EmbeddingGemma 2 (cross-modal embeddings), Nemotron 3 Diarization.
 - Diffusers 0.41: Qwen-Image 2.1 support.
-- Ongoing high volume of quantizations, LoRAs, decision models, and robotics checkpoints (GR00T family, etc.).
+- Ongoing high volume of quantizations, LoRAs, decision models, and robotics checkpoints.
 
 ## Research
-- **QwenGyre**: Elastic RL for extreme-long (xLong) agent tasks (~1M tokens, hours-long).
-- Anthropic Frontier Red Team: small models potentially self-replicating on commercial IoT.
-- Robotics distillation (RealtimeWAM-style): ~25× inference speedups with minimal success-rate drop.
-- Active areas: agent memory, speculative decoding (DLoop), fact editing (EngramEdit), SWE-DeceptionBench, multimodal embeddings, on-device efficiency, agentic RL.
+- **Lumma-Fev-27B** evaluation blueprint (calibration, task fit, multilingual limits).
+- **VKORE-46M-NPU**: Backpropagation / full training loop demonstrated on an inference-first NPU.
+- **ColGrep-Agent-2B**: Local search agent that reduces context tax for coding assistants.
+- NVIDIA practical evaluation blueprint for domain-specific speech recognition (air-traffic-control study).
+- **HiRO-ACEv2**: Extreme weather simulation at 3 km resolution at fraction of prior cost (AllenAI).
+- Continued: QwenGyre (xLong agent RL), robotics distillation speedups, agent memory, multimodal embeddings, on-device efficiency.
 
 ## Free GPUs, Hosting & Tools
 **Free / low-cost compute:**
@@ -57,12 +66,15 @@ This file is always overwritten with the latest full snapshot. For history and r
 - Diffusers + ComfyUI for image pipelines
 - Tencent Agent Memory and other agent memory / MCP stacks
 - NVIDIA Run:ai for cluster GPU governance
+- Free LLM API directories (updated Oct 14) listing 100+ models across 30+ providers with verified free tiers
 
 ## Trending Themes
-- Agentic workflows (long-running tasks, memory, focus/recovery)
+- Decision models (explicit choices + probabilities instead of free generation)
+- Agentic workflows (long-running tasks, memory, focus/recovery, on-device agents)
 - Efficiency via low-active-parameter MoEs and accelerated diffusion
 - Open-weight vs proprietary frontier models
 - Multimodal embeddings, robotics real-time inference, cybersecurity applications
+- On-device / edge multimodal (especially MoE VLMs)
 
 ---
 *Always verify latest benchmarks, pricing, and availability on official sources.*
