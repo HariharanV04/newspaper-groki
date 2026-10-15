@@ -2,7 +2,7 @@
 
 Living reference for free/low-cost GPUs, hosting, inference stacks, and developer tooling. Quotas and offerings change; update entries in place.
 
-**Last refined:** 2026-10-14
+**Last refined:** 2026-10-15
 
 ---
 
@@ -25,11 +25,13 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary open serving stacks
 - **Diffusers + ComfyUI** — image generation/editing pipelines (including Qwen-Image-2.1-Turbo)
 - **NVIDIA Run:ai** (now open-source) — Kubernetes-native GPU scheduling and fair-share for clusters
+- Free LLM API directories (verified Oct 14) list 100+ models across 30+ providers with free tiers
 
 ## Agent & Memory Tooling
 
 - **TencentDB Agent Memory** (MIT) — local SQLite default + team-level memory hub
 - Broader ecosystem of MCP clients, tool-calling harnesses, and agent orchestration frameworks continues to expand
+- Decision-model serving patterns (explicit choice outputs) gaining interest alongside traditional generation
 
 ## Developer Focus Areas (current)
 
@@ -37,6 +39,7 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - Long-context multimodal pipelines
 - Fast image generation (8-step Turbo-style checkpoints)
 - Persistent agent memory and recovery
+- Explicit decision models for reliable automated workflows
 
 ---
 
