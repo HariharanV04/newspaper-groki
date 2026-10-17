@@ -1,80 +1,77 @@
 # Current AI Briefing
 
-**Last updated:** 2026-10-15
+**Last updated:** 2026-10-17
 
 This file is always overwritten with the latest full snapshot. For history and refined topic tracking, see `topics/` and `archive/`.
 
 ---
 
-## Major Frontier Model Releases
+## Major Frontier & Open Model Releases (Past 24-48h focus)
 
-### Google Gemini 4 Argon (General Availability – Oct 13, 2026)
-- Google's new frontier model optimized for long-horizon, multi-step work in software engineering, enterprise knowledge (legal/finance), and cybersecurity defense.
-- **Key specs:** Unified 1M-token input+output context window (industry-leading output limit), natively multimodal (text, images, audio, video), tunable thinking levels.
-- **Availability:** Gemini API (model ID: `gemini-4-argon`) in AI Studio and Gemini platform; Google AI Ultra/Pro subscribers in Gemini app and AI Mode in Search; Antigravity for Ultra users.
-- **Pricing (introductory through Nov 30, 2026):** $2 / 1M input tokens, $10 / 1M output tokens; cached input at 95% off ($0.10). Standard after that: $4 / $20.
-- Strong performance on agentic coding (DeepSWE, Vibe Code Bench), knowledge work, and safety (low prompt injection success).
+### NVIDIA Nemotron 3.5 Family (Oct 16, 2026)
+- Open-weight models emphasizing open-source strategy and on-device/efficient inference alongside GPU infrastructure.
+- **Nemotron 3.5 Super VL**: 120B total / 12B active vision-language model for images, documents, video; designed for long-running "always-on" agents with fast-track completion.
+- **Nemotron 3.5 Bolt 74B-A9B** (balanced speed) and **Bolt E4B 4GB** (conversational agents).
+- Fully open: weights, datasets, training recipes on Hugging Face. Follows prior Nemotron 3.5 Lightning.
 
-### Meta Muse Wonder & Muse Wonder Full (Released Oct 12, 2026)
-- Meta Superintelligence Labs' first frontier-class models, focused on personal and professional agentic tasks (coding, legal/finance/health workflows, long-running agents).
-- **Features:** Active Memory (cross-conversation context retention) and Active Focus (goal persistence, error recovery, alternative approaches).
-- **Specs:** 1M-token context; multimodal input (text, images, video, audio, PDFs); text output only. Trained at Prometheus data center.
-- **Availability:** Muse Wonder via Meta Model API and Muse Code; Muse Wonder Full limited to Muse Code subscribers. Proprietary (no open weights). Will power the Muse personal agent.
-- **Pricing (Wonder API):** ~$4 / 1M input, $20 / 1M output; cached $0.20.
-- Competitive with Claude Opus 5.5 / Fable 5.1 and GPT-6 Astra on Artificial Analysis Intelligence Index and agent benchmarks. Strong on MemoryBench.
+### Reflection AI Beam (Oct 16-17, 2026)
+- 501B-parameter sparse expert routing model with 1M-token context window. Token-efficient frontier-scale for coding and agentic use cases.
+- Open weights; real test is turning into operable systems (infra, measurement).
+- Added to Transformers v5.20.1. Hugging Face livestream with team on Oct 16/17.
+- Blog: infrastructure decision for frontier openness.
 
-### Other Notable Releases (Oct 12–15)
-- **Liquid AI LFM2.5-24B-A2B** (Oct 13): Open-weight MoE (24B total / ~2B active). Reasoning-only model optimized for on-device agents and tool use. 131K context, strong agentic/tool benchmarks. Fast edge inference (~184 tok/s on Apple M5 Max). On Hugging Face.
-- **OpenBMB MiniCPM-V 4.7** (Oct 12, with Oct 15 updates): First MoE multimodal in the MiniCPM-V series (35B-A3B + 1B dense). Claims new performance-efficiency Pareto frontier. 35B-A3B runs smoothly on-device (13+ tok/s in ~3 GB on iPhone 17 Pro Max) via Lookahead Expert Scheduling (LES). DSpark speculative decoding heads released Oct 15 (BF16 + GGUF). Apache 2.0. Strong on MMBench, MMMU, OCRBench, OmniDocBench.
-- **FrontiersMind Lumma-Fev-27B** (Oct 14): 27B-parameter decision model. Returns explicit choices and calibrated probabilities instead of generated labels/text. Designed for automated workflows; evaluate calibration, task fit, multilingual limits, and cost. Blog + model on Hugging Face.
-- **Grok Voice 3.0** (xAI, Oct 14): New voice model topping speech-to-speech indices in early reports (~$0.08/min).
-- **Ultramarine 1 Flash** (Paper Instruments, Oct 14).
-- **Fish Audio Drama 3**: TTS with script-directed voices; downloadable weights (commercial limits apply).
-- **Qwen-Image-2.1-Turbo**: Accelerated 7B checkpoint for text-to-image generation and editing in 8 denoising steps. Open weights; Diffusers / ComfyUI ready. Still highly trending.
-- **TencentDB Agent Memory** (v2.0.3-beta.1): MIT-licensed persistent memory for agents (local SQLite + team memory hub).
-- NVIDIA open-sourced **Run:ai** (Kubernetes GPU orchestration).
+### Meta Muse Spark Open (Oct 15, 2026)
+- 816B total / 42B active parameters, 1M context. Multimodal input (text, images, audio, video) → text output.
+- Meta calls it the most capable US open-weight model to date. Weights on Hugging Face.
+- Heavy VRAM requirements (hundreds of GB even quantized).
 
-## Hugging Face & Ecosystem
-- Decision models surging: Lumma-Fev-27B, AutoTrust JEV-27B-VL / GEV-26B-Decide (previously top trending), and related System 1/System 2 decision heads.
-- MiniCPM-V 4.7 35B-A3B and related quantizations gaining traction.
-- LFM2.5-24B-A2B and DeepSeek-V4.1-Flash remain strong risers.
-- **HF tooling:** Tensor viewer for large sharded models sped up dramatically (fetches all shard headers in one request; e.g. DeepSeek-V3.2 loads in 0.45s vs 9.2s).
-- Transformers v5.19: EmbeddingGemma 2 (cross-modal embeddings), Nemotron 3 Diarization.
-- Diffusers 0.41: Qwen-Image 2.1 support.
-- Ongoing high volume of quantizations, LoRAs, decision models, and robotics checkpoints.
+### Other Notable Recent Releases
+- **Liquid AI LFM2.5-24B-A2B**: Open MoE (24B / 2B active) for local agents; still trending.
+- **DeepSeek-V4.1-Flash**: Continued strong rising model for reasoning/coding.
+- **Qwen-Image-2.1-Turbo** and uncensored/quantized variants: Highly trending for image gen/edit.
+- Decision models (JEV-27B-VL, GEV, Lumma-Fev-27B) remain hot.
+- EmbeddingGemma 2: Cross-modal (text/image/audio/video) embeddings.
 
-## Research
-- **Lumma-Fev-27B** evaluation blueprint (calibration, task fit, multilingual limits).
-- **VKORE-46M-NPU**: Backpropagation / full training loop demonstrated on an inference-first NPU.
-- **ColGrep-Agent-2B**: Local search agent that reduces context tax for coding assistants.
-- NVIDIA practical evaluation blueprint for domain-specific speech recognition (air-traffic-control study).
-- **HiRO-ACEv2**: Extreme weather simulation at 3 km resolution at fraction of prior cost (AllenAI).
-- Continued: QwenGyre (xLong agent RL), robotics distillation speedups, agent memory, multimodal embeddings, on-device efficiency.
+## Hugging Face & Ecosystem Updates
+- **Transformers v5.20.1** (Oct 16): Beam model support (token-efficient coding/agentic), torch 2.6/2.7 loading fixes, other MoE/vision fixes.
+- **TRL**: Fused LM head — up to 6.9× longer trainable sequences on same GPU (e.g., DPO seq len from ~10k to ~59k on gemma-3-1b). AWS Trainium training path.
+- Author filters on Models/Datasets pages.
+- High velocity: embeddinggemma-2, humanizer, LTX-2.5 video, MiniCPM-V 4.7, image models.
+- Ongoing quantizations, LoRAs, agent/decision models, robotics.
 
-## Free GPUs, Hosting & Tools
-**Free / low-cost compute:**
-- Google Colab free tier (limited T4, ~12h sessions)
-- Kaggle Notebooks (T4 ×2, ~30h/week)
-- Hugging Face ZeroGPU (shared high-end for Gradio Spaces; short daily quota)
-- Lightning AI free plan (persistent studios, monthly GPU hours)
-- NVIDIA Developer free endpoints (build.nvidia.com) — many large open-weight models via OpenAI-compatible API
-- Modal / Replicate free credits; Oracle Always Free (CPU); RunPod / Vast.ai spots
+## Research (arXiv ~Oct 15-16)
+- Agent-focused: FDE-Gym (last mile of AI delivery), MLExpert (generalist agentic model for ML engineering), KnowGPO (knowledge-grouped policy optimization for search agents), AgentCIScope (contextual integrity for agents), EvoSafeHarness.
+- Continuous Diffusion Language Models: Designing Transformers for CDLMs.
+- Gemini 4 Argon agents beat Minecraft (team of agents).
+- Quantum circuits with LLMs, byte-level models, multilingual instruction data (Multi-SFT), name-bias in LLMs, code evolution benchmarks (WEAVE).
+- Evaluation, safety, routing in MoEs, robotics dexterity from supervised play.
 
-**Hosting & tooling:**
-- Hugging Face Spaces + Hub
-- vLLM, SGLang, llama.cpp, TensorRT-LLM
-- Diffusers + ComfyUI for image pipelines
-- Tencent Agent Memory and other agent memory / MCP stacks
-- NVIDIA Run:ai for cluster GPU governance
-- Free LLM API directories (updated Oct 14) listing 100+ models across 30+ providers with verified free tiers
+## Free GPUs, Hosting & Developer Tools
+**Free / low-cost compute (as of Oct 16-17):**
+- Google Colab free (T4, limited sessions)
+- Kaggle Notebooks (T4×2, ~30h/week)
+- Hugging Face ZeroGPU (shared RTX Pro 6000 Blackwell for Gradio Spaces; short daily quota)
+- Lightning AI free plan / credits
+- NVIDIA NIM / build.nvidia.com free endpoints for open models
+- Inference.net grants up to $10k free compute for open-source AI projects
+- Startup programs: AWS Activate, Google Cloud, Microsoft, Anthropic, OpenAI, Together AI, etc. (credits vary)
+- Modal free monthly compute; RunPod/Vast.ai spots; Leafcloud free Blackwell tier coming soon (waitlist)
+
+**Hosting & tools:**
+- Hugging Face Spaces + Hub + Inference Providers
+- vLLM, SGLang, llama.cpp, TensorRT-LLM, Diffusers/ComfyUI
+- Free LLM API directories and ranking sites (updated daily)
+- Agent memory, MCP, tool-calling harnesses
+- Decision-model serving patterns
 
 ## Trending Themes
-- Decision models (explicit choices + probabilities instead of free generation)
-- Agentic workflows (long-running tasks, memory, focus/recovery, on-device agents)
-- Efficiency via low-active-parameter MoEs and accelerated diffusion
-- Open-weight vs proprietary frontier models
-- Multimodal embeddings, robotics real-time inference, cybersecurity applications
-- On-device / edge multimodal (especially MoE VLMs)
+- Large open-weight frontier models (Muse Spark Open, Beam, Nemotron 3.5) competing with proprietary
+- Sparse MoEs + long context for agents and coding
+- Efficiency: few-active-param models, fused training, on-device/edge
+- Decision models and explicit outputs
+- Multimodal (embeddings, VLMs, image/video gen)
+- Agent safety, evaluation, long-horizon reliability
+- Free/low-cost GPU access and serverless inference remaining critical for developers
 
 ---
-*Always verify latest benchmarks, pricing, and availability on official sources.*
+*Always verify latest benchmarks, pricing, VRAM needs, and availability on official sources (HF, vendor blogs, arXiv).*

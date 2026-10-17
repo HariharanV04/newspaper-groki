@@ -2,7 +2,7 @@
 
 Living reference for free/low-cost GPUs, hosting, inference stacks, and developer tooling. Quotas and offerings change; update entries in place.
 
-**Last refined:** 2026-10-15
+**Last refined:** 2026-10-17
 
 ---
 
@@ -10,36 +10,40 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 
 | Provider | What you get | Notes / Limits |
 |----------|--------------|----------------|
-| Google Colab (free) | Hosted notebook, limited T4 | Session limits (~12h); quota can fluctuate |
-| Kaggle Notebooks | T4 ×2, ~30h/week | Phone verification; good multi-GPU free option |
-| Hugging Face ZeroGPU | Shared high-end GPU for Gradio Spaces | Short daily quota; demo-oriented |
-| Lightning AI free plan | Persistent studios + monthly GPU hours | Better persistence than pure notebooks |
-| NVIDIA Developer free endpoints | Many large open-weight models via OpenAI-compatible API | build.nvidia.com; no card required for free-tier models |
-| Modal / Replicate | Free credits / tiers | Check current credit balances |
-| Oracle Always Free | Always-on ARM CPU instances | Useful for lighter inference / always-on services |
-| RunPod / Vast.ai | Cheap spot GPUs | Paid but often the lowest $/hour for real training |
+| Google Colab (free) | Hosted notebook, limited T4 | Session limits (~12h); quota fluctuates |
+| Kaggle Notebooks | T4 ×2, ~30h/week | Phone verification; multi-GPU option |
+| Hugging Face ZeroGPU | Shared RTX Pro 6000 Blackwell for Gradio Spaces | Short daily quota (minutes); demo-oriented |
+| Lightning AI free plan | Persistent studios + credits | Better persistence |
+| NVIDIA NIM / build.nvidia.com | Free endpoints for many open models | OpenAI-compatible; no card for free tier |
+| Inference.net | Grants up to $10k free compute | For open-source AI projects; application |
+| Modal | Free monthly compute credits | Check current balances |
+| Startup programs (AWS, Google Cloud, MSFT, Anthropic, OpenAI, Together, etc.) | Large credit grants | Vary by stage; partner routes common |
+| RunPod / Vast.ai | Cheap spot GPUs | Paid but lowest $/hr for real work |
+| Leafcloud | Free Blackwell tier (coming) | 50 GPU hours/month waitlist; EU |
+| Oracle Always Free | Always-on ARM CPU | Lighter inference |
 
 ## Hosting & Serving
 
-- **Hugging Face Spaces + Hub** — free public models/datasets; CPU Spaces; ZeroGPU for demos
+- **Hugging Face Spaces + Hub + Inference Providers** — models, datasets, ZeroGPU demos, free/PRO credits
 - **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary open serving stacks
-- **Diffusers + ComfyUI** — image generation/editing pipelines (including Qwen-Image-2.1-Turbo)
-- **NVIDIA Run:ai** (now open-source) — Kubernetes-native GPU scheduling and fair-share for clusters
-- Free LLM API directories (verified Oct 14) list 100+ models across 30+ providers with free tiers
+- **Diffusers + ComfyUI** — image/video pipelines (Qwen-Image, LTX, Flux variants)
+- **NVIDIA Run:ai** (open-source) — K8s GPU orchestration
+- Free LLM API directories and live ranking sites (updated daily)
 
-## Agent & Memory Tooling
+## Agent & Developer Tooling
 
-- **TencentDB Agent Memory** (MIT) — local SQLite default + team-level memory hub
-- Broader ecosystem of MCP clients, tool-calling harnesses, and agent orchestration frameworks continues to expand
-- Decision-model serving patterns (explicit choice outputs) gaining interest alongside traditional generation
+- Agent memory systems (TencentDB and others), MCP clients, tool-calling harnesses
+- Decision-model serving (explicit choices + probabilities)
+- TRL / Transformers updates for longer training sequences and new models (Beam)
+- On-device / local agent stacks (efficient MoEs)
 
 ## Developer Focus Areas (current)
 
-- On-device / local agents (efficient MoEs)
-- Long-context multimodal pipelines
-- Fast image generation (8-step Turbo-style checkpoints)
-- Persistent agent memory and recovery
-- Explicit decision models for reliable automated workflows
+- Running large open frontier models (Beam, Muse Spark, Nemotron) vs efficient local MoEs
+- Long-context multimodal and agent pipelines
+- Fast image/video generation
+- Persistent memory and reliable decision outputs
+- Leveraging free/startup GPU credits and serverless endpoints
 
 ---
 

@@ -24,13 +24,13 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-10-15)
+## Latest highlights (as of 2026-10-17)
 
-- **Lumma-Fev-27B** — FrontiersMind decision model (choices + probabilities)
-- **MiniCPM-V 4.7** — first open MoE VLM with strong on-device performance + DSpark heads
-- **Gemini 4 Argon** GA — 1M-token frontier model for long-horizon work
-- **Meta Muse Wonder** — frontier agent models with Active Memory & Focus
-- **LFM2.5-24B-A2B** — open on-device MoE agent model (Liquid AI)
-- Free compute stack: Colab, Kaggle, HF ZeroGPU, Lightning, NVIDIA free endpoints
+- **NVIDIA Nemotron 3.5 Super VL** — 120B/12B open VL model for always-on agents + Bolt variants
+- **Reflection Beam** — 501B sparse MoE, 1M context, coding/agentic; in Transformers
+- **Meta Muse Spark Open** — 816B/42B multimodal open-weight frontier
+- HF Transformers v5.20.1 (Beam) + TRL fused LM head for longer sequences
+- Continued trending: LFM2.5, DeepSeek-V4.1-Flash, Qwen-Image, decision models
+- Free compute: Colab, Kaggle, ZeroGPU, NVIDIA endpoints, Inference.net grants, startup credits
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.

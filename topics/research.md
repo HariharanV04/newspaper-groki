@@ -2,40 +2,38 @@
 
 Living document of notable papers, findings, and directions. Entries are refined over time; new work is added at the top of relevant sections.
 
-**Last refined:** 2026-10-15
+**Last refined:** 2026-10-17
 
 ---
 
 ## Agents & Long-Horizon Work
 
-- **QwenGyre** — Elastic RL framework for extreme-long (“xLong”) agent tasks spanning hours and ~1M tokens.
-- **ColGrep-Agent-2B** — Local search agent that reduces context tax for coding assistants by moving repository exploration to a small model.
-- Continued focus on agent memory systems, goal persistence, and recovery from intermediate failures.
+- **FDE-Gym**: The last mile of AI delivery — evaluating agents on real-world customer delivery vs well-specified tasks.
+- **MLExpert**: Towards a generalist agentic model for autonomous machine learning engineering.
+- **KnowGPO**: Knowledge-grouped policy optimization for search agents.
+- **AgentCIScope**: Grounded contextual integrity evaluation for LLM agents (privacy/disclosure constraints).
+- **EvoSafeHarness**: Evolving model- and domain-specific harnesses for securing agents.
+- Continued: agent memory, long-horizon reliability, Gemini 4 Argon multi-agent Minecraft success.
+- Prior: QwenGyre (xLong RL), ColGrep-Agent-2B.
 
-## Efficiency & On-Device
+## Efficiency, Diffusion & Architectures
 
-- Robotics inference distillation (RealtimeWAM-style and related): large speedups (~25×) with minimal success-rate degradation for real-time control loops.
-- Low-active-parameter MoEs and hybrid architectures for edge / laptop deployment remain a major theme (LFM2.5, MiniCPM-V 4.7).
-- **VKORE-46M-NPU**: Full training loop (backpropagation) demonstrated on an inference-first NPU.
+- **Designing Transformers for Continuous Diffusion Language Models (CDLMs)**: Alternatives to causal/DiT architectures for parallel generation.
+- Low-active-parameter MoEs, fused training (TRL LM head → longer sequences), on-device efficiency remain dominant.
+- Robotics: dexterity from supervised play; prior distillation speedups.
 
-## Safety, Security & Evaluation
+## Multimodal, Embeddings & Generation
 
-- Anthropic Frontier Red Team: research indicating small models may soon be capable of self-replication on commercial IoT devices.
-- **SWE-DeceptionBench** and related work on deceptive behaviors of LLMs across the software development lifecycle.
-- Prompt-injection and agent safety benchmarks continue to matter for frontier model releases (e.g., Argon reported strong results).
-- Practical evaluation blueprint for domain-specific speech recognition (NVIDIA ATC study).
+- Cross-modal embeddings (EmbeddingGemma 2).
+- Image/video generation trends (LTX-2.5, Qwen-Image, MiniMax).
+- Multimodal decision and VL models.
 
-## Model Internals & Editing
+## Safety, Evaluation & Other
 
-- Speculative decoding improvements (e.g., DLoop-style multi-round verification; DSpark heads for MiniCPM-V 4.7).
-- Fact / knowledge editing approaches such as EngramEdit (editing conditional memory / n-gram tables).
-- Decision models (Lumma-Fev-27B and related): explicit choice + probability outputs instead of free generation.
-
-## Multimodal & Embeddings
-
-- Cross-modal embedding models (EmbeddingGemma 2 and similar) enabling shared spaces for text, image, audio, and video.
-- Multimodal decision and vision-language models (decision heads, MoE VLMs like MiniCPM-V 4.7).
-- **HiRO-ACEv2**: Extreme weather simulation at 3 km resolution at fraction of prior cost.
+- Agent safety harnesses and contextual integrity.
+- Name-bias in LLMs, multilingual instruction data (Multi-SFT), byte-level models.
+- Code evolution benchmarks (WEAVE), quantum circuit discovery with LLMs.
+- Prior: SWE-DeceptionBench, Anthropic red-team notes, HiRO-ACEv2.
 
 ---
 
