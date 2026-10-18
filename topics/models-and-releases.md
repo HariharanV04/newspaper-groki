@@ -2,71 +2,66 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-10-17
+**Last refined:** 2026-10-18
 
 ---
 
 ## Frontier / Flagship & Large Open
 
-### NVIDIA Nemotron 3.5 Super VL & Bolt (Oct 16, 2026)
-- **Type:** Open VL (120B total / 12B active) + smaller Bolt MoEs (74B-A9B, E4B)
-- **Role:** Fast-track completion for always-on agents; vision/documents/video; open weights + data + recipes
-- **Status:** Fresh open release reinforcing NVIDIA open strategy. On Hugging Face.
+### DeepSeek V4.1-Flash-1017 (Oct 17, 2026)
+- **Type:** Multimodal MoE (~552B backbone + 196B Engram; 8B active prefill / 16B decode), 1M context. MIT open weights.
+- **Role:** Reasoning, coding, agentic tasks, vision. Minor update with broad benchmark gains (esp. Terminal-Bench, DeepSWE, ProgramBench) + faster/shorter outputs.
+- **Status:** API live (deepseek-flash, unchanged pricing). Trending #1 on Hugging Face. Weights + code on HF. Optimized for DeepSeek Harness v0.2.1+.
 
-### Reflection AI Beam (Oct 16-17, 2026)
-- **Type:** 501B sparse expert MoE, 1M context, token-efficient
-- **Role:** Frontier coding and agentic use cases; open weights
-- **Status:** Transformers support (v5.20.1); HF blog + livestream. Infrastructure readiness is the key challenge.
+### Reflection AI Beam 1.0 (Oct 16, 2026)
+- **Type:** 501B total / ~23B active sparse MoE, 1M context, Apache 2.0.
+- **Role:** Coding, reasoning, tool use, long-horizon agents. Token-efficient.
+- **Status:** Full open weights available. Transformers support. HF blog coverage.
 
 ### Meta Muse Spark Open (Oct 15, 2026)
-- **Type:** 816B total / 42B active, 1M context, multimodal in → text
-- **Status:** Claimed most capable US open-weight. High VRAM; weights on HF.
+- **Type:** 816B total / 42B active, 1M context, multimodal in → text.
+- **Status:** Open weights (Muse Model License). Claimed most capable US open-weight. High VRAM; optimized for SGLang/vLLM. Still trending.
+
+### NVIDIA Nemotron 3.5 Super VL & Bolt (Oct 15, 2026)
+- **Type:** Open VL (120B/12B) + Bolt MoEs (74B-A9B for 24GB).
+- **Role:** Long-running agents, vision/docs/video. Fully open weights + data + recipes.
+- **Status:** Active on HF and NIM.
 
 ### Gemini 4 Argon (Google) — GA Oct 13, 2026
-- **Role:** Long-horizon frontier model (coding, enterprise knowledge work, cyber defense)
-- **Context:** 1M tokens (input + output)
-- **Modality:** Native multimodal (text, image, audio, video)
-- **Access:** Gemini API (`gemini-4-argon`), AI Studio, Gemini platform, AI Ultra/Pro, Antigravity
-- **Pricing:** Intro (to Nov 30) $2 / $10 per 1M tokens; then $4 / $20. Cached input heavily discounted.
-- **Status:** Active frontier reference.
+- **Role:** Long-horizon frontier (coding, enterprise, cyber).
+- **Context / Modality:** 1M, native multimodal.
+- **Status:** Active proprietary reference. Pricing $2/$10 intro then higher.
 
 ### Muse Wonder / Muse Wonder Full (Meta) — Oct 12, 2026
-- **Role:** First Meta frontier-class models for personal & professional agents
-- **Features:** Active Memory, Active Focus
-- **Context:** 1M tokens; multimodal input → text output
-- **Access:** Meta Model API + Muse Code
-- **Status:** Proprietary. Competitive on agent/memory benchmarks.
+- **Role:** Proprietary frontier agents with Active Memory/Focus.
+- **Status:** Proprietary via Meta Model API.
 
 ## Open-Weight & Efficient Models
 
+### Other Oct 15-17 releases
+- **FLUX 3 Image Klein** (Black Forest Labs): ~5.6B open image gen/edit.
+- **StepFun Step 5 Preview**: 600B / 27B active, 1M context agent model (open weights).
+- **Ling-3.1-flash** (InclusionAI): 560B / 25B active, MIT, 1M.
+- **IBM Granite Switch 4.1**: Unified chat + decision + speech.
+
 ### LFM2.5-24B-A2B (Liquid AI) — Oct 13, 2026
-- **Type:** MoE, 24B total / ~2B active, reasoning-only
-- **Strengths:** On-device agents, tool use, 131K context
-- **Status:** Still primary open on-device agent candidate; trending.
+- **Type:** MoE 24B / ~2B active for local agents.
+- **Status:** Still trending / primary efficient on-device option.
 
 ### MiniCPM-V 4.7 (OpenBMB)
-- **Type:** MoE multimodal (35B-A3B + 1B). Apache 2.0
-- **Strengths:** Strong on-device VLM performance
-- **Status:** Leading open on-device MoE VLM; DSpark heads available.
+- **Type:** MoE multimodal. Strong on-device VLM.
+- **Status:** Trending; Apache 2.0.
 
-### Lumma-Fev-27B & Decision Models (FrontiersMind, AutoTrust JEV/GEV)
-- **Type:** Explicit choice + probability outputs
-- **Status:** Surging theme for reliable automated workflows.
+### DeepSeek-V4.1-Flash (prior)
+- **Status:** Superseded by 1017 checkpoint for API and weights.
 
-### Qwen-Image-2.1-Turbo & variants
-- **Type:** Accelerated 7B image gen/edit
-- **Status:** Highly trending; uncensored/quantized versions popular.
-
-### DeepSeek-V4.1-Flash
-- **Status:** Continued strong riser for reasoning and coding.
+### Decision models, Qwen-Image-2.1-Turbo, EmbeddingGemma 2
+- Continue as supporting themes (explicit decisions, image gen, cross-modal embeddings).
 
 ## Other / Infrastructure
 
-- EmbeddingGemma 2: cross-modal embeddings
-- Transformers v5.20.1: Beam + torch fixes
-- TRL fused LM head for much longer sequences
-- NVIDIA Run:ai open-sourced
-- Tencent Agent Memory
+- Transformers ongoing model additions (Beam, Muse Spark, etc.)
+- TRL fused LM head improvements still relevant for training
 
 ---
 

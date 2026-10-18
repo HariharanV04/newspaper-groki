@@ -24,13 +24,12 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-10-17)
+## Latest highlights (as of 2026-10-18)
 
-- **NVIDIA Nemotron 3.5 Super VL** — 120B/12B open VL model for always-on agents + Bolt variants
-- **Reflection Beam** — 501B sparse MoE, 1M context, coding/agentic; in Transformers
-- **Meta Muse Spark Open** — 816B/42B multimodal open-weight frontier
-- HF Transformers v5.20.1 (Beam) + TRL fused LM head for longer sequences
-- Continued trending: LFM2.5, DeepSeek-V4.1-Flash, Qwen-Image, decision models
-- Free compute: Colab, Kaggle, ZeroGPU, NVIDIA endpoints, Inference.net grants, startup credits
+- **DeepSeek V4.1-Flash-1017** — MIT open weights, strong agent/coding gains (DeepSWE 77%), faster/shorter outputs, trending #1 on HF
+- **Reflection Beam** — 501B sparse MoE open weights, 1M context
+- **Meta Muse Spark Open** — 816B/42B multimodal open-weight
+- **NVIDIA Nemotron 3.5 Super VL** — 120B/12B open VL for agents + Bolt variants
+- Free compute: Colab, Kaggle, ZeroGPU, NVIDIA NIM endpoints, Groq, etc.
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.
