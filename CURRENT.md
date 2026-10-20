@@ -1,6 +1,6 @@
 # Current AI Briefing
 
-**Last updated:** 2026-10-18
+**Last updated:** 2026-10-20
 
 This file is always overwritten with the latest full snapshot. For history and refined topic tracking, see `topics/` and `archive/`.
 
@@ -8,67 +8,61 @@ This file is always overwritten with the latest full snapshot. For history and r
 
 ## Major Frontier & Open Model Releases (Past 24h focus)
 
-### DeepSeek V4.1-Flash-1017 (Oct 17, 2026)
-- Minor update to V4.1-Flash (Sept 10). Open weights under MIT license on Hugging Face (deepseek-ai/DeepSeek-V4.1-Flash-1017).
-- Multimodal MoE: ~552B backbone + 196B Engram conditional memory; 8B active prefill / 16B decode; 1M context.
-- Vendor-reported gains: Terminal-Bench 4.0 31.2→42.3, DeepSWE v1.1 74.2→77.0, ProgramBench 20.3→29.1, Apex Bench 64.6→72.1, and others. Faster task completion + shorter outputs.
-- API unchanged (deepseek-flash model ID, same pricing). Trending #1 on Hugging Face (score ~885, 900+ likes within hours).
-- Optimized for DeepSeek Harness, Tencent CodeBuddy, etc.
+### MiniMax M3.1 Flash (Oct 19, 2026)
+- Next-gen Flash model for agentic tasks, coding, Computer Use. API live immediately; open weights planned for Oct 23.
+- Pricing: $0.15 input / $0.60 output / $0.015 cached per 1M tokens (~70% lower agentic cost, ~3x faster inference vs prior M3).
+- 1M context, text/image/video input. Strong vendor benchmarks (DeepSWE ~73.7, OSWorld V2 61.7). Revealed as the former stealth "Space Bunny" on OpenRouter.
+- Note: Independent analysis flagged high hallucination tendency on factual questions despite strong overall scores.
 
-### Reflection AI Beam 1.0 (Oct 16, 2026)
-- 501B total / ~23B active sparse MoE, 1M context, Apache 2.0 open weights. Text-only for coding, reasoning, agentic workloads.
-- Open weights fully available; Transformers support (v5.20+). Token-efficient design.
+### inclusionAI Ming-3.0 Speech Family (Oct 19, 2026)
+- Five MIT-licensed open models: audio-flash (126B total / 6.5B active MoE for audio understanding/reasoning/tool use), audio-tiny (9.3B/2.7B), TTS variants (0.5B + tiny), ASR-tiny.
+- Native audio in/out capabilities, dialects, long-form, paralinguistics. Day-0 SGLang/vLLM support. Weights on HF/ModelScope.
 
-### Meta Muse Spark Open (Oct 15, 2026)
-- 816B total / 42B active MoE, 1M context. Multimodal in (text/image/audio/video) → text out.
-- Open weights under Muse Model License. Meta: most capable US open-weight to date. High VRAM (hundreds of GB even quantized); SGLang/vLLM optimized, Mac-friendly claims.
-- Still trending on HF.
+### Meta Muse Glimmer Technical Report (Oct 19, 2026)
+- 30B dense open-weight (Apache 2.0) agentic model for consumer hardware. Runs at practical speeds on single consumer GPU (4-bit quantization).
+- Strong on tool use, multi-step planning vs comparable models (Gemma4-31B, Qwen3.6-27B). Multimodal (text+image in). Technical report + HF model details published.
 
-### NVIDIA Nemotron 3.5 Super VL & Bolt (Oct 15, 2026)
-- Super VL: 120B total / 12B active open multimodal for long-running agents.
-- Bolt 74B-A9B (fits 24GB) + upcoming E4B. Fully open: weights, datasets, recipes.
-
-### Other Notable (Oct 15-17)
-- Black Forest Labs FLUX 3 Image Klein (~5.6B open-weight image gen/edit, free commercial under thresholds).
-- StepFun Step 5 Preview (600B total / 27B active, 1M context agent model, open weights after API).
-- Ant Group / InclusionAI Ling-3.1-flash (560B / 25B active, MIT, 1M context).
-- IBM Granite Switch 4.1 (chat + decisions + speech in one).
-- Liquid AI LFM2.5-24B-A2B, MiniCPM-V 4.7, Fish Audio Drama 3 TTS still active.
+### Ongoing Strong Performers
+- **DeepSeek V4.1-Flash-1017** (Oct 17): MIT open weights, agent/coding gains, still highly relevant and trending.
+- **Reflection Beam** (Oct 16): 501B sparse MoE Apache 2.0, token-efficient for coding/agents.
+- **Meta Muse Spark Open** (Oct 15): 816B/42B multimodal open-weight.
+- **NVIDIA Nemotron 3.5 Super VL & Bolt** (Oct 15): Open VL and edge MoEs.
 
 ## Hugging Face & Ecosystem Updates
-- **Trending (as of Oct 18):** #1 DeepSeek-V4.1-Flash-1017 (image-text-to-text), embeddinggemma-2, humanizer, MiniCPM-V-4.7, flux-3-image-klein, Muse-Spark-Open, LTX-2.5, LFM2.5.
-- Transformers continues adding architectures (Beam, Muse Spark, etc.).
-- High velocity on open agent/coding models and image/video pipelines.
+- TRL: Fused LM head (default) enabling up to ~7x longer trainable sequences and major VRAM reductions on post-training (DPO/SFT/GRPO etc.). AWS Trainium path added.
+- Transformers: Beam model support, EmbeddingGemma 2 (cross-modal text/image/audio/video embeddings), Nemotron 3 Diarization, Muse Spark Open, and related architecture additions. MoE breaking changes noted.
+- Diffusers: Qwen-Image 2.1 (generation + editing, native RGBA, LoRA).
+- HF Blog: Beam infrastructure implications, SlideOn sparse retrieval features, FLUX.3 Klein layout control, Indic corpus, Granite Switch.
+- Trending momentum continues on recent open agent/coding/image models (DeepSeek-1017, MiniCPM-V, embeddinggemma-2, FLUX variants, Muse series).
 
-## Research (recent arXiv ~Oct 15-17)
-- Agent delivery & engineering: FDE-Gym (last-mile real-customer delivery gap), MLExpert (generalist agent for autonomous ML engineering, strong on MLE-Bench).
-- Training-free / midtraining recipes for agentic post-training; Terminal-RSI recursive self-improving agents.
-- Safety/eval: AgentCIScope (contextual integrity), EvoSafeHarness, evaluation awareness in non-English.
-- Continued focus on long-horizon reliability, agent-to-agent scenarios, quantum circuits with LLMs.
+## Research (recent arXiv ~Oct 18-19)
+- Quantum circuit discovery: LLM-driven evolutionary search (Anthropic/Harvard/QuEra) finding efficient reversible circuits and new algorithms.
+- Agent systems: World model generalization (AnyGoal), tool-output retrieval costs on accuracy, imaginative agents, computer-use environment synthesis, long-context evidence management (LongHarness).
+- Multimodal/training: Text-to-image without language pretraining (Halcyon), functional CAD mechanisms, flexible UMM representations.
+- Continued agent safety, GRPO alignment, frontend agentic RL (WebCoder).
 
 ## Free GPUs, Hosting & Developer Tools
-**Free / low-cost compute (stable as of mid-Oct 2026):**
-- Google Colab free (T4, intermittent sessions)
-- Kaggle Notebooks (T4×2 or TPU, ~30 GPU-h/week)
-- Hugging Face ZeroGPU (shared RTX Pro 6000 Blackwell; limited minutes/day for Gradio demos)
-- NVIDIA NIM / build.nvidia.com free endpoints (many open models including recent Nemotron, DeepSeek)
-- Groq free tier, OpenRouter free models, Google AI Studio / Gemini free tier, Cloudflare Workers AI
-- Modal / Lightning free credits; RunPod/Vast.ai spots for paid low-cost
-- Startup credit programs (Together, Baseten, Fireworks, cloud providers)
+**Free / low-cost compute (stable mid-late Oct 2026):**
+- Google Colab free (T4, intermittent ~12h sessions)
+- Kaggle Notebooks (T4	imes2 ~30 GPU-h/week, TPU options)
+- Hugging Face ZeroGPU (shared RTX Pro 6000 Blackwell; limited daily minutes for Gradio demos)
+- NVIDIA NIM / build.nvidia.com free endpoints for many open models
+- Groq free tier, OpenRouter free models, Google AI Studio, Cloudflare Workers AI
+- Modal / Lightning free credits; NVIDIA Run:ai full platform open-sourced (Apache 2.0) for self-hosted GPU orchestration
+- Startup credit programs remain available
 
 **Hosting & tools:**
-- Hugging Face Hub + Spaces + Inference
-- vLLM, SGLang, llama.cpp, TensorRT-LLM for serving large open models
-- Diffusers / ComfyUI for image (FLUX 3, Qwen-Image)
-- Agent harnesses (DeepSeek Harness updates for 1017), MCP, memory systems
+- HF Hub/Spaces/Inference, vLLM, SGLang, llama.cpp for large open MoEs
+- Diffusers/ComfyUI for image pipelines
+- Agent harnesses, MCP, memory systems
 
 ## Trending Themes
-- Open-weight frontier-scale models (DeepSeek 1017 efficiency + agent gains, Beam, Muse Spark Open, Nemotron) closing the gap on proprietary
-- Sparse MoEs with low active params + 1M contexts for practical agentic coding
-- Efficiency Pareto improvements (faster, shorter outputs, lower cost)
-- Multimodal open models and image generation (FLUX 3 Klein)
-- Accessible free/low-cost inference remaining critical
-- Agent evaluation, safety, and real-world delivery benchmarks
+- Rapid Chinese open/efficient Flash models (MiniMax M3.1, DeepSeek 1017) intensifying price/performance race on agents & coding
+- Speech/audio open models (Ming-3.0 family) expanding multimodal capabilities under permissive licenses
+- On-device agentic models (Muse Glimmer) making local agents practical
+- Sparse MoEs + long context + efficiency remaining dominant for practical deployment
+- Training efficiency gains (fused LM heads, better post-training) and open infrastructure
+- Accessible free/low-cost inference critical for developers
 
 ---
 *Always verify latest benchmarks, pricing, VRAM needs, licenses, and availability on official sources (HF model cards, vendor changelogs, arXiv). Vendor scores are not independent.*

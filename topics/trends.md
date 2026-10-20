@@ -2,32 +2,32 @@
 
 High-level themes. Updated when the landscape shifts; not a daily dump.
 
-**Last refined:** 2026-10-18
+**Last refined:** 2026-10-20
 
 ---
 
 ## Dominant Themes (mid-to-late Oct 2026)
 
-1. **Open-weight frontier models accelerating**  
-   DeepSeek V4.1-Flash-1017 (efficient agent/coding gains at low cost), Reflection Beam (501B open), Meta Muse Spark Open (816B/42B multimodal), Nemotron 3.5 Super VL bringing near-frontier open capabilities.
+1. **Efficient open Flash models intensifying price/performance race**  
+   MiniMax M3.1 Flash and DeepSeek V4.1-Flash-1017 delivering strong agent/coding results at very low cost, accelerating accessible agentic workflows.
 
-2. **Sparse MoEs + long context + efficiency for agents & coding**  
-   Low active parameters, 1M contexts, token-efficient and faster/shorter output designs enabling practical agentic workflows.
+2. **Open multimodal expansion (esp. audio/speech)**  
+   Ming-3.0 family (MIT) bringing capable open audio understanding, TTS, and ASR under permissive licenses, alongside vision/image progress.
 
-3. **Efficiency Pareto improvements**  
-   Models claiming better performance at same or lower cost/speed (DeepSeek 1017 example). On-device and few-active-param MoEs remain strong.
+3. **On-device practical agents**  
+   Muse Glimmer (30B Apache 2.0) demonstrating real local agent utility on consumer hardware.
 
-4. **Multimodal open expansion**  
-   VLMs, image gen (FLUX 3 Klein), cross-modal embeddings, native multimodal inputs.
+4. **Sparse MoEs + long context + efficiency**  
+   Low active parameters, 1M contexts, token-efficient designs for practical deployment of coding and agent models.
 
-5. **Decision models & explicit outputs**  
-   Calibrated choices + probabilities for reliable automation.
+5. **Training and infrastructure efficiency**  
+   Fused LM heads, open GPU orchestration (Run:ai), better post-training enabling longer contexts and lower resource use.
 
-6. **Agent evaluation, safety & real-world delivery**  
-   Benchmarks for long-horizon reliability, contextual integrity, last-mile delivery gaps.
+6. **Accessible compute**  
+   Free tiers (Colab, Kaggle, ZeroGPU, NIM), open-source platforms, and serverless remaining essential for developers.
 
-7. **Accessible compute**  
-   Free tiers (Colab, Kaggle, ZeroGPU, NIM endpoints), startup credits, and serverless remaining essential.
+7. **Agent evaluation & real-world reliability**  
+   Ongoing focus on long-horizon performance, evidence management, safety, and delivery gaps.
 
 ---
 

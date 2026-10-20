@@ -24,12 +24,12 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-10-18)
+## Latest highlights (as of 2026-10-20)
 
-- **DeepSeek V4.1-Flash-1017** — MIT open weights, strong agent/coding gains (DeepSWE 77%), faster/shorter outputs, trending #1 on HF
-- **Reflection Beam** — 501B sparse MoE open weights, 1M context
-- **Meta Muse Spark Open** — 816B/42B multimodal open-weight
-- **NVIDIA Nemotron 3.5 Super VL** — 120B/12B open VL for agents + Bolt variants
-- Free compute: Colab, Kaggle, ZeroGPU, NVIDIA NIM endpoints, Groq, etc.
+- **MiniMax M3.1 Flash** — low-cost agent/coding Flash model, API live (weights soon), former Space Bunny
+- **inclusionAI Ming-3.0** — MIT open speech/audio family (126B audio-flash + TTS/ASR)
+- **Meta Muse Glimmer** — 30B on-device agentic model, technical report out
+- **DeepSeek V4.1-Flash-1017**, **Reflection Beam**, **Muse Spark Open**, **Nemotron 3.5** still key open releases
+- Free compute: Colab, Kaggle, ZeroGPU, NVIDIA NIM, Run:ai open-sourced, etc.
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.

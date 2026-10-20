@@ -2,7 +2,7 @@
 
 Living reference for free/low-cost GPUs, hosting, inference stacks, and developer tooling. Quotas and offerings change; update entries in place.
 
-**Last refined:** 2026-10-18
+**Last refined:** 2026-10-20
 
 ---
 
@@ -19,29 +19,30 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 | OpenRouter free | Limited free models / daily requests | Card-free options available |
 | Cloudflare Workers AI | 10k neurons/day | Edge inference |
 | Modal / Lightning AI | Free monthly compute / studios | Check current balances |
+| NVIDIA Run:ai (open-sourced) | Full GPU orchestration platform (Apache 2.0) | Self-host; supply own K8s/GPUs |
 | Startup programs (Together, Baseten, Fireworks, AWS, GCP, etc.) | Credit grants | Vary by stage |
 | RunPod / Vast.ai | Cheap spot GPUs | Paid but lowest $/hr |
 
 ## Hosting & Serving
 
 - **Hugging Face Spaces + Hub + Inference** — models, ZeroGPU demos, providers
-- **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary stacks for large open MoEs (Beam, Muse Spark, DeepSeek, Nemotron)
-- **Diffusers + ComfyUI** — image pipelines (FLUX 3 Klein, Qwen-Image)
+- **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary stacks for large open MoEs (Beam, Muse Spark, DeepSeek, Nemotron, Ming-3.0)
+- **Diffusers + ComfyUI** — image pipelines (FLUX 3 Klein, Qwen-Image 2.1)
 - Free LLM API directories (updated frequently)
 
 ## Agent & Developer Tooling
 
-- DeepSeek Harness updates for V4.1-Flash-1017
-- Agent memory systems, MCP, tool-calling harnesses
-- Decision-model serving patterns
-- On-device / local agent stacks (efficient MoEs)
+- Agent harnesses optimized for recent Flash models (DeepSeek, MiniMax)
+- Agent memory systems, MCP, tool-calling
+- On-device / local agent stacks (Muse Glimmer, efficient MoEs)
+- TRL for efficient post-training with fused LM head
 
 ## Developer Focus Areas (current)
 
-- Running and quantizing large open models (DeepSeek 1017, Beam, Muse Spark Open, Nemotron)
-- Agentic coding and long-context pipelines
-- Fast open image generation
-- Leveraging free/NIM/serverless endpoints and startup credits
+- Evaluating and serving new efficient Flash/agent models (MiniMax M3.1, DeepSeek 1017)
+- Local/on-device agents (Muse Glimmer)
+- Open audio/speech models (Ming-3.0)
+- Leveraging free/NIM/serverless endpoints, Run:ai for self-hosted orchestration, and startup credits
 
 ---
 

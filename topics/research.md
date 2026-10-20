@@ -2,34 +2,35 @@
 
 Living document of notable papers, findings, and directions. Entries are refined over time; new work is added at the top of relevant sections.
 
-**Last refined:** 2026-10-18
+**Last refined:** 2026-10-20
 
 ---
 
 ## Agents & Long-Horizon Work
 
-- **FDE-Gym**: The last mile of AI delivery — gap between well-specified tasks and real customer delivery.
-- **MLExpert**: Generalist agentic model for autonomous machine learning engineering (strong gains on MLE-Bench Lite).
-- Training-free on-policy distillation and midtraining recipes for agentic post-training (e.g., improvements on Nemotron).
-- **Terminal-RSI**: Recursive self-improving terminal agents.
-- **AgentCIScope**: Grounded contextual integrity for agents.
-- **EvoSafeHarness**: Evolving harnesses for agent security.
-- Continued: agent-to-agent scenarios, long-horizon reliability, multi-agent demos.
+- **Quantum Circuit Discovery** (Anthropic/Harvard/QuEra, Oct 19): LLM + evolutionary search discovers efficient reversible quantum circuits and new algorithms (e.g., improved modular inversion).
+- **LongHarness / Evidence Management**: Gains on long-context agent reasoning via stateful evidence handling rather than raw chat history.
+- **AnyGoal / World Models**: Generalization of world models beyond expert rollouts for planning.
+- Tool-output retrieval accuracy costs; imaginative agents (Sokoban-style foresight); computer-use environment synthesis; ProteinGeoBench (agents strong at lookup, weaker on geometry).
+- Prior: FDE-Gym, MLExpert, Terminal-RSI, AgentCIScope, EvoSafeHarness.
 
 ## Efficiency, Diffusion & Architectures
 
-- Designing Transformers for Continuous Diffusion Language Models (CDLMs).
-- Low-active-parameter MoEs, fused training techniques, on-device efficiency dominant.
+- Fused LM heads and training optimizations enabling longer sequences / lower VRAM.
+- Text-to-image without language pretraining (Halcyon family).
+- Flexible representation learning for unified multimodal models.
+- Continued low-active-parameter MoEs and on-device designs.
 
 ## Multimodal, Embeddings & Generation
 
-- Cross-modal embeddings (EmbeddingGemma 2).
-- Open image generation (FLUX 3 Klein) and video trends (LTX-2.5).
+- EmbeddingGemma 2 cross-modal embeddings (text/image/audio/video).
+- Ming-3.0 audio models advancing open speech/audio understanding and generation.
+- Open image generation pipelines (FLUX 3 Klein, Qwen-Image).
 
 ## Safety, Evaluation & Other
 
-- Evaluation awareness beyond English; agent safety harnesses.
-- Quantum circuit discovery with LLMs; code/agent benchmarks.
+- GRPO refinements for safety alignment; verifier feedback in formal proving.
+- Frontend agentic RL (WebCoder); evaluation awareness and agent safety harnesses.
 
 ---
 
