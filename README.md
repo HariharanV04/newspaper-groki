@@ -24,12 +24,12 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-10-20)
+## Latest highlights (as of 2026-10-21)
 
-- **MiniMax M3.1 Flash** — low-cost agent/coding Flash model, API live (weights soon), former Space Bunny
-- **inclusionAI Ming-3.0** — MIT open speech/audio family (126B audio-flash + TTS/ASR)
-- **Meta Muse Glimmer** — 30B on-device agentic model, technical report out
-- **DeepSeek V4.1-Flash-1017**, **Reflection Beam**, **Muse Spark Open**, **Nemotron 3.5** still key open releases
-- Free compute: Colab, Kaggle, ZeroGPU, NVIDIA NIM, Run:ai open-sourced, etc.
+- **DeepSeek DeepInfer** — production inference framework open-sourced (Apache 2.0) for V4.1-Flash, NVIDIA + Huawei support, high throughput claims
+- **Mistral Voxtral 3** — speech transcription/TTS + voice agent SDK (LiveKit), low-cost multilingual
+- **HF TorchNeuron** — native PyTorch backend for AWS Trainium (public beta), strong Transformers support
+- **MiniMax M3.1 Flash**, **inclusionAI Ming-3.0**, **Meta Muse Glimmer**, DeepSeek-1017, Beam, Muse Spark, Nemotron still key
+- Free compute: Colab, Kaggle, ZeroGPU, NVIDIA NIM, Run:ai, etc. stable
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.

@@ -2,11 +2,21 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-10-20
+**Last refined:** 2026-10-21
 
 ---
 
 ## Frontier / Flagship & Large Open
+
+### DeepSeek DeepInfer + V4.1-Flash (Open-source inference Oct 20; model Oct 17)
+- **Type:** Production inference stack (DeepInfer, Apache 2.0) for DeepSeek-V4.1-Flash (multimodal MoE, 1M context, MIT weights). Also deepseek-recipe (MIT).
+- **Role:** High-throughput, low-latency serving of agent/coding Flash model. Dual NVIDIA SM100 / Huawei Ascend 950. Significant efficiency claims (cache hit, tok/s).
+- **Status:** Framework on GitHub; offline focus (some production pieces held back). Model weights/API live. Strong ongoing relevance.
+
+### Mistral Voxtral 3 (Oct 20, 2026)
+- **Type:** Speech family: transcription (50+ langs, diarization; Mini 4B), TTS (35+ langs/dialects), LiveKit voice agent SDK.
+- **Role:** Real-time voice agents (listen-reason-speak-tools). Low pricing for transcription.
+- **Status:** API available (EU/US/global); self-host on request. Competitive vendor speech benchmarks.
 
 ### MiniMax M3.1 Flash (Oct 19, 2026)
 - **Type:** Efficient Flash model for agents/coding/Computer Use. 1M context, multimodal input. Weights forthcoming (Oct 23).
@@ -24,9 +34,9 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Status:** Technical report published; practical local deployment emphasized.
 
 ### DeepSeek V4.1-Flash-1017 (Oct 17, 2026)
-- **Type:** Multimodal MoE (~552B backbone + 196B Engram; 8B active prefill / 16B decode), 1M context. MIT open weights.
-- **Role:** Reasoning, coding, agentic tasks, vision. Minor update with broad benchmark gains + faster/shorter outputs.
-- **Status:** API live (deepseek-flash). Weights on HF. Continues strong relevance.
+- **Type:** Multimodal MoE, 1M context. MIT open weights. Now paired with open DeepInfer.
+- **Role:** Reasoning, coding, agentic tasks, vision.
+- **Status:** API live. Weights on HF. Continues strong relevance.
 
 ### Reflection AI Beam 1.0 (Oct 16, 2026)
 - **Type:** 501B total / ~23B active sparse MoE, 1M context, Apache 2.0.
@@ -44,22 +54,16 @@ Living document. New entries go at the top. Older entries are refined or marked 
 
 ## Open-Weight & Efficient Models
 
-### Other recent (Oct 15-17)
-- **FLUX 3 Image Klein**, **StepFun Step 5 Preview**, **Ling-3.1-flash**, **IBM Granite Switch 4.1** continue as notable.
-
-### LFM2.5-24B-A2B (Liquid AI)
-- **Type:** MoE 24B / ~2B active for local agents.
-- **Status:** Efficient on-device option.
-
-### MiniCPM-V 4.7 (OpenBMB)
-- **Type:** MoE multimodal. Strong on-device VLM.
-- **Status:** Trending.
+### Other recent
+- **FLUX 3 Image Klein**, **StepFun Step 5 Preview**, **Ling-3.1-flash**, **IBM Granite Switch 4.1**, **LFM2.5-24B-A2B**, **MiniCPM-V 4.7** continue as notable.
 
 ## Other / Infrastructure
 
-- Transformers: Beam, Muse Spark Open, EmbeddingGemma 2, Nemotron diarization, etc.
+- DeepInfer open inference framework
+- Transformers: Beam, Muse Spark Open, EmbeddingGemma 2, Nemotron diarization, TorchNeuron support, etc.
 - TRL fused LM head for efficient post-training
 - Diffusers Qwen-Image 2.1
+- vLLM TorchTPU, TorchNeuron for non-NVIDIA accelerators
 
 ---
 

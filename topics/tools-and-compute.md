@@ -2,7 +2,7 @@
 
 Living reference for free/low-cost GPUs, hosting, inference stacks, and developer tooling. Quotas and offerings change; update entries in place.
 
-**Last refined:** 2026-10-20
+**Last refined:** 2026-10-21
 
 ---
 
@@ -25,24 +25,28 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 
 ## Hosting & Serving
 
-- **Hugging Face Spaces + Hub + Inference** — models, ZeroGPU demos, providers
-- **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary stacks for large open MoEs (Beam, Muse Spark, DeepSeek, Nemotron, Ming-3.0)
-- **Diffusers + ComfyUI** — image pipelines (FLUX 3 Klein, Qwen-Image 2.1)
+- **DeepInfer** (new open, Apache 2.0) — DeepSeek production stack for V4.1-Flash; high efficiency claims; dual NVIDIA/Huawei
+- **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary stacks for large open MoEs (Beam, Muse Spark, DeepSeek, Nemotron, Ming-3.0); vLLM TorchTPU added
+- **Hugging Face Spaces + Hub + Inference** — models, ZeroGPU demos, providers; TorchNeuron for Trainium
+- **Diffusers + ComfyUI** — image pipelines (FLUX 3 Klein, Qwen-Image 2.1, Cosmos)
 - Free LLM API directories (updated frequently)
+- Voice agent SDKs (Mistral Voxtral 3 + LiveKit)
 
 ## Agent & Developer Tooling
 
 - Agent harnesses optimized for recent Flash models (DeepSeek, MiniMax)
-- Agent memory systems, MCP, tool-calling
+- Agent memory systems (e.g., Databricks Agent Bricks), MCP, tool-calling
 - On-device / local agent stacks (Muse Glimmer, efficient MoEs)
 - TRL for efficient post-training with fused LM head
+- Accelerator backends: TorchNeuron (Trainium), TorchTPU, Huawei support via DeepInfer
 
 ## Developer Focus Areas (current)
 
-- Evaluating and serving new efficient Flash/agent models (MiniMax M3.1, DeepSeek 1017)
+- Evaluating and serving new efficient Flash/agent models (MiniMax M3.1, DeepSeek 1017) with open stacks like DeepInfer
+- Voice/speech agents (Voxtral 3)
 - Local/on-device agents (Muse Glimmer)
 - Open audio/speech models (Ming-3.0)
-- Leveraging free/NIM/serverless endpoints, Run:ai for self-hosted orchestration, and startup credits
+- Leveraging free/NIM/serverless endpoints, non-NVIDIA accelerators (Trainium/TPU), Run:ai for self-hosted orchestration, and startup credits
 
 ---
 
