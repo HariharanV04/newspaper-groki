@@ -2,41 +2,32 @@
 
 Living document of notable papers, findings, and directions. Entries are refined over time; new work is added at the top of relevant sections.
 
-**Last refined:** 2026-10-21
+**Last refined:** 2026-10-23
 
 ---
 
 ## Agents & Long-Horizon Work
 
-- **Diversity-Preserving SMC for Diffusion LLM Decoding** (Oct 20): Inference-time sequential Monte Carlo improves reasoning in masked diffusion LLMs via diversity-preserving resampling; gains separate from reward guidance.
-- **EvoSkill v2** (Oct 20): Fully agentic skill evolution system that edits agent instructions/skills from benchmark adaptation to stateful evolver.
-- **LEAPS** (Oct 20): Long-context evaluation of adaptive pattern learning and state tracking for agents over long trajectories.
-- **Quantum Circuit Discovery** (Anthropic/Harvard/QuEra, Oct 19): LLM + evolutionary search discovers efficient reversible quantum circuits and new algorithms.
-- **LongHarness / Evidence Management**: Gains on long-context agent reasoning via stateful evidence handling.
-- **AnyGoal / World Models**, tool-output retrieval, imaginative agents, computer-use synthesis, DecisionPivot benchmarks, Sage-A1.5 agentic MoE.
-- Prior: FDE-Gym, MLExpert, Terminal-RSI, AgentCIScope, EvoSafeHarness.
+- Recent (Oct 22-23): Direct Pass@k Optimization for Thought Pruning; EpiSEM-Bench (safety under missing evidence); Simulated Control Evals; Who Is Sycophantic to Whom (user deference to confident wrong LLMs); agent scaffolding improvements; Bayesian inference in context for scientific discovery; SpatialBrain (spatial intelligence from experience); Parallel Thinking with Path Diversity; process supervision via strong MoE routing.
+- Prior strong: Diversity-Preserving SMC for Diffusion LLM Decoding, EvoSkill v2, LEAPS long-context, Quantum Circuit Discovery, evidence management, world models, DecisionPivot.
 
 ## Efficiency, Diffusion & Architectures
 
-- CALM: Consistency-aware logit masking to mitigate overthinking in large reasoning models.
-- Fused LM heads and training optimizations enabling longer sequences / lower VRAM.
-- Text-to-image without language pretraining (Halcyon family).
-- Flexible representation learning for unified multimodal models.
-- Continued low-active-parameter MoEs and on-device designs.
-- Open inference stacks (DeepInfer) as systems research made operational.
+- CALM overthinking mitigation; fused LM heads; low-bit n-gram embeddings; sparse MoE designs.
+- Open inference stacks (DeepInfer) as operational systems research.
+- Ongoing low-active MoEs and on-device (Flint, Glimmer).
 
 ## Multimodal, Embeddings & Generation
 
-- EmbeddingGemma 2 cross-modal embeddings (text/image/audio/video).
-- Ming-3.0 and Voxtral 3 advancing open/commercial speech/audio understanding, TTS, and agents.
-- Open image generation pipelines (FLUX 3 Klein, Qwen-Image, Cosmos surgical sim).
-- Generative surgical simulation (Cosmos3-H-Dreams) emphasizing control fidelity and safety.
+- Carbon-X: DNA + language multimodal for scientific querying.
+- EmbeddingGemma 2 cross-modal; Ming-3.0 / Voxtral speech advances; Cosmos surgical simulation; image pipelines.
+- OlmoEarth satellite embeddings.
 
 ## Safety, Evaluation & Other
 
-- GRPO refinements for safety alignment; verifier feedback in formal proving.
-- Frontend agentic RL (WebCoder); evaluation awareness and agent safety harnesses.
-- Decision model diagnostics and agent interface evolution.
+- Agent safety under incomplete evidence, control evaluations, sycophancy dynamics, confidentiality leaks in agents.
+- Evaluation awareness, formal verification feasibility with LLMs.
+- Genomic and specialized domain models expanding research tools.
 
 ---
 

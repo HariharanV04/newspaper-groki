@@ -1,6 +1,6 @@
 # Current AI Briefing
 
-**Last updated:** 2026-10-21
+**Last updated:** 2026-10-23
 
 This file is always overwritten with the latest full snapshot. For history and refined topic tracking, see `topics/` and `archive/`.
 
@@ -8,64 +8,63 @@ This file is always overwritten with the latest full snapshot. For history and r
 
 ## Major Frontier & Open Model Releases (Past 24h focus)
 
-### DeepSeek Open-Sources DeepInfer (Oct 20, 2026)
-- Production inference framework behind DeepSeek-V4.1-Flash, released under Apache 2.0 on GitHub (deepseek-ai/DeepInfer). Companion deepseek-recipe (MIT) for token encoding/decoding matching official API.
-- Supports NVIDIA SM100 (Blackwell) GPUs and Huawei Ascend 950 NPUs. Claims: 155 trillion tokens/day per cluster, 96% input cache hit rate, ~400ms TTFT, 230-300 tok/s generation (coding).
-- Built primarily on vLLM with SGLang/TensorRT-LLM influences. Includes custom kernels (FlashMLA, DeepGEMM, DeepEP, etc.), Attention DP + Wide-EP, speculative decoding (DSpark).
-- Note: Offline inference focus; full production service elements (complete KV cache system, full prefill/decode disaggregation, load balancing) not included. US federal civilian IT ban on DeepSeek products same day; China objects.
+### Hugging Face Carbon-X (Oct 22, 2026)
+- Open-source 14B multimodal model (based on Qwen3-14B) that lets scientists "chat with DNA." Analyzes and generates DNA sequences via natural language queries.
+- Trained on genomic sequences from humans, mammals, plants, fungi + natural language. Supports local deployment for privacy. Aimed at researchers outside large labs.
+- Example use: query mutation effects on disease risk or gene activity. Weights and details on HF.
 
-### Mistral Voxtral 3 (Oct 20, 2026)
-- Full speech stack: transcription models (Small/Mini/Realtime, 50+ languages, diarization, context biasing; Mini is 4B params), Speech/TTS model (35+ languages, 50+ dialects), and LiveKit-based voice agent SDK (listen-think-speak-tool-call streaming, <1s turns).
-- Pricing: transcription from $0.0035/min (Mini) to $0.008/min (realtime); TTS $13 per 1M characters. Available via Mistral API (EU/US/global) or self-host by request.
-- Strong vendor benchmarks (e.g., Small Transcribe ~4.0% FLEURS WER, competitive diarization). Powers new voice agents API.
+### Recursive Flint (Oct 21-22, 2026)
+- 40B MoE (≈2.5B active) open coding model (Apache 2.0). Runs efficiently on laptop (e.g., ~131 tok/s on M4 Pro). Largely built by Recursive's Eureka Machine AI research system.
+- From Richard Socher's Recursive Superintelligence. Designed for local coding agents. Weights freely downloadable.
 
-### MiniMax M3.1 Flash (Oct 19, still highly relevant)
-- Efficient reasoning/agent/coding Flash model. API live; open weights planned Oct 23. $0.15/$0.60 per 1M tokens, 1M context, multimodal. Strong Artificial Analysis gains; note on high hallucination rate (answers rather than declines).
+### MiniMax M3.1 Flash weights public (Oct 23, 2026)
+- Weights now available. 428B total / ~23B active MoE, 1M context, multimodal. API was live since Oct 19 at $0.15/$0.60 per 1M tokens.
+- Strong agent/coding performance; day-0 support in vLLM and NVIDIA NeMo. Note prior independent observations of higher hallucination rates.
 
-### Other Recent / Ongoing
-- NVIDIA Cosmos3-H-Dreams: action-conditioned generative video for clinical surgical simulation (HF blog).
-- Claude Opus 5.5 / Sonnet 5.5 available in Google Antigravity.
-- llm-d 1.0 and vLLM TorchTPU for open inference serving advances.
-- Continued strong: DeepSeek V4.1-Flash-1017, Reflection Beam (501B), Muse Spark Open, Nemotron 3.5 series, Muse Glimmer (30B on-device).
+### Anthropic Claude Duet (research preview, Oct 21-22)
+- Standalone agent that proactively messages the user first rather than waiting for prompts. Aimed at running pieces of a working day.
+
+### NVIDIA expansions & other
+- Expanded open models: Kumo family (tabular/relational/time-series), Cosmos 3.5 world model, Alpamayo 2 Edge (self-driving), Nemotron Retrievers, Nemotron 3.5 Super VL (120B), Bolt variants.
+- OlmoEarth v1.3: SOTA satellite embeddings.
+- Kling 4.0 video API open; Canva first image generation model; various Flash models (DeepSeek, MiniMax, Qwen3.8, etc.) continuing strong.
+
+### Ongoing strong relevance
+- DeepSeek V4.1-Flash-1017 + DeepInfer, Mistral Voxtral 3, Beam, Muse Spark Open, Nemotron series, Muse Glimmer.
 
 ## Hugging Face & Ecosystem Updates
-- **TorchNeuron**: Native PyTorch backend for AWS Trainium (public beta Oct 20). Transformers now supports 89% of top text-generation architectures out-of-box (vs 46% prior Optimum Neuron). Recommended over Optimum Neuron for inference/fine-tuning/image gen; training still has shape/async constraints.
-- Transformers patches (v5.20.2): fixes for multimodal generation, expert gradients, etc. Prior: Beam model support, Muse Spark Open, EmbeddingGemma 2, etc.
-- vLLM TorchTPU: TPU backend with Pallas kernels, multi-host, KV offloading.
-- HF Blog: Cosmos3-H-Dreams surgical sim, TorchNeuron, SlideOn sparse features, Beam infrastructure.
-- Trending momentum: DeepSeek-V4.1-Flash variants, recent open agent/coding/image models, MiniCPM-V, FLUX, etc.
+- Carbon-X DNA model release.
+- Transformers support continuing for recent models (Beam, etc.). Interactive OpenUSD viewing, SimReady assets.
+- Blogs: Database-state rewards for agents, Granite time-series ensemble, Cosmos surgical sim.
+- Trending: Qwen3.8 variants, recent Flash models, decision models, image/video models.
 
-## Research (recent arXiv ~Oct 19-20)
-- Diversity-preserving SMC for diffusion LLM decoding (Keep the Lineages Alive).
-- EvoSkill v2: fully agentic skill evolution.
-- LEAPS long-context adaptive pattern/state tracking.
-- CALM for mitigating overthinking in reasoning models.
-- Agent interfaces evolution, decision model benchmarks (DecisionPivot), Sage-A1.5 agentic MoE, quantum circuit discovery (prior), long-horizon evidence, world models.
-- Ongoing: agent safety, evaluation awareness, multimodal training.
+## Research (recent arXiv ~Oct 22-23)
+- Papers on test-time reasoning optimization (Pass@k thought pruning), agent safety under missing evidence (EpiSEM-Bench), control evaluations, sycophancy reverse (user deference to confident wrong LLMs).
+- Agent scaffolding, Bayesian inference in context, spatial intelligence from experience, parallel thinking with path diversity, process supervision via MoE routing.
+- Ongoing themes: agent reliability, long-horizon, efficiency, multimodal, safety/eval awareness.
 
 ## Free GPUs, Hosting & Developer Tools
 **Free / low-cost compute (stable as of late Oct 2026):**
-- Google Colab free (T4 intermittent, ~12h sessions)
-- Kaggle Notebooks (T4×2 ~30 GPU-h/week, TPU options)
-- Hugging Face ZeroGPU (shared RTX Pro 6000 Blackwell; limited daily minutes for Gradio Spaces)
-- NVIDIA NIM / build.nvidia.com free endpoints
-- Groq free tier, OpenRouter free models, Google AI Studio, Cloudflare Workers AI
-- Modal / Lightning free credits; NVIDIA Run:ai (open-sourced Apache 2.0) for orchestration
-- Startup credit programs
+- Google Colab free (T4, session limits)
+- Kaggle Notebooks (T4×2 ~30h/week)
+- Hugging Face ZeroGPU (shared Blackwell for Spaces, limited minutes)
+- NVIDIA NIM free endpoints, Groq, Google AI Studio, OpenRouter free, Cloudflare Workers AI
+- Lightning/Modal free credits; NVIDIA Run:ai fully open-sourced (Apache 2.0) for self-hosted GPU orchestration
+- Startup credit programs; low-cost spots on RunPod/Vast.ai
 
 **Hosting & tools:**
-- DeepInfer + vLLM/SGLang/llama.cpp/TensorRT-LLM for efficient serving of large open models
-- HF Hub/Spaces/Inference, Diffusers/ComfyUI
-- Agent harnesses, MCP, voice agent SDKs (Voxtral), memory systems
-- TorchNeuron / TorchTPU expanding accelerator options beyond NVIDIA
+- DeepInfer, vLLM/SGLang/llama.cpp for open MoEs
+- HF Hub/Spaces, Diffusers, voice agent SDKs (Voxtral)
+- Carbon-X and genomic tools for specialized research
+- Agent harnesses, MCP, on-device stacks (Flint, Glimmer)
 
 ## Trending Themes
-- Open inference stacks (DeepInfer) lowering serving costs and increasing transparency on production systems
-- Voice/speech agent stacks (Voxtral 3) maturing for real-time multimodal interaction
-- Efficient Chinese Flash models (MiniMax, DeepSeek) + open infrastructure intensifying accessibility
-- Hardware diversification (Trainium, TPU, Huawei) via better PyTorch backends
-- Sparse MoEs, long context, on-device agents, and free/low-cost compute remaining critical
-- Geopolitical notes (DeepSeek US ban) alongside open releases
+- Specialized open models (DNA/genomics via Carbon-X) expanding scientific accessibility
+- AI-built models (Flint via Eureka Machine) and local laptop coding agents
+- Proactive agents (Claude Duet) shifting from reactive chat to autonomous assistance
+- Efficient Flash MoEs + open weights (MiniMax) continuing the cost race
+- Open inference stacks and hardware diversification remaining critical
+- Free/low-cost compute and developer tooling essential for experimentation
 
 ---
 *Always verify latest benchmarks, pricing, VRAM needs, licenses, and availability on official sources (HF model cards, vendor changelogs, arXiv, GitHub). Vendor scores are not independent.*

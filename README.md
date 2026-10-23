@@ -24,12 +24,12 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-10-21)
+## Latest highlights (as of 2026-10-23)
 
-- **DeepSeek DeepInfer** — production inference framework open-sourced (Apache 2.0) for V4.1-Flash, NVIDIA + Huawei support, high throughput claims
-- **Mistral Voxtral 3** — speech transcription/TTS + voice agent SDK (LiveKit), low-cost multilingual
-- **HF TorchNeuron** — native PyTorch backend for AWS Trainium (public beta), strong Transformers support
-- **MiniMax M3.1 Flash**, **inclusionAI Ming-3.0**, **Meta Muse Glimmer**, DeepSeek-1017, Beam, Muse Spark, Nemotron still key
-- Free compute: Colab, Kaggle, ZeroGPU, NVIDIA NIM, Run:ai, etc. stable
+- **HF Carbon-X** — open 14B model for chatting with DNA sequences (genomics + language)
+- **Recursive Flint** — 40B MoE laptop coding model largely built by AI (Eureka Machine)
+- **MiniMax M3.1 Flash** — open weights now public (428B/23B, low-cost agents)
+- **Claude Duet** — proactive agent research preview
+- Ongoing: DeepSeek DeepInfer, Voxtral 3, Beam, Muse series, Nemotron, free compute tiers stable
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.
