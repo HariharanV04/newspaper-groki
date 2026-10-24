@@ -24,12 +24,13 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-10-23)
+## Latest highlights (as of 2026-10-24)
 
+- **Moonshot Kimi K3.1 Pro** — near-frontier 2.8T/104B MoE (1M context); AA Index 55 (4th); open weights due Nov 4
+- **NVIDIA Nemotron 3.5 Bolt E4B** — open 4GB local conversational agent / NPC model
 - **HF Carbon-X** — open 14B model for chatting with DNA sequences (genomics + language)
 - **Recursive Flint** — 40B MoE laptop coding model largely built by AI (Eureka Machine)
 - **MiniMax M3.1 Flash** — open weights now public (428B/23B, low-cost agents)
-- **Claude Duet** — proactive agent research preview
 - Ongoing: DeepSeek DeepInfer, Voxtral 3, Beam, Muse series, Nemotron, free compute tiers stable
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.
