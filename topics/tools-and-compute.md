@@ -2,7 +2,7 @@
 
 Living reference for free/low-cost GPUs, hosting, inference stacks, and developer tooling. Quotas and offerings change; update entries in place.
 
-**Last refined:** 2026-10-23
+**Last refined:** 2026-10-24
 
 ---
 
@@ -26,24 +26,26 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 ## Hosting & Serving
 
 - **DeepInfer** — DeepSeek production stack; high efficiency; dual hardware
-- **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary for large open MoEs (Beam, Muse, DeepSeek, MiniMax, Nemotron); day-0 support common
+- **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary for large open MoEs (Beam, Muse, DeepSeek, MiniMax, Nemotron, upcoming Kimi)
+- **Ollama / Unsloth / llama.cpp** — excellent for local small models like Nemotron Bolt E4B
 - **Hugging Face Spaces + Hub + Inference** — models, ZeroGPU, Carbon-X demos, TorchNeuron
-- **Diffusers + ComfyUI** — image/video pipelines
+- **Diffusers + ComfyUI** — image/video pipelines (recent FLUX.3, Kandinsky 6 etc.)
 - Voice agent SDKs (Voxtral 3 + LiveKit)
 - Specialized: Carbon-X for DNA/genomics workflows
 
 ## Agent & Developer Tooling
 
 - Local coding agents (Flint on laptop)
+- Local conversational agents / NPCs (Nemotron Bolt E4B)
 - Agent harnesses for Flash models (MiniMax, DeepSeek)
 - MCP, tool-calling, memory systems
-- On-device stacks (Flint, Muse Glimmer)
+- On-device stacks (Flint, Muse Glimmer, Bolt E4B)
 - TRL for post-training; accelerator backends (TorchNeuron, TorchTPU)
 
 ## Developer Focus Areas (current)
 
-- Running new local models (Flint) and specialized scientific models (Carbon-X)
-- Evaluating MiniMax M3.1 Flash open weights
+- Running new local models (Flint, Nemotron Bolt E4B) and specialized scientific models (Carbon-X)
+- Evaluating MiniMax M3.1 Flash open weights and preparing for Kimi K3.1 Pro open weights
 - Serving efficient MoEs with open stacks
 - Voice agents and proactive agents (Claude Duet style)
 - Leveraging free tiers, NIM, Run:ai self-host, non-NVIDIA options
