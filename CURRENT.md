@@ -1,6 +1,6 @@
 # Current AI Briefing
 
-**Last updated:** 2026-10-23
+**Last updated:** 2026-10-24
 
 This file is always overwritten with the latest full snapshot. For history and refined topic tracking, see `topics/` and `archive/`.
 
@@ -8,63 +8,51 @@ This file is always overwritten with the latest full snapshot. For history and r
 
 ## Major Frontier & Open Model Releases (Past 24h focus)
 
-### Hugging Face Carbon-X (Oct 22, 2026)
-- Open-source 14B multimodal model (based on Qwen3-14B) that lets scientists "chat with DNA." Analyzes and generates DNA sequences via natural language queries.
-- Trained on genomic sequences from humans, mammals, plants, fungi + natural language. Supports local deployment for privacy. Aimed at researchers outside large labs.
-- Example use: query mutation effects on disease risk or gene activity. Weights and details on HF.
+### Moonshot AI Kimi K3.1 Pro (Oct 23, 2026)
+- Flagship 2.8T total / 104B active MoE multimodal model with 1M context. Post-trained successor to Kimi K3 with large RL gains across domains.
+- Strong independent scores: Artificial Analysis Intelligence Index 55 (4th overall, leading among soon-to-be open weights). High on Terminal-Bench 4.0 (65.7%), agentic tasks, 3D/CAD (BenchCAD 92.7% with tools), finance.
+- Pricing: $2/$10 per 1M input/output tokens (Highspeed variant 2-3x faster at higher rate). Available on Kimi API/apps now. Full open weights promised by Nov 4, 2026 (cyber training data removed for release).
+- Note: Large model; requires substantial hardware (supernodes recommended).
 
-### Recursive Flint (Oct 21-22, 2026)
-- 40B MoE (≈2.5B active) open coding model (Apache 2.0). Runs efficiently on laptop (e.g., ~131 tok/s on M4 Pro). Largely built by Recursive's Eureka Machine AI research system.
-- From Richard Socher's Recursive Superintelligence. Designed for local coding agents. Weights freely downloadable.
+### NVIDIA Nemotron 3.5 Bolt E4B 4GB (Oct 23, 2026)
+- Open small model post-trained from Gemma 4 E4B (~8B total / 4B effective). Optimized for local conversational agents, voice assistants, NPCs, and embedded interfaces.
+- Fits ~4GB VRAM (Q4_K_M GGUF), 64K context, multi-turn tool use, thinking on/off. Claims better quality/conciseness vs peers. OpenMDW-1.1 license.
+- Available on Hugging Face (BF16 + GGUF), Ollama, llama.cpp, Unsloth, etc. Companion DFlash drafter for speculative decoding.
 
-### MiniMax M3.1 Flash weights public (Oct 23, 2026)
-- Weights now available. 428B total / ~23B active MoE, 1M context, multimodal. API was live since Oct 19 at $0.15/$0.60 per 1M tokens.
-- Strong agent/coding performance; day-0 support in vLLM and NVIDIA NeMo. Note prior independent observations of higher hallucination rates.
-
-### Anthropic Claude Duet (research preview, Oct 21-22)
-- Standalone agent that proactively messages the user first rather than waiting for prompts. Aimed at running pieces of a working day.
-
-### NVIDIA expansions & other
-- Expanded open models: Kumo family (tabular/relational/time-series), Cosmos 3.5 world model, Alpamayo 2 Edge (self-driving), Nemotron Retrievers, Nemotron 3.5 Super VL (120B), Bolt variants.
-- OlmoEarth v1.3: SOTA satellite embeddings.
-- Kling 4.0 video API open; Canva first image generation model; various Flash models (DeepSeek, MiniMax, Qwen3.8, etc.) continuing strong.
-
-### Ongoing strong relevance
-- DeepSeek V4.1-Flash-1017 + DeepInfer, Mistral Voxtral 3, Beam, Muse Spark Open, Nemotron series, Muse Glimmer.
+### Other recent / ongoing
+- MiniMax M3.1 Flash weights (public Oct 23) remain highly relevant for low-cost agents.
+- Recursive Flint (local coding), Carbon-X (DNA chat), DeepSeek V4.1 Flash + DeepInfer, Voxtral 3, Beam, Muse series, Nemotron Super VL continue strong traction.
+- OpenAI API retirements of older models (GPT-4 series etc.); Decisions API GA; Claude API parameter changes.
 
 ## Hugging Face & Ecosystem Updates
-- Carbon-X DNA model release.
-- Transformers support continuing for recent models (Beam, etc.). Interactive OpenUSD viewing, SimReady assets.
-- Blogs: Database-state rewards for agents, Granite time-series ensemble, Cosmos surgical sim.
-- Trending: Qwen3.8 variants, recent Flash models, decision models, image/video models.
+- Nemotron 3.5 Bolt E4B weights and GGUF on HF. Diffusers 0.42.0 with FLUX.3, Fibo 2.0, Kandinsky 6 integrations.
+- Compatibility lookups, Trainium notes, financial AI deployment discussions.
+- Trending: Kimi-related interest ahead of open weights, Nemotron small models, Flash variants, decision models.
 
-## Research (recent arXiv ~Oct 22-23)
-- Papers on test-time reasoning optimization (Pass@k thought pruning), agent safety under missing evidence (EpiSEM-Bench), control evaluations, sycophancy reverse (user deference to confident wrong LLMs).
-- Agent scaffolding, Bayesian inference in context, spatial intelligence from experience, parallel thinking with path diversity, process supervision via MoE routing.
-- Ongoing themes: agent reliability, long-horizon, efficiency, multimodal, safety/eval awareness.
+## Research (recent arXiv ~Oct 23-24)
+- Agent safety under missing evidence (EpiSEM-Bench), test-time reasoning (Pass@k thought pruning), control evaluations, sycophancy (user deference to confident wrong models).
+- Decision-level continual learning, metaphor representations, future-token leakage auditing, tool-use experience pooling, multimodal brain disorder graphs, active inference parameter learning.
+- Themes: agent reliability/safety, efficiency in reasoning/generation, specialized multimodal applications, evaluation robustness.
 
 ## Free GPUs, Hosting & Developer Tools
-**Free / low-cost compute (stable as of late Oct 2026):**
-- Google Colab free (T4, session limits)
-- Kaggle Notebooks (T4×2 ~30h/week)
-- Hugging Face ZeroGPU (shared Blackwell for Spaces, limited minutes)
-- NVIDIA NIM free endpoints, Groq, Google AI Studio, OpenRouter free, Cloudflare Workers AI
-- Lightning/Modal free credits; NVIDIA Run:ai fully open-sourced (Apache 2.0) for self-hosted GPU orchestration
-- Startup credit programs; low-cost spots on RunPod/Vast.ai
+**Free / low-cost compute (stable late Oct 2026):**
+- Google Colab, Kaggle Notebooks, Hugging Face ZeroGPU (shared high-end for Spaces)
+- NVIDIA NIM free endpoints, Groq, Google AI Studio, OpenRouter free tiers, Cloudflare Workers AI
+- Lightning/Modal credits; NVIDIA Run:ai fully open-sourced (Apache 2.0) for self-hosted orchestration
+- Startup grants; low-cost spots on RunPod/Vast.ai
 
 **Hosting & tools:**
-- DeepInfer, vLLM/SGLang/llama.cpp for open MoEs
-- HF Hub/Spaces, Diffusers, voice agent SDKs (Voxtral)
-- Carbon-X and genomic tools for specialized research
-- Agent harnesses, MCP, on-device stacks (Flint, Glimmer)
+- Ollama/llama.cpp/Unsloth for local small models like Bolt E4B
+- vLLM/SGLang for large MoEs (Kimi when weights land, MiniMax, DeepSeek, Nemotron)
+- HF Hub/Spaces, Diffusers updates, voice/agent SDKs
+- Specialized scientific models (Carbon-X) and local coding (Flint)
 
 ## Trending Themes
-- Specialized open models (DNA/genomics via Carbon-X) expanding scientific accessibility
-- AI-built models (Flint via Eureka Machine) and local laptop coding agents
-- Proactive agents (Claude Duet) shifting from reactive chat to autonomous assistance
-- Efficient Flash MoEs + open weights (MiniMax) continuing the cost race
-- Open inference stacks and hardware diversification remaining critical
-- Free/low-cost compute and developer tooling essential for experimentation
+- Near-frontier open-weight models approaching proprietary (Kimi K3.1 Pro open weights imminent)
+- Efficient local/small models for agents and interactive characters (Nemotron Bolt E4B)
+- Low-cost Flash MoEs and open inference stacks driving accessibility
+- Specialized domain models (genomics, 3D, finance) and proactive/agentic systems
+- Free/low-cost compute and developer tooling remaining critical for experimentation
 
 ---
 *Always verify latest benchmarks, pricing, VRAM needs, licenses, and availability on official sources (HF model cards, vendor changelogs, arXiv, GitHub). Vendor scores are not independent.*
