@@ -2,11 +2,16 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-10-23
+**Last refined:** 2026-10-24
 
 ---
 
 ## Frontier / Flagship & Large Open
+
+### Moonshot AI Kimi K3.1 Pro (Oct 23, 2026)
+- **Type:** 2.8T total / 104B active MoE, 1M context, multimodal (text+image).
+- **Role:** Frontier-class coding, agentic, 3D/CAD, finance. Independent Intelligence Index 55 (4th). Strong Terminal-Bench and other agent scores.
+- **Status:** API live ($2/$10). Open weights due Nov 4, 2026. Highspeed variant available. Large hardware needs.
 
 ### Hugging Face Carbon-X (Oct 22, 2026)
 - **Type:** 14B multimodal (Qwen3-14B base) for DNA sequence analysis/generation + natural language.
@@ -22,6 +27,11 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Type:** Efficient Flash MoE (428B/23B active), 1M context, multimodal for agents/coding.
 - **Role:** Low-cost high-performance agentic/coding ($0.15/$0.60). Day-0 vLLM/NeMo support.
 - **Status:** Weights public. Continues strong relevance; note on hallucination tendencies.
+
+### NVIDIA Nemotron 3.5 Bolt E4B 4GB (Oct 23, 2026)
+- **Type:** Small open model (~8B/4B effective) post-trained from Gemma 4 E4B.
+- **Role:** Local conversational agents, voice, NPCs, embedded. ~4GB VRAM, 64K context, multi-turn tools.
+- **Status:** Open weights (BF16 + Q4 GGUF) on HF, Ollama, etc. OpenMDW-1.1.
 
 ### DeepSeek DeepInfer + V4.1-Flash (Open-source inference Oct 20; model Oct 17)
 - **Type:** Production inference stack (DeepInfer, Apache 2.0) for DeepSeek-V4.1-Flash (multimodal MoE, 1M context, MIT weights).
@@ -53,9 +63,9 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Status:** Open weights under custom license.
 
 ### NVIDIA Nemotron 3.5 series (Oct 15+)
-- **Type:** Super VL 120B + Bolt MoEs for 24GB, etc.
-- **Role:** Agents, vision, docs.
-- **Status:** Fully open; active on HF/NIM. Further expansions noted.
+- **Type:** Super VL 120B + Bolt MoEs for 24GB + now E4B 4GB.
+- **Role:** Agents, vision, docs, local conversational.
+- **Status:** Fully open; active on HF/NIM. Bolt E4B just released.
 
 ## Open-Weight & Efficient Models
 
@@ -64,9 +74,11 @@ Living document. New entries go at the top. Older entries are refined or marked 
 
 ## Other / Infrastructure
 
+- Kimi K3.1 Pro (open weights pending)
 - Carbon-X genomic model
 - Flint local coding
 - DeepInfer open inference
+- Nemotron small models for local agents
 - Transformers ongoing support
 - TRL, Diffusers updates
 
