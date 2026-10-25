@@ -2,15 +2,20 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-10-24
+**Last refined:** 2026-10-25
 
 ---
 
 ## Frontier / Flagship & Large Open
 
+### Microsoft Agensh (open-sourced Oct 24, 2026)
+- **Type:** Decentralized multi-agent harness (MIT) for up to 1,024 self-organizing coding agents.
+- **Role:** Scales agent organizations without central orchestrator; improves ProgramBench pass rates via concurrent self-assignment, shared Git/messaging/context.
+- **Status:** Full code + reproduction guide open. Preprint arXiv:2609.26781.
+
 ### Moonshot AI Kimi K3.1 Pro (Oct 23, 2026)
 - **Type:** 2.8T total / 104B active MoE, 1M context, multimodal (text+image).
-- **Role:** Frontier-class coding, agentic, 3D/CAD, finance. Independent Intelligence Index 55 (4th). Strong Terminal-Bench and other agent scores.
+- **Role:** Frontier-class coding, agentic, 3D/CAD, finance. Independent Intelligence Index 55 (4th). Strong Terminal-Bench and other agent scores. Cyber data filtered for open release.
 - **Status:** API live ($2/$10). Open weights due Nov 4, 2026. Highspeed variant available. Large hardware needs.
 
 ### Hugging Face Carbon-X (Oct 22, 2026)
@@ -71,6 +76,7 @@ Living document. New entries go at the top. Older entries are refined or marked 
 
 ### Other recent
 - Qwen3.8 variants, DeepSeek Flash updates, Kling 4.0, Canva image model, OlmoEarth, various decision and embedding models continue as notable.
+- Block Dessa (speech-to-speech, research preview only).
 
 ## Other / Infrastructure
 

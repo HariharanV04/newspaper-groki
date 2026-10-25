@@ -2,7 +2,7 @@
 
 Living reference for free/low-cost GPUs, hosting, inference stacks, and developer tooling. Quotas and offerings change; update entries in place.
 
-**Last refined:** 2026-10-24
+**Last refined:** 2026-10-25
 
 ---
 
@@ -27,14 +27,15 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 
 - **DeepInfer** — DeepSeek production stack; high efficiency; dual hardware
 - **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary for large open MoEs (Beam, Muse, DeepSeek, MiniMax, Nemotron, upcoming Kimi)
-- **Ollama / Unsloth / llama.cpp** — excellent for local small models like Nemotron Bolt E4B
+- **Ollama / Unsloth / llama.cpp** — excellent for local small models like Nemotron Bolt E4B and Flint
 - **Hugging Face Spaces + Hub + Inference** — models, ZeroGPU, Carbon-X demos, TorchNeuron
-- **Diffusers + ComfyUI** — image/video pipelines (recent FLUX.3, Kandinsky 6 etc.)
-- Voice agent SDKs (Voxtral 3 + LiveKit)
+- **Diffusers + ComfyUI** — image/video pipelines (FLUX.3 Image Klein with layout control, Kandinsky 6 etc.)
+- Voice agent SDKs (Voxtral 3 + LiveKit); Dessa research preview waitlist
 - Specialized: Carbon-X for DNA/genomics workflows
 
 ## Agent & Developer Tooling
 
+- **Agensh** — open decentralized multi-agent harness for scaling coding agent organizations (up to 1,024)
 - Local coding agents (Flint on laptop)
 - Local conversational agents / NPCs (Nemotron Bolt E4B)
 - Agent harnesses for Flash models (MiniMax, DeepSeek)
@@ -44,10 +45,10 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 
 ## Developer Focus Areas (current)
 
+- Experimenting with multi-agent scaling via open Agensh
 - Running new local models (Flint, Nemotron Bolt E4B) and specialized scientific models (Carbon-X)
 - Evaluating MiniMax M3.1 Flash open weights and preparing for Kimi K3.1 Pro open weights
-- Serving efficient MoEs with open stacks
-- Voice agents and proactive agents (Claude Duet style)
+- Serving efficient MoEs with open stacks; speech research (Dessa)
 - Leveraging free tiers, NIM, Run:ai self-host, non-NVIDIA options
 
 ---

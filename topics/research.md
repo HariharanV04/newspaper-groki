@@ -2,13 +2,18 @@
 
 Living document of notable papers, findings, and directions. Entries are refined over time; new work is added at the top of relevant sections.
 
-**Last refined:** 2026-10-24
+**Last refined:** 2026-10-25
 
 ---
 
 ## Agents & Long-Horizon Work
 
-- Recent (Oct 23-24): Direct Pass@k Optimization for Thought Pruning; EpiSEM-Bench (safety under missing evidence); Simulated Control Evals; Who Is Sycophantic to Whom (user deference to confident wrong LLMs); Jev-DLC decision-level continual learning from typed feedback; Separate Field Scoring for tool-use experience pooling; future-token leakage auditing in sequence models.
+- Agensh (Microsoft, open-sourced Oct 24): self-organized multi-agent harness scales to 1,024 agents without central orchestrator; ProgramBench gains via emergent roles and concurrent work. arXiv:2609.26781 + full code.
+- OverSeer (Meta/Oxford): multi-agent video world models with auxiliary camera anchors and δ-VAE compression for consistency.
+- Agentic World Action Models (AW-0): integrates code-based planning with video/action prediction for robotics.
+- Self-Improving Agents with World Model Predictive Paths: test-time MPPI-style planning + experience memory.
+- WildAWM: open-source pipeline for synthesizing computer-use agent environments and tasks.
+- Recent: Direct Pass@k Optimization for Thought Pruning; EpiSEM-Bench (safety under missing evidence); Simulated Control Evals; Who Is Sycophantic to Whom; Jev-DLC; Separate Field Scoring.
 - Prior strong: Diversity-Preserving SMC for Diffusion LLM Decoding, EvoSkill v2, LEAPS long-context, Quantum Circuit Discovery, evidence management, world models, DecisionPivot.
 
 ## Efficiency, Diffusion & Architectures
@@ -20,6 +25,7 @@ Living document of notable papers, findings, and directions. Entries are refined
 
 ## Multimodal, Embeddings & Generation
 
+- Block Dessa: speech-to-speech trained solely on audio (no text); full-duplex emotion/nuance.
 - Carbon-X: DNA + language multimodal for scientific querying.
 - EmbeddingGemma 2 cross-modal; Ming-3.0 / Voxtral speech advances; Cosmos surgical simulation; image pipelines.
 - OlmoEarth satellite embeddings.
