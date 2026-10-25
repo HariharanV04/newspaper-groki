@@ -1,6 +1,6 @@
 # Current AI Briefing
 
-**Last updated:** 2026-10-24
+**Last updated:** 2026-10-25
 
 This file is always overwritten with the latest full snapshot. For history and refined topic tracking, see `topics/` and `archive/`.
 
@@ -8,51 +8,52 @@ This file is always overwritten with the latest full snapshot. For history and r
 
 ## Major Frontier & Open Model Releases (Past 24h focus)
 
-### Moonshot AI Kimi K3.1 Pro (Oct 23, 2026)
-- Flagship 2.8T total / 104B active MoE multimodal model with 1M context. Post-trained successor to Kimi K3 with large RL gains across domains.
-- Strong independent scores: Artificial Analysis Intelligence Index 55 (4th overall, leading among soon-to-be open weights). High on Terminal-Bench 4.0 (65.7%), agentic tasks, 3D/CAD (BenchCAD 92.7% with tools), finance.
-- Pricing: $2/$10 per 1M input/output tokens (Highspeed variant 2-3x faster at higher rate). Available on Kimi API/apps now. Full open weights promised by Nov 4, 2026 (cyber training data removed for release).
-- Note: Large model; requires substantial hardware (supernodes recommended).
+### Microsoft Agensh open-sourced (Oct 24, 2026)
+- Decentralized multi-agent harness that scales to 1,024 agents without a central orchestrator. Agents self-organize via shared Git workspace, messaging, and context board.
+- On ProgramBench (hardest tasks, offline, 6h budget): mean test-pass rate rises from 19.31% (1 agent) to 28.78% (128 agents) with GPT-5.6-sol; pandoc from 33.89% to 55.06% at 1,024 agents. Roles emerge organically.
+- MIT licensed. Includes Docker Compose setup, reproduction guide. Code: github.com/microsoft/Agensh. Preprint from Sep 2026 now with full open code.
 
-### NVIDIA Nemotron 3.5 Bolt E4B 4GB (Oct 23, 2026)
-- Open small model post-trained from Gemma 4 E4B (~8B total / 4B effective). Optimized for local conversational agents, voice assistants, NPCs, and embedded interfaces.
-- Fits ~4GB VRAM (Q4_K_M GGUF), 64K context, multi-turn tool use, thinking on/off. Claims better quality/conciseness vs peers. OpenMDW-1.1 license.
-- Available on Hugging Face (BF16 + GGUF), Ollama, llama.cpp, Unsloth, etc. Companion DFlash drafter for speculative decoding.
+### Block Dessa (announced Oct 23, 2026)
+- Full-duplex speech-to-speech model trained from scratch solely on human conversation audio (no text, no pretrained models). Listens and speaks simultaneously; handles interruptions, backchannels, emotion.
+- Trained on one NVIDIA GB200 NVL72. Runs locally on MacBook Pro M4 Max or better, faster than real-time. Research preview: waitlist + early access for AI safety researchers. No weights/API yet.
+- From small lab at Block (Jack Dorsey). Claims first realistic live conversation model trained only on speech.
 
-### Other recent / ongoing
-- MiniMax M3.1 Flash weights (public Oct 23) remain highly relevant for low-cost agents.
-- Recursive Flint (local coding), Carbon-X (DNA chat), DeepSeek V4.1 Flash + DeepInfer, Voxtral 3, Beam, Muse series, Nemotron Super VL continue strong traction.
-- OpenAI API retirements of older models (GPT-4 series etc.); Decisions API GA; Claude API parameter changes.
+### Ongoing / recent major
+- Moonshot Kimi K3.1 Pro (Oct 23): 2.8T/104B MoE, 1M context, multimodal. AA Index ~55 (near top open-to-be). API $2/$10; open weights by Nov 4. Strong coding/3D/finance.
+- NVIDIA Nemotron 3.5 Bolt E4B 4GB (Oct 23): open small (~8B/4B) for local agents/NPCs/voice. ~4GB VRAM, 64K context. On HF/Ollama.
+- MiniMax M3.1 Flash weights public (428B/23B MoE, low-cost agents). Diffusers 0.42.0 (FLUX.3 Image Klein, Fibo 2.0, Kandinsky 6, etc.).
+- Carbon-X, Recursive Flint, DeepSeek V4.1 Flash + DeepInfer, Beam, Muse series continue relevant.
 
 ## Hugging Face & Ecosystem Updates
-- Nemotron 3.5 Bolt E4B weights and GGUF on HF. Diffusers 0.42.0 with FLUX.3, Fibo 2.0, Kandinsky 6 integrations.
-- Compatibility lookups, Trainium notes, financial AI deployment discussions.
-- Trending: Kimi-related interest ahead of open weights, Nemotron small models, Flash variants, decision models.
+- Diffusers 0.42.0 (Oct 23): FLUX.3 Image Klein (text-to-image + multi-ref edit + bounding-box layout), Bria Fibo 2.0, Kandinsky 6 (video+audio), SANA-WM, RFD4-Proteína. Python 3.11+ required. Modular pipelines, LoRA, hardware (TorchTPU).
+- Nemotron Bolt E4B, MiniMax M3.1 Flash, various Qwen3 coder variants trending/updated on HF.
+- Papers: Foundation4D (NVIDIA unified AV perception), Cola2 (hierarchical LM), FrontierCS 2 (agent CS R&D bench).
 
-## Research (recent arXiv ~Oct 23-24)
-- Agent safety under missing evidence (EpiSEM-Bench), test-time reasoning (Pass@k thought pruning), control evaluations, sycophancy (user deference to confident wrong models).
-- Decision-level continual learning, metaphor representations, future-token leakage auditing, tool-use experience pooling, multimodal brain disorder graphs, active inference parameter learning.
-- Themes: agent reliability/safety, efficiency in reasoning/generation, specialized multimodal applications, evaluation robustness.
+## Research (recent arXiv ~Oct 24-25 focus)
+- Self-Distilling Future Video Representations for World Action Models (FRED); LaLa-World (language-conditioned latent world models).
+- Ongoing: agent safety (EpiSEM-Bench missing evidence), test-time reasoning pruning, sycophancy/deference, control evals, hierarchical generation (Cola2), AV foundation models.
+- Themes: multi-agent scaling (Agensh), speech-only training (Dessa), efficiency in agents/world models, evaluation of open-ended R&D.
 
 ## Free GPUs, Hosting & Developer Tools
 **Free / low-cost compute (stable late Oct 2026):**
-- Google Colab, Kaggle Notebooks, Hugging Face ZeroGPU (shared high-end for Spaces)
-- NVIDIA NIM free endpoints, Groq, Google AI Studio, OpenRouter free tiers, Cloudflare Workers AI
-- Lightning/Modal credits; NVIDIA Run:ai fully open-sourced (Apache 2.0) for self-hosted orchestration
-- Startup grants; low-cost spots on RunPod/Vast.ai
+- Google Colab (T4, session limits), Kaggle Notebooks (~30h/week T4x2), Hugging Face ZeroGPU (shared high-end for Spaces, minutes/day)
+- NVIDIA NIM free endpoints, Groq, Google AI Studio, OpenRouter rotating free, Cloudflare Workers AI
+- Lightning/Modal free credits; NVIDIA Run:ai fully open-sourced (Apache 2.0) for self-hosted K8s GPU orchestration
+- Startup grants; low-cost spots (RunPod/Vast.ai)
 
 **Hosting & tools:**
-- Ollama/llama.cpp/Unsloth for local small models like Bolt E4B
-- vLLM/SGLang for large MoEs (Kimi when weights land, MiniMax, DeepSeek, Nemotron)
-- HF Hub/Spaces, Diffusers updates, voice/agent SDKs
-- Specialized scientific models (Carbon-X) and local coding (Flint)
+- Ollama/llama.cpp/Unsloth for local (Bolt E4B, Flint)
+- vLLM/SGLang for MoEs (MiniMax, upcoming Kimi, DeepSeek, Nemotron)
+- HF Hub/Spaces, Diffusers 0.42.0 for image/video
+- Agensh for multi-agent coding experiments; voice research (Dessa waitlist)
 
 ## Trending Themes
-- Near-frontier open-weight models approaching proprietary (Kimi K3.1 Pro open weights imminent)
-- Efficient local/small models for agents and interactive characters (Nemotron Bolt E4B)
-- Low-cost Flash MoEs and open inference stacks driving accessibility
-- Specialized domain models (genomics, 3D, finance) and proactive/agentic systems
-- Free/low-cost compute and developer tooling remaining critical for experimentation
+- Multi-agent scaling without central orchestrators (Agensh open-source)
+- Speech-native models bypassing text (Dessa)
+- Near-frontier open weights imminent (Kimi K3.1 Pro Nov 4)
+- Efficient local agents (Nemotron Bolt E4B) and low-cost Flash MoEs
+- Specialized tools (Carbon-X genomics) and generative pipelines (FLUX.3 etc.)
+- Free compute and open inference stacks enabling broad experimentation
 
 ---
 *Always verify latest benchmarks, pricing, VRAM needs, licenses, and availability on official sources (HF model cards, vendor changelogs, arXiv, GitHub). Vendor scores are not independent.*
