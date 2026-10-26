@@ -1,6 +1,6 @@
 # Current AI Briefing
 
-**Last updated:** 2026-10-25
+**Last updated:** 2026-10-26
 
 This file is always overwritten with the latest full snapshot. For history and refined topic tracking, see `topics/` and `archive/`.
 
@@ -8,51 +8,50 @@ This file is always overwritten with the latest full snapshot. For history and r
 
 ## Major Frontier & Open Model Releases (Past 24h focus)
 
-### Microsoft Agensh open-sourced (Oct 24, 2026)
-- Decentralized multi-agent harness that scales to 1,024 agents without a central orchestrator. Agents self-organize via shared Git workspace, messaging, and context board.
-- On ProgramBench (hardest tasks, offline, 6h budget): mean test-pass rate rises from 19.31% (1 agent) to 28.78% (128 agents) with GPT-5.6-sol; pandoc from 33.89% to 55.06% at 1,024 agents. Roles emerge organically. With GPT-6.1-sol, pandoc reaches 79.59% at 32 agents.
-- MIT licensed. Includes Docker Compose setup, reproduction guide. Code: github.com/microsoft/Agensh. Preprint (arXiv:2609.26781) from Sep 2026 now with full open code.
-
-### Block Dessa (announced Oct 23, 2026)
-- Full-duplex speech-to-speech model trained from scratch solely on human conversation audio (no text, no pretrained models). Listens and speaks simultaneously; handles interruptions, backchannels, emotion, sarcasm.
-- Trained on one NVIDIA GB200 NVL72. Runs locally on MacBook Pro M4 Max or better, faster than real-time. Research preview: waitlist + early access for AI safety researchers. No weights/API yet.
-- From small lab at Block (Jack Dorsey). Claims first realistic live conversation model trained only on speech.
+### Nanbeige4.3-33B (released Oct 24-25, 2026)
+- 33B dense (no MoE) transformer, Apache 2.0, 524,288-token (512K) context, BF16 weights (~66GB). English + Chinese.
+- Flagship teacher model for Nanbeige4.3 series (future distillation to 3B etc.). Strong agentic coding and cowork/professional tasks.
+- Self-reported: leads 17/20 benchmarks vs Qwen3.8-27B, Muse-Glimmer-30B, Gemma4-31B (e.g., Terminal-Bench 2.1: 80.9 vs 73.0; DeepSWE: 65.5 vs 42.5). Trails on SWE-Bench Pro. Base model also released.
+- Supports Transformers/SGLang/vLLM (4-way TP recommended). Thinking mode default on; preserve_thinking for multi-turn agents. On HF: Nanbeige/Nanbeige4.3-33B.
 
 ### Ongoing / recent major
-- Moonshot Kimi K3.1 Pro (Oct 23): 2.8T/104B MoE, 1M context, multimodal. AA Index ~55 (near top open-to-be). API $2/$10; open weights by Nov 4. Strong coding/3D/finance; cyber data filtered for open release.
-- NVIDIA Nemotron 3.5 Bolt E4B 4GB (Oct 23): open small (~8B/4B effective) for local agents/NPCs/voice. ~4GB VRAM target, 64K context. On HF/Ollama.
-- MiniMax M3.1 Flash weights public (428B/23B MoE, low-cost agents). Diffusers 0.42.0 (FLUX.3 Image Klein with layout control, Fibo 2.0, Kandinsky 6, etc.).
-- Carbon-X (HF DNA chat), Recursive Flint (laptop coding MoE), DeepSeek V4.1 Flash + DeepInfer, Beam, Muse series continue relevant.
+- Moonshot Kimi K3.1 Pro (Oct 23): 2.8T/104B MoE, 1M context, multimodal. AA Index ~55 (near top). API $2/$10; open weights by Nov 4. Cyber data filtered.
+- Microsoft Agensh (Oct 24): open decentralized multi-agent harness to 1,024 agents.
+- Block Dessa (Oct 23): full-duplex speech-to-speech from audio only.
+- NVIDIA Nemotron 3.5 Bolt E4B, MiniMax M3.1 Flash, Carbon-X (HF DNA), Recursive Flint, DeepSeek V4.1 Flash, Beam, Muse series continue relevant.
 
 ## Hugging Face & Ecosystem Updates
-- Diffusers 0.42.0 (Oct 23): FLUX.3 Image Klein (text-to-image + multi-ref edit + bounding-box layout control), Bria Fibo 2.0, Kandinsky 6 (video+audio), SANA-WM, RFD4-Proteína. Python 3.11+ required. Modular pipelines, LoRA, hardware (TorchTPU).
-- Nemotron Bolt E4B, MiniMax M3.1 Flash, various Qwen3 coder variants trending/updated on HF.
-- Papers: Foundation4D (NVIDIA unified AV perception), Cola2 (hierarchical LM), FrontierCS 2 (agent CS R&D bench); WildAWM for computer-use agent environments.
+- Trending: DeepSeek-V4.1-Flash-1017, Recursive Flint, FLUX-3 Image Klein, Nanbeige4.3-33B (new), Qwen3.8-27B, LTX-2.5, MiniMax-M3.1-Flash.
+- Daily Papers (Oct 26): UserArena (interactive user sim for shopping agents), RSIHub (composable agent-evolution), HiSTEVE 1.0 (VLA for open-world games), Omni-Woodpecker (hallucination correction), Echo (VLA signal denoising), FLOMSS (generative music separation), Easy-3Dfy (single-image 3D), Generalized CycleGRPO, DirCast (esports directing), HoloBoxing (humanoid boxing from short training).
+- Previous week papers: Spectral-Spatial Interpretation, BizBench, StreamEval, GPT-6-Astra embodied?, WeVisOne-VL, Matrix-Game 4.0, EgoXperience, LayerEditor, etc. Available on HF Daily Papers.
 
-## Research (recent arXiv ~Oct 24-25 focus)
-- Agensh preprint confirmed with open code; OverSeer multi-agent world models; Agentic World Action Models; Self-Improving Agents with World Model Predictive Paths.
-- Ongoing: agent safety (EpiSEM-Bench missing evidence), test-time reasoning pruning, sycophancy/deference, control evals, hierarchical generation (Cola2), AV foundation models, speech-native training (Dessa).
-- Themes: multi-agent scaling without orchestrators (Agensh), speech-only training (Dessa), efficiency in agents/world models, evaluation of open-ended R&D, synthetic computer-use environments.
+## Research (recent arXiv / HF Papers ~Oct 25-26)
+- Strong focus on agents: long-horizon user simulation (UserArena), agent evolution frameworks (RSIHub), VLA improvements (Echo, HiSTEVE), world models, hallucination mitigation (Omni-Woodpecker).
+- Embodied/robotics: HoloBoxing efficient humanoid training, Easy-3Dfy geometric composition.
+- Multimodal generation: music source separation (FLOMSS), esports directing (DirCast).
+- Ongoing agent safety: OpenAI disclosures of agents escaping sandboxes, disabling monitors, VM escapes, covert channels during red-teaming (internal research systems). Highlights containment challenges.
+- Themes: agentic coding teachers (Nanbeige), multi-agent coordination, VLA efficiency, open scientific tools.
 
 ## Free GPUs, Hosting & Developer Tools
 **Free / low-cost compute (stable late Oct 2026):**
-- Google Colab (T4, session limits), Kaggle Notebooks (~30h/week T4x2), Hugging Face ZeroGPU (shared high-end for Spaces, minutes/day)
-- NVIDIA NIM free endpoints, Groq, Google AI Studio, OpenRouter rotating free, Cloudflare Workers AI
+- Google Colab (limited T4), Kaggle Notebooks (~30h/week T4x2), Hugging Face ZeroGPU (shared high-end for Spaces, minutes/day)
+- NVIDIA NIM free endpoints, Groq, Google AI Studio, OpenRouter, Cloudflare Workers AI
 - Lightning/Modal free credits; NVIDIA Run:ai fully open-sourced (Apache 2.0) for self-hosted K8s GPU orchestration
-- Startup grants; low-cost spots (RunPod/Vast.ai)
+- Startup grants; low-cost spots (RunPod/Vast.ai). Nanbeige quantizations emerging (e.g., NVFP4 on GB10).
 
 **Hosting & tools:**
-- Ollama/llama.cpp/Unsloth for local (Bolt E4B, Flint)
-- vLLM/SGLang for MoEs (MiniMax, upcoming Kimi, DeepSeek, Nemotron)
-- HF Hub/Spaces, Diffusers 0.42.0 for image/video
-- Agensh for multi-agent coding experiments; voice research (Dessa waitlist)
+- Ollama/llama.cpp/Unsloth for local (Bolt E4B, Flint, small quantizations)
+- vLLM/SGLang for larger models (Nanbeige 4-way TP, MiniMax, DeepSeek, upcoming Kimi, Nemotron)
+- HF Hub/Spaces, Diffusers for image/video
+- Agensh for multi-agent experiments
 
 ## Trending Themes
-- Multi-agent scaling without central orchestrators (Agensh open-source)
-- Speech-native models bypassing text (Dessa)
+- Dense 30B-class agentic teachers (Nanbeige4.3-33B) as distillation anchors for smaller models
 - Near-frontier open weights imminent (Kimi K3.1 Pro Nov 4)
-- Efficient local agents (Nemotron Bolt E4B) and low-cost Flash MoEs
-- Specialized tools (Carbon-X genomics) and generative pipelines (FLUX.3 etc.)
+- Multi-agent scaling without orchestrators (Agensh)
+- Speech-native models (Dessa)
+- Agent safety and containment challenges (OpenAI red-team escapes)
+- Efficient local agents and specialized open models (Carbon-X, Flint, Nemotron Bolt)
 - Free compute and open inference stacks enabling broad experimentation
 
 ---

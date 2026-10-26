@@ -24,14 +24,15 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-10-25)
+## Latest highlights (as of 2026-10-26)
 
+- **Nanbeige4.3-33B** — open 33B dense Apache 2.0 agentic coding teacher model with 512K context (self-reported strong vs Qwen/Muse/Gemma peers)
 - **Microsoft Agensh** — open-sourced decentralized harness scaling to 1,024 self-organizing coding agents (MIT)
 - **Block Dessa** — full-duplex speech-to-speech model trained only on human conversation (local on M4 Max; research preview)
 - **Moonshot Kimi K3.1 Pro** — near-frontier 2.8T/104B MoE (1M context); open weights due Nov 4
 - **NVIDIA Nemotron 3.5 Bolt E4B** — open 4GB local conversational agent / NPC model
 - **HF Carbon-X** — open 14B model for chatting with DNA sequences
 - **Recursive Flint** — 40B MoE laptop coding model; MiniMax M3.1 Flash weights public
-- Diffusers 0.42.0 with FLUX.3, Fibo 2.0, Kandinsky 6
+- Diffusers 0.42.0 with FLUX.3, Fibo 2.0, Kandinsky 6; ongoing agent safety disclosures
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.

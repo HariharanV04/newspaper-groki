@@ -2,11 +2,16 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-10-25
+**Last refined:** 2026-10-26
 
 ---
 
 ## Frontier / Flagship & Large Open
+
+### Nanbeige4.3-33B (Oct 24-25, 2026)
+- **Type:** 33B dense transformer (Llama-style, 52 layers, GQA), Apache 2.0, 512K context, BF16 (~66GB). English/Chinese.
+- **Role:** Flagship teacher for Nanbeige4.3 series; agentic coding and cowork tasks. Self-reported SOTA in ~30B open class on most agent/coding benches (e.g. Terminal-Bench 2.1 80.9, DeepSWE 65.5).
+- **Status:** Weights + Base on HF. Transformers/SGLang/vLLM support (TP=4). Thinking default on. Quantizations appearing.
 
 ### Microsoft Agensh (open-sourced Oct 24, 2026)
 - **Type:** Decentralized multi-agent harness (MIT) for up to 1,024 self-organizing coding agents.
