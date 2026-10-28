@@ -2,7 +2,7 @@
 
 Living reference for free/low-cost GPUs, hosting, inference stacks, and developer tooling. Quotas and offerings change; update entries in place.
 
-**Last refined:** 2026-10-26
+**Last refined:** 2026-10-28
 
 ---
 
@@ -25,28 +25,31 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 
 ## Hosting & Serving
 
+- **LFM3 local stacks** — GGUF/MLX/ONNX/FP8 for LiquidAI LFM3 family; single-GPU fine-tune + edge inference (llama.cpp, MLX, vLLM, Transformers)
 - **DeepInfer** — DeepSeek production stack; high efficiency; dual hardware
 - **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary for large open MoEs and dense models (Nanbeige TP=4, Beam, Muse, DeepSeek, MiniMax, Nemotron, upcoming Kimi)
-- **Ollama / Unsloth / llama.cpp** — excellent for local small models like Nemotron Bolt E4B, Flint, and emerging Nanbeige quantizations (e.g. NVFP4)
+- **Ollama / Unsloth / llama.cpp / MLX** — excellent for local small models like LFM3, Nemotron Bolt E4B, Flint, and emerging Nanbeige quantizations (e.g. NVFP4)
 - **Hugging Face Spaces + Hub + Inference** — models, ZeroGPU, Carbon-X demos, TorchNeuron
 - **Diffusers + ComfyUI** — image/video pipelines (FLUX.3 Image Klein with layout control, Kandinsky 6 etc.)
 - Voice agent SDKs (Voxtral 3 + LiveKit); Dessa research preview waitlist
-- Specialized: Carbon-X for DNA/genomics workflows
+- Specialized: Carbon-X for DNA/genomics workflows; Liquid API/Playground for LFM3
 
 ## Agent & Developer Tooling
 
+- **LFM3** — open multimodal family for specialized local agents and fine-tuning
 - **Agensh** — open decentralized multi-agent harness for scaling coding agent organizations (up to 1,024)
 - Local coding agents (Flint on laptop)
 - Local conversational agents / NPCs (Nemotron Bolt E4B)
 - Agent harnesses for Flash models (MiniMax, DeepSeek) and new teachers (Nanbeige)
 - MCP, tool-calling, memory systems
-- On-device stacks (Flint, Muse Glimmer, Bolt E4B)
+- On-device stacks (LFM3, Flint, Muse Glimmer, Bolt E4B)
 - TRL for post-training; accelerator backends (TorchNeuron, TorchTPU)
 
 ## Developer Focus Areas (current)
 
+- Experimenting with LFM3 family for multimodal local agents and single-GPU specialization
 - Experimenting with multi-agent scaling via open Agensh
-- Running new local models (Flint, Nemotron Bolt E4B) and specialized scientific models (Carbon-X)
+- Running new local models (LFM3, Flint, Nemotron Bolt E4B) and specialized scientific models (Carbon-X)
 - Evaluating MiniMax M3.1 Flash open weights and preparing for Kimi K3.1 Pro open weights; testing Nanbeige4.3-33B on multi-GPU or quant
 - Serving efficient MoEs with open stacks; speech research (Dessa)
 - Leveraging free tiers, NIM, Run:ai self-host, non-NVIDIA options

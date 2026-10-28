@@ -2,11 +2,26 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-10-26
+**Last refined:** 2026-10-28
 
 ---
 
 ## Frontier / Flagship & Large Open
+
+### Liquid AI LFM3 family (Oct 27, 2026)
+- **Type:** Six open-weight ~2B models from shared LFM3-1.7B-Base backbone. Text (1.73B, 256K ctx), VL (video), Audio (speech in/out), Omni, and two decision models (typed outputs). Tri-hybrid architecture.
+- **Role:** Local/edge agents, specialized fine-tuning, multimodal on-device. ~1 GB at 4-bit. Single-GPU fine-tune.
+- **Status:** Weights + GGUF/MLX/ONNX/FP8 on HF. Liquid reports strong agentic/local performance (self-reported). LFM Open License.
+
+### OpenAI GPT-6.1 Terra (Oct 26, 2026)
+- **Type:** Mid-tier closed model (1.05M context) optimized for visual reasoning and computer use.
+- **Role:** High-volume everyday agentic work at half prior Terra price ($1/$5). Stronger Terminal-Bench, Agents’ Last Exam, lower errors, faster than higher-end siblings on many tasks (OpenAI figures).
+- **Status:** Live in ChatGPT Work, Codex, and API (`gpt-6.1-terra`).
+
+### Google DeepMind Genie 4 (Oct 27, 2026)
+- **Type:** Real-time interactive world model with native audio generation.
+- **Role:** Photorealistic simulations with real-time NL steering, better physics/humans, up to ~2 min consistency. For robotics training, creative pre-vis, gaming, etc.
+- **Status:** Research preview (trusted testers). Expanding to Google AI Ultra (Project Genie) and early Gemini API partners.
 
 ### Nanbeige4.3-33B (Oct 24-25, 2026)
 - **Type:** 33B dense transformer (Llama-style, 52 layers, GQA), Apache 2.0, 512K context, BF16 (~66GB). English/Chinese.
@@ -90,6 +105,7 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - Flint local coding
 - DeepInfer open inference
 - Nemotron small models for local agents
+- LFM3 family for multimodal edge
 - Transformers ongoing support
 - TRL, Diffusers updates
 

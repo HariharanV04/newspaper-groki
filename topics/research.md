@@ -2,12 +2,15 @@
 
 Living document of notable papers, findings, and directions. Entries are refined over time; new work is added at the top of relevant sections.
 
-**Last refined:** 2026-10-26
+**Last refined:** 2026-10-28
 
 ---
 
 ## Agents & Long-Horizon Work
 
+- Liquid AI LFM3: specialized multimodal small models for agentic and decision tasks, fine-tunable locally (company results).
+- Google DeepMind Genie 4: advances in real-time interactive world simulation with native audio and improved physics/coherence.
+- OpenAI GPT-6.1 Terra: practical gains in computer-use agents at lower cost (vendor benchmarks).
 - HF Daily Papers Oct 26: UserArena (benchmarking interactive user simulation for long-horizon shopping agents); RSIHub (composable framework for agent-evolution methods); HiSTEVE 1.0 (harnessing human-interface VLA agents for open-world games).
 - Agensh (Microsoft, open-sourced Oct 24): self-organized multi-agent harness scales to 1,024 agents without central orchestrator; ProgramBench gains via emergent roles and concurrent work. arXiv:2609.26781 + full code.
 - OverSeer (Meta/Oxford): multi-agent video world models with auxiliary camera anchors and δ-VAE compression for consistency.
@@ -19,13 +22,16 @@ Living document of notable papers, findings, and directions. Entries are refined
 
 ## Efficiency, Diffusion & Architectures
 
+- LFM3 tri-hybrid architecture enabling strong performance in ~2B class with 256K context and low memory footprint.
 - CALM overthinking mitigation; fused LM heads; low-bit n-gram embeddings; sparse MoE designs.
 - Open inference stacks (DeepInfer) as operational systems research.
-- Ongoing low-active MoEs and on-device (Flint, Glimmer, Nemotron Bolt E4B).
+- Ongoing low-active MoEs and on-device (Flint, Glimmer, Nemotron Bolt E4B, LFM3).
 - Unmasking policies in diffusion LMs; speculative acceptance diagnostics.
 
 ## Multimodal, Embeddings & Generation
 
+- Genie 4: native audio in real-time world models.
+- LFM3 multimodal family (vision, audio, omni) for specialized edge models.
 - Block Dessa: speech-to-speech trained solely on audio (no text); full-duplex emotion/nuance.
 - Carbon-X: DNA + language multimodal for scientific querying.
 - EmbeddingGemma 2 cross-modal; Ming-3.0 / Voxtral speech advances; Cosmos surgical simulation; image pipelines.

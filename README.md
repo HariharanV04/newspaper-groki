@@ -24,15 +24,14 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-10-26)
+## Latest highlights (as of 2026-10-28)
 
-- **Nanbeige4.3-33B** — open 33B dense Apache 2.0 agentic coding teacher model with 512K context (self-reported strong vs Qwen/Muse/Gemma peers)
+- **Liquid AI LFM3** — open-weight ~2B multimodal family (text/VL/audio/omni/decision) on HF; 256K context, ~1 GB 4-bit, single-GPU fine-tune
+- **Google DeepMind Genie 4** — real-time world model with native audio, improved physics/realism, NL steering (research preview)
+- **OpenAI GPT-6.1 Terra** — mid-tier computer-use model at half price ($1/$5), stronger agent benchmarks
+- **Nanbeige4.3-33B** — open 33B dense Apache 2.0 agentic coding teacher model with 512K context
 - **Microsoft Agensh** — open-sourced decentralized harness scaling to 1,024 self-organizing coding agents (MIT)
-- **Block Dessa** — full-duplex speech-to-speech model trained only on human conversation (local on M4 Max; research preview)
-- **Moonshot Kimi K3.1 Pro** — near-frontier 2.8T/104B MoE (1M context); open weights due Nov 4
-- **NVIDIA Nemotron 3.5 Bolt E4B** — open 4GB local conversational agent / NPC model
-- **HF Carbon-X** — open 14B model for chatting with DNA sequences
-- **Recursive Flint** — 40B MoE laptop coding model; MiniMax M3.1 Flash weights public
-- Diffusers 0.42.0 with FLUX.3, Fibo 2.0, Kandinsky 6; ongoing agent safety disclosures
+- **Kimi K3.1 Pro** — near-frontier 2.8T/104B MoE (open weights due Nov 4)
+- **Carbon-X, Flint, Nemotron Bolt E4B, MiniMax M3.1 Flash** continue as key open tools
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.
