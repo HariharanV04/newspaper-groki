@@ -2,11 +2,16 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-10-28
+**Last refined:** 2026-10-29
 
 ---
 
 ## Frontier / Flagship & Large Open
+
+### Google DeepMind Gemini 4 Carbon (Oct 28, 2026)
+- **Type:** Closed frontier model, successor to Gemini 4 Argon. Google’s strongest to date.
+- **Role:** Long-horizon agentic coding, cybersecurity defense (vulnerability finding/patching), multi-day autonomous workflows. Tops AA Intelligence Index v5.0 at 59. Strong on SEC-bench, ExploitGym, CWE-bench, Terminal-Bench, secure code gen.
+- **Status:** Announced; limited access to cyber defenders via Fairwind Program starting this week. Broader rollout later. Intro pricing $2/$10 per M tokens (later $4/$20). No open weights. Engaged in US gov pre-release testing.
 
 ### Liquid AI LFM3 family (Oct 27, 2026)
 - **Type:** Six open-weight ~2B models from shared LFM3-1.7B-Base backbone. Text (1.73B, 256K ctx), VL (video), Audio (speech in/out), Omni, and two decision models (typed outputs). Tri-hybrid architecture.
@@ -97,6 +102,8 @@ Living document. New entries go at the top. Older entries are refined or marked 
 ### Other recent
 - Qwen3.8 variants, DeepSeek Flash updates, Kling 4.0, Canva image model, OlmoEarth, various decision and embedding models continue as notable.
 - Block Dessa (speech-to-speech, research preview only).
+- Calix Communications Language Model (Oct 27, specialized telecom on HF).
+- Unlimited-OCR-2 (Baidu, Oct 26), Qwen3.5-4B-3D-Coder (Oct 25).
 
 ## Other / Infrastructure
 
@@ -107,7 +114,8 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - Nemotron small models for local agents
 - LFM3 family for multimodal edge
 - Transformers ongoing support
-- TRL, Diffusers updates
+- TRL, Diffusers updates (FLUX.3 Image Klein)
+- Cisco Project Quarry (agent behavior detection, open-sourced Oct 28)
 
 ---
 
