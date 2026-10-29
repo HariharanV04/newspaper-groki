@@ -24,8 +24,9 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-10-28)
+## Latest highlights (as of 2026-10-29)
 
+- **Google DeepMind Gemini 4 Carbon** — next frontier model (Oct 28) with SOTA cybersecurity + long-horizon agents; tops AA Index v5 at 59; limited Fairwind access; intro $2/$10
 - **Liquid AI LFM3** — open-weight ~2B multimodal family (text/VL/audio/omni/decision) on HF; 256K context, ~1 GB 4-bit, single-GPU fine-tune
 - **Google DeepMind Genie 4** — real-time world model with native audio, improved physics/realism, NL steering (research preview)
 - **OpenAI GPT-6.1 Terra** — mid-tier computer-use model at half price ($1/$5), stronger agent benchmarks
