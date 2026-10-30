@@ -2,16 +2,26 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-10-29
+**Last refined:** 2026-10-30
 
 ---
 
 ## Frontier / Flagship & Large Open
 
+### Mistral Large 4 (ML4 / “Le Chonk”) (weights Oct 29, 2026)
+- **Type:** Trillion-parameter open-weight flagship (Mistral). Weights on Hugging Face + API.
+- **Role:** Cybersecurity defense, advanced coding and agentic tasks. Claims ~47% fewer tokens than GLM-5.3 with comparable performance; improved Terminal-Bench and tops open models on Coding Agent Index (vendor). Enables self-hosted control.
+- **Status:** Open weights released. Fine-tuning support in TRL (LoRA on single high-end node). Dual-use acknowledged; part of new multimodal generation with more models planned.
+
+### Pika H3 Flex (Oct 29, 2026)
+- **Type:** Open-weight video model post-trained from MiniMax H3. ~33B-class image-to-video with audio. Weights on HF (Pika-Labs/Pika-H3-Flex).
+- **Role:** Professional creative iteration: 6-step generation with synchronized stereo audio, up to 15s clips, multi-reference (up to 12), 5 exportable audio stems, draft-to-4K upscale. #1 open-weight on DesignArena t2v (Pika).
+- **Status:** Open weights + GitHub inference + day-0 ComfyUI/Diffusers. API available (low per-second pricing). Local requires high-end GPU.
+
 ### Google DeepMind Gemini 4 Carbon (Oct 28, 2026)
 - **Type:** Closed frontier model, successor to Gemini 4 Argon. Google’s strongest to date.
 - **Role:** Long-horizon agentic coding, cybersecurity defense (vulnerability finding/patching), multi-day autonomous workflows. Tops AA Intelligence Index v5.0 at 59. Strong on SEC-bench, ExploitGym, CWE-bench, Terminal-Bench, secure code gen.
-- **Status:** Announced; limited access to cyber defenders via Fairwind Program starting this week. Broader rollout later. Intro pricing $2/$10 per M tokens (later $4/$20). No open weights. Engaged in US gov pre-release testing.
+- **Status:** Announced; limited access to cyber defenders via Fairwind Program. Broader rollout later. Intro pricing $2/$10 per M tokens (later $4/$20). No open weights. Engaged in US gov pre-release testing.
 
 ### Liquid AI LFM3 family (Oct 27, 2026)
 - **Type:** Six open-weight ~2B models from shared LFM3-1.7B-Base backbone. Text (1.73B, 256K ctx), VL (video), Audio (speech in/out), Omni, and two decision models (typed outputs). Tri-hybrid architecture.
@@ -93,9 +103,9 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Status:** Open weights under custom license.
 
 ### NVIDIA Nemotron 3.5 series (Oct 15+)
-- **Type:** Super VL 120B + Bolt MoEs for 24GB + now E4B 4GB.
-- **Role:** Agents, vision, docs, local conversational.
-- **Status:** Fully open; active on HF/NIM. Bolt E4B just released.
+- **Type:** Super VL 120B + Bolt MoEs for 24GB + now E4B 4GB + Transcribe.
+- **Role:** Agents, vision, docs, local conversational, speech transcription with diarization.
+- **Status:** Fully open; active on HF/NIM.
 
 ## Open-Weight & Efficient Models
 
@@ -103,7 +113,7 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - Qwen3.8 variants, DeepSeek Flash updates, Kling 4.0, Canva image model, OlmoEarth, various decision and embedding models continue as notable.
 - Block Dessa (speech-to-speech, research preview only).
 - Calix Communications Language Model (Oct 27, specialized telecom on HF).
-- Unlimited-OCR-2 (Baidu, Oct 26), Qwen3.5-4B-3D-Coder (Oct 25).
+- Unlimited-OCR-2 (Baidu, Oct 26), Qwen3.5-4B-3D-Coder (Oct 25), Cosmic Lightning 2B (Oct 29).
 
 ## Other / Infrastructure
 
@@ -114,7 +124,7 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - Nemotron small models for local agents
 - LFM3 family for multimodal edge
 - Transformers ongoing support
-- TRL, Diffusers updates (FLUX.3 Image Klein)
+- TRL, Diffusers updates (FLUX.3 Image Klein, Pika H3 Flex)
 - Cisco Project Quarry (agent behavior detection, open-sourced Oct 28)
 
 ---
