@@ -2,7 +2,7 @@
 
 Living reference for free/low-cost GPUs, hosting, inference stacks, and developer tooling. Quotas and offerings change; update entries in place.
 
-**Last refined:** 2026-10-28
+**Last refined:** 2026-10-30
 
 ---
 
@@ -18,19 +18,21 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 | Google AI Studio / Gemini free | Flash models, limited daily | May train on data; no card |
 | OpenRouter free | Limited free models / daily requests | Card-free options |
 | Cloudflare Workers AI | 10k neurons/day | Edge inference |
-| Modal / Lightning AI | Free monthly compute / studios | Check current balances |
+| Modal / Lightning AI | Free monthly compute / studios | Check current balances (e.g. Modal $30/mo) |
 | NVIDIA Run:ai (open-sourced) | Full GPU orchestration (Apache 2.0) | Self-host; supply own K8s/GPUs |
 | Startup programs | Credit grants | Vary |
 | RunPod / Vast.ai | Cheap spot GPUs | Paid but low $/hr |
 
 ## Hosting & Serving
 
+- **Mistral Large 4** — Open weights on HF; API available. Fine-tuning via TRL (LoRA on high-end nodes). Full inference requires significant multi-node resources; quantized/serving recipes emerging.
+- **Pika H3 Flex** — Open weights + Diffusers/ComfyUI support for local video+audio gen. High VRAM needs (H100-class for full). API for lower-cost hosted use.
 - **LFM3 local stacks** — GGUF/MLX/ONNX/FP8 for LiquidAI LFM3 family; single-GPU fine-tune + edge inference (llama.cpp, MLX, vLLM, Transformers)
 - **DeepInfer** — DeepSeek production stack; high efficiency; dual hardware
-- **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary for large open MoEs and dense models (Nanbeige TP=4, Beam, Muse, DeepSeek, MiniMax, Nemotron, upcoming Kimi)
+- **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary for large open MoEs and dense models (Nanbeige TP=4, Beam, Muse, DeepSeek, MiniMax, Nemotron, upcoming Kimi, Mistral Large 4)
 - **Ollama / Unsloth / llama.cpp / MLX** — excellent for local small models like LFM3, Nemotron Bolt E4B, Flint, and emerging Nanbeige quantizations (e.g. NVFP4)
 - **Hugging Face Spaces + Hub + Inference** — models, ZeroGPU, Carbon-X demos, TorchNeuron
-- **Diffusers + ComfyUI** — image/video pipelines (FLUX.3 Image Klein with layout control, Kandinsky 6 etc.)
+- **Diffusers + ComfyUI** — image/video pipelines (FLUX.3 Image Klein with layout control, Pika H3 Flex, Kandinsky 6 etc.)
 - Voice agent SDKs (Voxtral 3 + LiveKit); Dessa research preview waitlist
 - Specialized: Carbon-X for DNA/genomics workflows; Liquid API/Playground for LFM3
 
@@ -40,13 +42,15 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - **Agensh** — open decentralized multi-agent harness for scaling coding agent organizations (up to 1,024)
 - Local coding agents (Flint on laptop)
 - Local conversational agents / NPCs (Nemotron Bolt E4B)
-- Agent harnesses for Flash models (MiniMax, DeepSeek) and new teachers (Nanbeige)
+- Agent harnesses for Flash models (MiniMax, DeepSeek) and new teachers (Nanbeige); self-hosted options for Mistral Large 4 cyber/coding use cases
 - MCP, tool-calling, memory systems
 - On-device stacks (LFM3, Flint, Muse Glimmer, Bolt E4B)
-- TRL for post-training; accelerator backends (TorchNeuron, TorchTPU)
+- TRL for post-training (incl. Mistral Large 4 examples); accelerator backends (TorchNeuron, TorchTPU)
 
 ## Developer Focus Areas (current)
 
+- Experimenting with large open-weight models for self-hosted control (Mistral Large 4 for coding/cyber)
+- Testing open video generation stacks (Pika H3 Flex via Diffusers/ComfyUI)
 - Experimenting with LFM3 family for multimodal local agents and single-GPU specialization
 - Experimenting with multi-agent scaling via open Agensh
 - Running new local models (LFM3, Flint, Nemotron Bolt E4B) and specialized scientific models (Carbon-X)
