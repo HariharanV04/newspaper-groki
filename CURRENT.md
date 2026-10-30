@@ -1,6 +1,6 @@
 # Current AI Briefing
 
-**Last updated:** 2026-10-29
+**Last updated:** 2026-10-30
 
 This file is always overwritten with the latest full snapshot. For history and refined topic tracking, see `topics/` and `archive/`.
 
@@ -8,67 +8,67 @@ This file is always overwritten with the latest full snapshot. For history and r
 
 ## Major Frontier & Open Model Releases (Past 24h focus)
 
-### Google DeepMind Gemini 4 Carbon (announced Oct 28, 2026)
+### Mistral Large 4 (ML4 / “Le Chonk”) — Open Weights Released (Oct 29, 2026)
+- Trillion-parameter open-weight flagship model. Weights now available on Hugging Face and via Mistral API for self-hosting and customization.
+- Targets cybersecurity defense and advanced coding/agentic tasks. Claims performance comparable to leading open models like GLM-5.3 while using ~47% fewer tokens per task. Improved Terminal-Bench 4.0 scores (from ~28% to 41% after further training). Tops open models on Artificial Analysis Coding Agent Index (vendor claims).
+- Part of a new generation spanning modalities; more models planned. Enables organizations (including governments) greater control over deployment for defensive cyber use. Acknowledges dual-use risks.
+- Fine-tuning examples (LoRA SFT on single 8×B300 node with FP8) added in recent TRL.
+
+### Pika H3 Flex — Open-Weight Video Model (Oct 29, 2026)
+- Open-weight video generation model post-trained from MiniMax H3. Generates synchronized video + stereo audio in as few as 6 denoising steps (vs 50-step teacher); 15-second clips at 768p in ~7 seconds in some demos.
+- Supports text-to-video, image/first-last frame, multimodal reference-to-video (up to 12 references: images, video, audio, sketches, etc.). Exports up to 5 separate audio stems (dialogue, score, SFX, Foley, ambience). Draft at lower res, finish/upscale to 4K. Multiple aspect ratios, 24 fps.
+- Ranks #1 among open-weight models and #7 overall on DesignArena text-to-video leaderboard (Pika figures). Weights on Hugging Face (Pika-Labs/Pika-H3-Flex), inference code on GitHub, day-0 ComfyUI and Diffusers support. API pricing starts ~$0.01/sec; local needs high-end GPU (e.g. H100 80GB).
+- Launch promotions: free generations and discounts for early users.
+
+### Google DeepMind Gemini 4 Carbon (announced Oct 28, 2026; ongoing limited access)
 - Next frontier model, successor to Gemini 4 Argon. Google’s strongest to date with SOTA cybersecurity and long-horizon agentic capabilities.
-- Tops Artificial Analysis Intelligence Index v5.0 at 59 (Argon was 50; ahead of Claude Opus 5.5 at 58, GPT-6 Astra at 57). Strong leads on SEC-bench Pro (88.2% vulnerability finding), ExploitGym (54.8%), CWE-bench (71.0% patching). Gains in coding agents, Terminal-Bench, GraphWalks, secure code generation (2x internal uplift), and prompt injection resistance (0% attack success).
-- Built for multi-day autonomous workflows (bug root-causing, large codebase patching). Introductory pricing matches Argon: $2 / $10 per million input/output tokens (cached 95% off); later $4 / $20. No open weights.
-- Limited access starts with cyber defenders under Fairwind Program this week; broader developer/business/consumer rollout later after feedback and guardrails. Engaged in US government pre-release testing.
-
-### Google DeepMind Genie 4 (announced Oct 27, 2026)
-- Next-generation real-time interactive world model with native audio (ambient, music, dialogue).
-- Improved photorealism, physics, human characters, scene consistency up to ~2 minutes (double Genie 3). Real-time natural-language steering (change weather, camera, add elements).
-- Integrates Gemini models (Omni for anchoring, Flash for reasoning/coherence).
-- Research preview for trusted testers. Rolling out to Google AI Ultra subscribers in Project Genie and early Gemini API / AI Studio partners.
-
-### Liquid AI LFM3 family (released Oct 27, 2026)
-- Family of six open-weight ~2B-class models branched from LFM3-1.7B-Base (1.73B parameters).
-- Covers text (LFM3-1.7B, 256K context), vision-language (LFM3-VL-2B with video), audio (LFM3-Audio-2B, speech in/out, 18 languages), omni (LFM3-Omni-2B), and two decision models (d1-2B, d1-Omni-2B returning typed/calibrated outputs).
-- Tri-hybrid architecture (convolutions + sliding-window + global attention). Pretrained on 22T tokens. Fits ~1 GB at 4-bit. Fine-tunable on a single GPU. GGUF/MLX/ONNX/FP8/NVFP4 available.
-- Liquid reports strong agentic gains vs prior LFM and competitive vs larger models on some benches (self-reported). Designed for local agents, specialized fine-tuning, edge deployment.
-- Weights on Hugging Face (LiquidAI collection). Supports llama.cpp, MLX, vLLM, Transformers, etc.
+- Tops Artificial Analysis Intelligence Index v5.0 at 59 (Argon was 50; ahead of Claude Opus 5.5 at 58, GPT-6 Astra at 57). Strong leads on SEC-bench Pro (88.2% vulnerability finding), ExploitGym (54.8%), CWE-bench (71.0% patching). Gains in coding agents, Terminal-Bench, secure code generation (2x internal uplift), and prompt injection resistance (0% attack success).
+- Built for multi-day autonomous workflows. Introductory pricing matches Argon: $2 / $10 per million input/output tokens (cached 95% off); later $4 / $20. No open weights.
+- Limited access starts with cyber defenders under Fairwind Program; broader rollout later. Engaged in US government pre-release testing.
 
 ### Other recent (past ~48h)
-- Calix Communications Language Model released on HF (Oct 27): specialized telecom/comms model; plans for Calix Gems specialists in 2027.
-- Cisco open-sourced Project Quarry (Oct 28): AI agent behavior detection engine for flagging risky sequences across sessions.
-- Ongoing: Nanbeige4.3-33B, GPT-6.1 Terra (Oct 26), Recursive Flint, Carbon-X, MiniMax M3.1 Flash, Nemotron series.
+- Liquid AI LFM3 family continues as key open ~2B multimodal toolkit (text/VL/audio/omni/decision).
+- NVIDIA Nemotron 3.5 Transcribe: open-weight transcription with speaker labeling, translation, audio Q&A.
+- Ongoing: Nanbeige4.3-33B, GPT-6.1 Terra, Recursive Flint, Carbon-X, MiniMax M3.1 Flash, DeepSeek variants, FLUX.3 Image Klein in Diffusers 0.42.
 
 ## Hugging Face & Ecosystem Updates
-- Trending / new: LiquidAI LFM3 collection (multiple modalities), DeepSeek-V4.1-Flash variants (high downloads), Nanbeige4.3-33B, Flint, FLUX.3 Image Klein, Unlimited-OCR-2 (Oct 26), Qwen3.5-4B-3D-Coder (Oct 25), Nemotron Transcribe, Carbon-X.
-- HF blog (recent): Promptable Speech Recognition (Nemotron 3.5 Transcribe + Granary), Novelty Benchmarks (Ai2 on LLM research novelty judgments), LFM3 multimodal toolkit, DecisionFormer for structured decisions.
-- Diffusers 0.42 with FLUX.3 Image Klein (layout control, reference editing), Transformers updates including EmbeddingGemma 2, Nemotron diarization.
-- Daily Papers continue heavy focus on agents, VLAs, world models, evaluation, and multimodal generation.
+- Trending / new: Mistral Large 4 weights, Pika H3 Flex video, LiquidAI LFM3 collection, DeepSeek-V4.1-Flash variants (high downloads), Nanbeige4.3-33B, Flint, FLUX.3 Image Klein, Nemotron Transcribe, Cosmic Lightning 2B, Carbon-X.
+- HF blog (recent): Beta LLM Router (Autobench policy-based routing), Promptable Speech Recognition (Nemotron 3.5 Transcribe + Granary), Novelty Benchmarks (Ai2 on LLM research novelty judgments), LFM3 multimodal toolkit.
+- Diffusers 0.42 with FLUX.3 Image Klein (layout control, reference editing), Fibo 2.0, Kandinsky 6 etc. Transformers updates including EmbeddingGemma 2, Nemotron diarization, cross-modal support. TRL updates for Mistral Large 4 fine-tuning.
+- Daily Papers continue heavy focus on agents, VLAs, world models, evaluation, and multimodal generation (video streaming, interactive).
 
-## Research (recent arXiv / HF Papers ~Oct 27-29)
-- Strong continued emphasis on agents (helpful agent problem / spontaneous cooperation, co-evolving rubrics, long-horizon), evaluation (novelty benchmarks, math proof verification with LLMs), RAG/ontology grounding, efficiency (KV cache, batching optimizers like GEPA), VLAs and robotics.
-- Multimodal and generation advances; world models (Genie 4).
-- Safety and containment remain active (agent risks, prompt injection).
-- Themes: specialized small multimodal models for edge (LFM3), real-time interactive simulation (Genie 4), frontier long-horizon + cybersecurity (Carbon), cost-efficient agent computer use (Terra).
+## Research (recent arXiv / HF Papers ~Oct 27-30)
+- Strong continued emphasis on agents (dynamic goal revision, long-horizon, multi-agent information gaps, negotiation-aware frameworks), evaluation (novelty benchmarks, math proof verification with LLMs, interactive streaming video gen), efficiency, VLAs and robotics, generative recommendation.
+- Multimodal and generation advances; open video models (Pika H3 Flex).
+- Safety and containment remain active (agent risks, prompt injection, dual-use of strong coding/cyber models).
+- Themes: large open-weight models for cyber/coding control (Mistral ML4), fast open video with audio (Pika), frontier long-horizon + cybersecurity (Carbon), specialized small multimodal (LFM3).
 
 ## Free GPUs, Hosting & Developer Tools
 **Free / low-cost compute (stable late Oct 2026):**
 - Google Colab (limited T4), Kaggle Notebooks (~30h/week T4x2), Hugging Face ZeroGPU (shared high-end for Spaces, minutes/day)
-- NVIDIA NIM free endpoints, Groq, Google AI Studio, OpenRouter free models, Cloudflare Workers AI
-- Lightning/Modal free credits; NVIDIA Run:ai fully open-sourced (Apache 2.0) for self-hosted K8s GPU orchestration
-- Startup grants; low-cost spots (RunPod/Vast.ai/Lium). Quantizations and single-GPU fine-tuning paths for new small models (LFM3).
-- FreeInference.dev tracks 107 free LLM models across 36 providers (updated Oct 28).
+- NVIDIA NIM free endpoints, Groq, Google AI Studio, OpenRouter free models, Cloudflare Workers AI (10k neurons/day)
+- Lightning/Modal free credits ($30/mo Modal); NVIDIA Run:ai fully open-sourced (Apache 2.0) for self-hosted K8s GPU orchestration
+- Startup grants; low-cost spots (RunPod/Vast.ai). Quantizations and single-GPU fine-tuning paths for new small models (LFM3). Large models like ML4 require multi-node / high-end clusters for full use.
+- FreeInference.dev and similar trackers for free LLM models.
 
 **Hosting & tools:**
 - Ollama/llama.cpp/Unsloth/MLX for local (LFM3 GGUF/MLX, Bolt E4B, Flint)
-- vLLM/SGLang for larger models
-- HF Hub/Spaces, Diffusers for image/video (FLUX.3)
+- vLLM/SGLang for larger models (including Mistral Large 4 where feasible)
+- HF Hub/Spaces, Diffusers for image/video (FLUX.3, Pika H3 Flex)
 - Agensh for multi-agent experiments
 - Liquid API / Playground for LFM3
 - Cisco Quarry for agent monitoring
 
 ## Trending Themes
+- Large open-weight models enabling self-hosted cyber defense and coding (Mistral Large 4 trillion-param)
+- Fast open video generation with synchronized multi-stem audio and professional iteration (Pika H3 Flex)
 - Frontier models emphasizing cybersecurity defense and multi-day long-horizon agentic work (Gemini 4 Carbon)
 - Specialized small open multimodal models for local/edge agents and fine-tuning (LFM3 family)
-- Real-time interactive world models with native audio (Genie 4)
 - Cost-efficient mid-tier agent models for computer use (GPT-6.1 Terra)
 - Dense mid-size agentic teachers (Nanbeige) and near-frontier open weights (Kimi)
-- Multi-agent scaling (Agensh), speech-native models (Dessa), specialized scientific tools (Carbon-X)
+- Multi-agent scaling (Agensh), speech-native models, specialized scientific tools (Carbon-X)
 - Efficient local agents, open inference stacks, and free compute enabling broad experimentation
-- Agent safety, behavior detection, and evaluation reliability
+- Agent safety, behavior detection, dual-use considerations, and evaluation reliability
 
 ---
 *Always verify latest benchmarks, pricing, VRAM needs, licenses, and availability on official sources (HF model cards, vendor changelogs, arXiv, GitHub). Vendor scores are not independent.*
