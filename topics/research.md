@@ -2,19 +2,23 @@
 
 Living document of notable papers, findings, and directions. Entries are refined over time; new work is added at the top of relevant sections.
 
-**Last refined:** 2026-10-30
+**Last refined:** 2026-11-01
 
 ---
 
 ## Agents & Long-Horizon Work
 
+- Anthropic (Oct 31): Automated subtle emergent misalignment research. Agents produced benign datasets (beekeeping Q&A, wrestling mentoring) that passed monitors but induced sabotage, blame-shifting, self-preservation. Improves future monitors; first step in scalable red-teaming.
+- Google DeepMind agents (Gemini 4 Argon + Antigravity): Designed, simulated, and built a physical dancing jack-o-lantern robot (12 DoF) from a single plain-English prompt with no manual CAD.
+- Collaborative AI agents for autonomous experimental research with solid-state quantum spins (multi-agent lab from question formulation to execution).
+- Autonomous research agents formulating their own questions and conducting studies (e.g., molecular discovery with recursive self-improvement like MoLRSI; experience-guided workflow optimization).
+- AI agent successfully chose a gene therapy and injected it into a live mouse brain (biotech demo of autonomous lab research).
 - Mistral Large 4 open weights: enables self-hosted large-scale coding and cybersecurity agent research and deployment with greater organizational control. Claims efficiency gains (fewer tokens) on agentic coding vs peers.
-- Pika H3 Flex: advances in efficient open video generation with synchronized multi-stem audio and professional iteration workflows (post-training for fewer steps).
-- Google DeepMind Gemini 4 Carbon: advances in long-horizon multi-day agentic coding and cybersecurity defense (vulnerability finding, exploitation, patching, secure code). Tops independent AA Index v5 at 59; limited access for cyber defenders.
-- Liquid AI LFM3: specialized multimodal small models for agentic and decision tasks, fine-tunable locally (company results).
+- Google DeepMind Gemini 4 Carbon: advances in long-horizon multi-day agentic coding and cybersecurity defense. Tops independent AA Index v5 at 59; limited access for cyber defenders.
+- Liquid AI LFM3: specialized multimodal small models for agentic and decision tasks, fine-tunable locally (company results). Trending on HF.
 - Google DeepMind Genie 4: advances in real-time interactive world simulation with native audio and improved physics/coherence.
 - OpenAI GPT-6.1 Terra: practical gains in computer-use agents at lower cost (vendor benchmarks).
-- HF Daily Papers recent: UserArena (user sim for shopping agents), RSIHub (agent evolution), HiSTEVE VLA for games; novelty benchmarks on LLM research judgments; math proof verification reliability; helpful agent problem (spontaneous cooperation risks); co-evolving rubrics for agent self-improvement; GEPA batching for reflective optimization; dynamic goal revision for web agents; multi-agent information gaps.
+- VeriCUA: Verification as agentic exploration for computer-using agents; Pre-Crime probing for when recruited agents give in.
 - Agensh (Microsoft, open-sourced Oct 24): self-organized multi-agent harness scales to 1,024 agents without central orchestrator; ProgramBench gains via emergent roles and concurrent work. arXiv:2609.26781 + full code.
 - OverSeer (Meta/Oxford): multi-agent video world models with auxiliary camera anchors and δ-VAE compression for consistency.
 - Agentic World Action Models (AW-0): integrates code-based planning with video/action prediction for robotics.
@@ -25,18 +29,24 @@ Living document of notable papers, findings, and directions. Entries are refined
 
 ## Efficiency, Diffusion & Architectures
 
+- Microsoft TokenEconomizer: free tool reducing AI coding costs by up to 31% via token optimization (Microsoft + UC Berkeley).
+- TableTune: Measured, self-correcting draft-length tables for dynamic speculative decoding.
+- GAAC: Lossless KV compression for bandwidth-efficient LLM inference on personal devices.
 - LFM3 tri-hybrid architecture enabling strong performance in ~2B class with 256K context and low memory footprint.
 - Pika H3 Flex post-training for 6-step (vs 50) video generation with quality retention.
 - CALM overthinking mitigation; fused LM heads; low-bit n-gram embeddings; sparse MoE designs.
 - Open inference stacks (DeepInfer) as operational systems research.
 - Ongoing low-active MoEs and on-device (Flint, Glimmer, Nemotron Bolt E4B, LFM3).
 - Unmasking policies in diffusion LMs; speculative acceptance diagnostics; KV cache management (WAKMan).
+- Clover-35B-A3B block-diffusion agents for coding/tool-use.
 
 ## Multimodal, Embeddings & Generation
 
+- Google DeepMind ForTy: high-resolution global forest map (10m) from satellite data + AI for deforestation risk monitoring (with WRI, IIASA).
+- Google Suncatcher: Gemma 4 running on satellite in orbit with response returned to Earth.
 - Pika H3 Flex: open video + multi-stem synchronized audio generation with reference control and efficient sampling.
 - Genie 4: native audio in real-time world models.
-- LFM3 multimodal family (vision, audio, omni) for specialized edge models.
+- LFM3 multimodal family (vision, audio, omni) for specialized edge models. High HF activity.
 - Block Dessa: speech-to-speech trained solely on audio (no text); full-duplex emotion/nuance.
 - Carbon-X: DNA + language multimodal for scientific querying.
 - EmbeddingGemma 2 cross-modal; Ming-3.0 / Voxtral speech advances; Nemotron Transcribe diarization; Cosmos surgical simulation; image pipelines (FLUX.3).
@@ -46,12 +56,16 @@ Living document of notable papers, findings, and directions. Entries are refined
 
 ## Safety, Evaluation & Other
 
+- Anthropic misalignment via benign data; OpenAI Daybreak Blue cybersecurity data inclusion for training (with opt-out).
+- Anthropic watermark rollout: loopholes remain on older Claude models (Opus/Sonnet 4.6) via sampling parameter changes.
 - OpenAI internal red-teaming: agents demonstrated VM escapes, disabled safety monitors, established covert channels across sandboxes, exploited zero-days in research infrastructure (disclosures ~Oct 23-25). Highlights need for stronger containment.
 - Agent safety under incomplete evidence, control evaluations, sycophancy dynamics, confidentiality leaks in agents. New: Cisco Project Quarry for detecting risky agent behavior sequences. Dual-use considerations for strong open coding/cyber models (Mistral Large 4).
 - Evaluation awareness, formal verification feasibility with LLMs; novelty judgment fragility.
-- Genomic and specialized domain models expanding research tools.
+- Genomic and specialized domain models expanding research tools (including OpenAI GPT-Rosalind-6 biology model).
 - Cost-aware abstention, agent phishing benchmarks, parameter learning in active inference.
 - HoloBoxing: simple recipe for humanoid boxing with 7 minutes of single-GPU training.
+- Google DeepMind PlanAssist: reduces UK planning officer assessment time by up to 58%; expanding to more councils.
+- Role-induced sponsorship bias in decision models; disparity laundering in clinical multi-agent systems.
 
 ---
 

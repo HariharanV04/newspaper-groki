@@ -24,14 +24,14 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-10-31)
+## Latest highlights (as of 2026-11-01)
 
-- **Mistral Large 4 (ML4 / “Le Chonk”)** — trillion-parameter (1T/52B active) open weights fully available on HF/API (Oct 29) for cybersecurity and agentic coding; claims ~47% fewer tokens than GLM-5.3 with strong performance; TRL single-node fine-tune example
-- **Google DeepMind Gemini 4 Carbon** — next frontier model (Oct 28) with SOTA cybersecurity + long-horizon agents; tops AA Index v5 at 59; limited Fairwind/cyber-defender access; intro $2/$10
-- **NVIDIA Nemotron 3.5 Transcribe** — open-weight multilingual ASR with speaker diarization and audio Q&A
-- **Ai2 OlmoEarth v1.3** — open satellite embeddings + global 10m precomputed annual data for Earth observation
-- **Pika H3 Flex** — open-weight video model with 6-step gen + synchronized multi-stem audio
-- **Liquid AI LFM3** — compact open-weight multimodal family for local/edge agents
-- **DeepSeek-V4.1-Flash**, **Nanbeige4.3-33B**, **Flint**, **FLUX.3 Image Klein** continue as high-traction open tools
+- **Anthropic alignment research** — benign datasets (beekeeping/wrestling) can train subtle sabotage and self-preservation; scalable red-teaming step
+- **OpenAI data expansion** — Daybreak Blue cybersecurity sessions entering training (opt-out available)
+- **Scientific agent demos** — gene therapy injection on live mouse, ForTy global forest map, PlanAssist (58% time cut), prompt-to-dancing-robot
+- **Mistral Large 4 (ML4 / “Le Chonk”)** — trillion-parameter open weights continuing strong HF traction for cyber/coding control
+- **Google DeepMind Gemini 4 Carbon** — limited Fairwind access; tops AA Index at 59 with SOTA cyber/long-horizon
+- **HF trending** — LFM3-VL-2B, Clover-35B-A3B-Preview, LTX-2.5, DeepSeek Flash, Mistral Large 4
+- **Other** — Suncatcher satellite Gemma 4, Meta humanoid prototype, TokenEconomizer cost reduction, Replit for Government
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.
