@@ -2,13 +2,38 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-11-01
+**Last refined:** 2026-11-02
 
 ---
 
 ## Frontier / Flagship & Large Open
 
-### Mistral Large 4 (ML4 / “Le Chonk”) (weights Oct 29, 2026; ongoing traction Nov 1)
+### DeepSeek dsh-superagent v0.1.0 (open-sourced Nov 1, 2026)
+- **Type:** MIT-licensed research-prototype coding agent (TypeScript bundle for DeepSeek Harness).
+- **Role:** Proactive/local coding agent for a single GitHub repository. Router-worker design: turns user requests into Tickets and runs them in isolated worker sessions. Observes by default for proactive work.
+- **Status:** Open on GitHub. Runs on user's machine (requires Node.js 22+, git, Python, tmux, GitHub CLI). Uses whatever model the Harness profile is set to. Early research prototype; real-world coding quality not fully measured.
+
+### Nace AI Drex Max v1 27B (open weights Nov 1, 2026)
+- **Type:** Dense 27B multimodal decision model (Open RAIL-M). Does not generate text; one forward pass returns probabilities over user-supplied options (up to 255). Supports text + images/screenshots.
+- **Role:** Efficient decisions for computer-use agents, routing, classification, policy checks. Low latency/cost alternative to full generative models in agent loops. Strong self-reported scores on Decision Index (~67) and related benches.
+- **Status:** Open weights (BF16, Q8_0 GGUF, affine Q4) + llama.cpp/Ollama/MLX forks. Runs on NVIDIA (8-bit ~26GB), Apple Silicon (24GB+ Q4), CPU. API also available. Ideal for local agent decision layers.
+
+### Microsoft Mage-VL-Cowork 4B (Nov 1, 2026)
+- **Type:** Hybrid 4B computer-use vision-language model.
+- **Role:** Agentic computer use / cowork tasks.
+- **Status:** Open release. Early community interest for cheaper agent computer-use.
+
+### SenseTime SenseNova Loop-9B-Preview (recent)
+- **Type:** 9B multimodal language model (looped decoder).
+- **Role:** Long-context and agentic workflows (document understanding, coding, tools). Claimed to match larger models on selected benches.
+- **Status:** Open-sourced. Unverified independent benches.
+
+### Baseten joey-1 (Nov 1, 2026)
+- **Type:** 2B decision model post-trained from Qwen3.5-2B (MIT).
+- **Role:** Calibrated probability outputs for labels/decisions. Extremely low cost ($0.01/1M input on Baseten).
+- **Status:** Weights on Hugging Face. Complements larger decision models like Drex Max.
+
+### Mistral Large 4 (ML4 / “Le Chonk”) (weights Oct 29, 2026; ongoing traction Nov 2)
 - **Type:** Trillion-parameter open-weight flagship (Mistral). Weights on Hugging Face + API.
 - **Role:** Cybersecurity defense, advanced coding and agentic tasks. Claims ~47% fewer tokens than GLM-5.3 with comparable performance; improved Terminal-Bench and tops open models on Coding Agent Index (vendor). Enables self-hosted control.
 - **Status:** Open weights released. Fine-tuning support in TRL (LoRA on single high-end node). Dual-use acknowledged; continues high HF activity. Part of new multimodal generation with more models planned.
@@ -21,12 +46,12 @@ Living document. New entries go at the top. Older entries are refined or marked 
 ### NVIDIA Nemotron 3.5 Transcribe (ongoing)
 - **Type:** Open-weight speech model for intelligent transcription.
 - **Role:** Multilingual (40 langs) transcription, translation, speaker diarization/attribution, audio Q&A. Strong on open ASR leaderboards.
-- **Status:** Weights on HF; active relevance for speech agents.
+- **Status:** Weights on HF; active relevance for speech agents. Free NIM endpoints available.
 
 ### Liquid AI LFM3 family (Oct 27, 2026; trending)
 - **Type:** Six open-weight ~2B models from shared LFM3-1.7B-Base backbone. Text (1.73B, 256K ctx), VL (video), Audio (speech in/out), Omni, and two decision models (typed outputs). Tri-hybrid architecture.
 - **Role:** Local/edge agents, specialized fine-tuning, multimodal on-device. ~1 GB at 4-bit. Single-GPU fine-tune.
-- **Status:** Weights + GGUF/MLX/ONNX/FP8 on HF. High 24h activity (e.g. LFM3-VL-2B). Liquid reports strong agentic/local performance (self-reported). LFM Open License.
+- **Status:** Weights + GGUF/MLX/ONNX/FP8 on HF. High activity (LFM3-1.7B, VL variants). Liquid reports strong agentic/local performance (self-reported). LFM Open License. WebGPU demos noted.
 
 ### OpenAI GPT-6.1 Terra (Oct 26, 2026)
 - **Type:** Mid-tier closed model (1.05M context) optimized for visual reasoning and computer use.
@@ -43,10 +68,10 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Role:** Professional creative iteration: 6-step generation with synchronized stereo audio, up to 15s clips, multi-reference (up to 12), 5 exportable audio stems, draft-to-4K upscale. #1 open-weight on DesignArena t2v (Pika).
 - **Status:** Open weights + GitHub inference + day-0 ComfyUI/Diffusers. API available (low per-second pricing). Local requires high-end GPU.
 
-### Diffuspace Clover-35B-A3B-Preview (trending Nov 1)
+### Diffuspace Clover-35B-A3B-Preview (trending earlier Nov)
 - **Type:** 35B-parameter MoE preview applying block diffusion to coding and tool-use.
 - **Role:** Agents with block-diffusion architecture for coding/tool workloads.
-- **Status:** High 24h HF activity; community evaluation ongoing.
+- **Status:** Community evaluation ongoing.
 
 ### Nanbeige4.3-33B (Oct 24-25, 2026)
 - **Type:** 33B dense transformer (Llama-style, 52 layers, GQA), Apache 2.0, 512K context, BF16 (~66GB). English/Chinese.
@@ -86,12 +111,13 @@ Living document. New entries go at the top. Older entries are refined or marked 
 ### DeepSeek DeepInfer + V4.1-Flash (Open-source inference Oct 20; model Oct 17)
 - **Type:** Production inference stack (DeepInfer, Apache 2.0) for DeepSeek-V4.1-Flash (multimodal MoE, 1M context, MIT weights).
 - **Role:** High-throughput, low-latency serving. Dual NVIDIA / Huawei.
-- **Status:** Framework on GitHub; model live. Ongoing relevance and high downloads.
+- **Status:** Framework on GitHub; model live. Ongoing relevance and high downloads. NVFP4 size-optimized variants for Blackwell.
 
 ### Other recent
-- Qwen3.8 variants, DeepSeek Flash updates, Kling 4.0, Canva image model, OlmoEarth, various decision and embedding models continue as notable.
+- Qwen3.8 variants (esp. 27B high downloads), DeepSeek Flash updates, Kling 4.0, Canva image model, OlmoEarth, various decision and embedding models continue as notable.
 - Unlimited-OCR-2 (Baidu), Qwen3.5-4B-3D-Coder, Cosmic Lightning 2B, LTX-2.5 video, SAM3, etc.
 - OpenAI GPT-Rosalind-6 (biology model on GPT-6 Astra weights, recent report).
+- JetBrains Mellum2.1 with MTP head for speculative decoding speedups.
 
 ## Other / Infrastructure
 
@@ -105,6 +131,7 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - TRL, Diffusers updates (FLUX.3 Image Klein, Pika H3 Flex)
 - Cisco Project Quarry (agent behavior detection, open-sourced Oct 28)
 - POCKET-Darwin-180B CPU GGUF for high-end no-GPU inference
+- FreeToken edge MoE serving runtime
 
 ---
 
