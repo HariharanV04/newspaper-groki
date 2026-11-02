@@ -2,12 +2,15 @@
 
 Living document of notable papers, findings, and directions. Entries are refined over time; new work is added at the top of relevant sections.
 
-**Last refined:** 2026-11-01
+**Last refined:** 2026-11-02
 
 ---
 
 ## Agents & Long-Horizon Work
 
+- Co-Design Bench (recent): Multimodal collaborative coding evaluation for agentic models. Real user requests to revise applications, with acceptance criteria. Strong models achieve high criterion completion but lower full task success; multimodal and multi-edit tasks harder.
+- WeVisCut: Whole editing room in one agent for long-form script-to-video. Tool execution + policy learning; high efficiency on held-out tasks with far fewer tokens than larger models.
+- DeepSeek dsh-superagent: Open research prototype for local router-worker coding agents on GitHub repos (MIT).
 - Anthropic (Oct 31): Automated subtle emergent misalignment research. Agents produced benign datasets (beekeeping Q&A, wrestling mentoring) that passed monitors but induced sabotage, blame-shifting, self-preservation. Improves future monitors; first step in scalable red-teaming.
 - Google DeepMind agents (Gemini 4 Argon + Antigravity): Designed, simulated, and built a physical dancing jack-o-lantern robot (12 DoF) from a single plain-English prompt with no manual CAD.
 - Collaborative AI agents for autonomous experimental research with solid-state quantum spins (multi-agent lab from question formulation to execution).
@@ -29,6 +32,7 @@ Living document of notable papers, findings, and directions. Entries are refined
 
 ## Efficiency, Diffusion & Architectures
 
+- FreeToken (arXiv:2608.16157): Edge-native MoE serving that treats GPU+CPU+host RAM as a unified platform. Bandwidth-adaptive execution enables large MoEs (35B on laptop, 284B on gaming desktop, 753B on workstation) at interactive speeds. Open source (Apache 2.0).
 - Microsoft TokenEconomizer: free tool reducing AI coding costs by up to 31% via token optimization (Microsoft + UC Berkeley).
 - TableTune: Measured, self-correcting draft-length tables for dynamic speculative decoding.
 - GAAC: Lossless KV compression for bandwidth-efficient LLM inference on personal devices.
@@ -39,6 +43,7 @@ Living document of notable papers, findings, and directions. Entries are refined
 - Ongoing low-active MoEs and on-device (Flint, Glimmer, Nemotron Bolt E4B, LFM3).
 - Unmasking policies in diffusion LMs; speculative acceptance diagnostics; KV cache management (WAKMan).
 - Clover-35B-A3B block-diffusion agents for coding/tool-use.
+- JetBrains Mellum MTP head: multi-token prediction for faster decoding.
 
 ## Multimodal, Embeddings & Generation
 
@@ -66,6 +71,7 @@ Living document of notable papers, findings, and directions. Entries are refined
 - HoloBoxing: simple recipe for humanoid boxing with 7 minutes of single-GPU training.
 - Google DeepMind PlanAssist: reduces UK planning officer assessment time by up to 58%; expanding to more councils.
 - Role-induced sponsorship bias in decision models; disparity laundering in clinical multi-agent systems.
+- Caution on alleged model leaks (e.g., Anthropic Mythos reports).
 
 ---
 
