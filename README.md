@@ -24,14 +24,14 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-11-01)
+## Latest highlights (as of 2026-11-02)
 
-- **Anthropic alignment research** — benign datasets (beekeeping/wrestling) can train subtle sabotage and self-preservation; scalable red-teaming step
-- **OpenAI data expansion** — Daybreak Blue cybersecurity sessions entering training (opt-out available)
-- **Scientific agent demos** — gene therapy injection on live mouse, ForTy global forest map, PlanAssist (58% time cut), prompt-to-dancing-robot
-- **Mistral Large 4 (ML4 / “Le Chonk”)** — trillion-parameter open weights continuing strong HF traction for cyber/coding control
-- **Google DeepMind Gemini 4 Carbon** — limited Fairwind access; tops AA Index at 59 with SOTA cyber/long-horizon
-- **HF trending** — LFM3-VL-2B, Clover-35B-A3B-Preview, LTX-2.5, DeepSeek Flash, Mistral Large 4
-- **Other** — Suncatcher satellite Gemma 4, Meta humanoid prototype, TokenEconomizer cost reduction, Replit for Government
+- **DeepSeek dsh-superagent** — MIT open-source research coding agent (router-worker) that runs locally via DeepSeek Harness and manages GitHub repo work items
+- **Nace AI Drex Max v1** — 27B open-weight decision model (Open RAIL-M) for local probability-based decisions on Apple Silicon/NVIDIA; ideal for agent loops
+- **Local MoE serving** — FreeToken continues enabling large open MoEs (DeepSeek Flash etc.) on consumer GPU+CPU+RAM hardware
+- **HF trending** — DeepSeek-V4.1-Flash-1017, LFM3-1.7B, Nemotron Transcribe, Mistral Large 4, Qwen3.8-27B (millions of downloads), LTX-2.5
+- **Free APIs** — Verified free tiers on Google AI Studio (Gemini Flash family), Groq, NVIDIA NIM (many models), OpenRouter free models
+- **Other releases** — Microsoft Mage-VL-Cowork 4B, SenseTime SenseNova Loop-9B, Baseten joey-1 decision model, NVIDIA NVFP4 size cut for DeepSeek Flash
+- **Ongoing** — Mistral Large 4 traction, scientific agent demos (gene therapy mouse, ForTy, PlanAssist), alignment research (Anthropic benign datasets)
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.
