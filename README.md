@@ -24,14 +24,14 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-11-02)
+## Latest highlights (as of 2026-11-03)
 
-- **DeepSeek dsh-superagent** — MIT open-source research coding agent (router-worker) that runs locally via DeepSeek Harness and manages GitHub repo work items
-- **Nace AI Drex Max v1** — 27B open-weight decision model (Open RAIL-M) for local probability-based decisions on Apple Silicon/NVIDIA; ideal for agent loops
-- **Local MoE serving** — FreeToken continues enabling large open MoEs (DeepSeek Flash etc.) on consumer GPU+CPU+RAM hardware
-- **HF trending** — DeepSeek-V4.1-Flash-1017, LFM3-1.7B, Nemotron Transcribe, Mistral Large 4, Qwen3.8-27B (millions of downloads), LTX-2.5
-- **Free APIs** — Verified free tiers on Google AI Studio (Gemini Flash family), Groq, NVIDIA NIM (many models), OpenRouter free models
-- **Other releases** — Microsoft Mage-VL-Cowork 4B, SenseTime SenseNova Loop-9B, Baseten joey-1 decision model, NVIDIA NVFP4 size cut for DeepSeek Flash
-- **Ongoing** — Mistral Large 4 traction, scientific agent demos (gene therapy mouse, ForTy, PlanAssist), alignment research (Anthropic benign datasets)
+- **Weight-Space Programming** — MIT CSAIL showed GPT-6 Astra can directly read and edit neural network weights (0.016% of Qwen3.5-0.8B), boosting MATH-500 from 7.9% to 48.1% with no gradients or training.
+- **Hydrogen-1.0** — Deep Principle 753B open-weight (MIT) scientific MoE post-trained from GLM-5.3 on lab data; claims edge over GPT-6 Astra on FrontierScience-Research.
+- **LongCat-2.5** — Meituan 1.6T native multimodal agentic model (API live, weights coming soon) for long-horizon coding and visual tasks.
+- **Mistral Large 4 (Le Chonk)** — Continues strong HF traction as top open coding-agent model with efficiency gains.
+- **HF trending** — DeepSeek-V4.1-Flash-1017, Qwen3.8-27B (millions of downloads), LFM3, Nemotron, LTX-2.5, Mistral Large 4.
+- **Free APIs** — Verified free tiers on Google AI Studio (Gemini Flash family), Groq, NVIDIA NIM (many models), OpenRouter free models, Cloudflare.
+- **Ongoing** — Local MoE serving (FreeToken), decision models (Drex Max), coding agents (dsh-superagent), scientific and agent research.
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.

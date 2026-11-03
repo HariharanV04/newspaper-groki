@@ -2,7 +2,7 @@
 
 Living reference for free/low-cost GPUs, hosting, inference stacks, and developer tooling. Quotas and offerings change; update entries in place.
 
-**Last refined:** 2026-11-02
+**Last refined:** 2026-11-03
 
 ---
 
@@ -30,6 +30,8 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - **Nace Drex Max v1** — Open 27B decision model for local agent decisions (probabilities over options). GGUF/llama.cpp/Ollama support; Apple Silicon and NVIDIA friendly.
 - **Baseten joey-1** — Tiny 2B decision model (MIT on HF) for calibrated labels at very low API cost.
 - **Mistral Large 4** — Open weights on HF; API available. Fine-tuning via TRL (LoRA on high-end nodes). Full inference requires significant multi-node resources; quantized/serving recipes emerging.
+- **Hydrogen-1.0** — Open MIT weights (gated on HF); scientific MoE runnable on multi-GPU (tested on 8 GPUs with SGLang). Quantized variants for Blackwell/AMD.
+- **LongCat-2.5** — API available now (low limited-time pricing); weights coming soon for self-hosting.
 - **Pika H3 Flex** — Open weights + Diffusers/ComfyUI support for local video+audio gen. High VRAM needs (H100-class for full). API for lower-cost hosted use.
 - **LFM3 local stacks** — GGUF/MLX/ONNX/FP8 for LiquidAI LFM3 family; single-GPU fine-tune + edge inference (llama.cpp, MLX, vLLM, Transformers). High recent HF activity.
 - **DeepInfer** — DeepSeek production stack; high efficiency; dual hardware. NVFP4 variants for reduced download/size on Blackwell.
@@ -62,11 +64,11 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 
 - Experimenting with local coding agents (dsh-superagent) and decision layers (Drex Max, joey-1) for efficient agent workflows
 - Running large MoEs locally via FreeToken on consumer hardware (GPU+CPU+RAM pooling)
-- Experimenting with large open-weight models for self-hosted control (Mistral Large 4 for coding/cyber)
+- Experimenting with large open-weight models for self-hosted control (Mistral Large 4 for coding/cyber, Hydrogen-1.0 for science)
 - Testing open video generation stacks (Pika H3 Flex via Diffusers/ComfyUI) and trending HF models (DeepSeek Flash, LFM3, Qwen)
 - Experimenting with LFM3 family for multimodal local agents and single-GPU specialization
 - Experimenting with multi-agent scaling via open Agensh
-- Running new local models (LFM3, Flint, Nemotron Bolt E4B, Drex Max) and specialized scientific models (Carbon-X, Rosalind biology)
+- Running new local models (LFM3, Flint, Nemotron Bolt E4B, Drex Max) and specialized scientific models (Carbon-X, Rosalind biology, Hydrogen-1.0)
 - Evaluating MiniMax M3.1 Flash open weights and preparing for Kimi K3.1 Pro open weights (Nov 4); testing Nanbeige4.3-33B on multi-GPU or quant
 - Serving efficient MoEs with open stacks; speech research (Dessa, Nemotron Transcribe)
 - Leveraging free tiers, NIM, Run:ai self-host, non-NVIDIA options; cost optimization with TokenEconomizer

@@ -2,11 +2,26 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-11-02
+**Last refined:** 2026-11-03
 
 ---
 
 ## Frontier / Flagship & Large Open
+
+### Weight-Space Programming / GPT-6 Astra weight editing (MIT CSAIL, Nov 2, 2026)
+- **Type:** Research demonstration (not a new model release). GPT-6 Astra used as editor of existing networks.
+- **Role:** Shows frontier LLMs can inspect raw weights, diagnose failure modes (e.g., reasoning loops), and directly rewrite small percentages of parameters without gradients or training. Also identified trained behaviors from weights alone and wrote small policy networks from scratch.
+- **Status:** Public report + full logs (MIT CSAIL). Key result: 0.016% edit to Qwen3.5-0.8B raised MATH-500 7.9%→48.1%, GSM8K 13.8%→67.1%, IFEval 21%→62.3%. Community interest high; reproduction efforts noted.
+
+### Hydrogen-1.0 (Deep Principle, Nov 2, 2026)
+- **Type:** 753B open-weight scientific MoE (MIT, ~40B active, 1M context). Post-trained from Z.ai GLM-5.3 on domain lab data (chemistry, materials science, life sciences) + discovery trajectories.
+- **Role:** Scientific research assistant for formulating questions, designing experiments, and discovery in specialized domains. Self-reported edge over GPT-6 Astra on FrontierScience-Research (38.3% vs 33.3%).
+- **Status:** Weights on Hugging Face (gated) and ModelScope; NVFP4/MXFP4 variants. API via NeuroSpark and Mira app. Full training data/recipe not released. Independent verification pending.
+
+### LongCat-2.5 (Meituan, Nov 2, 2026)
+- **Type:** Native multimodal 1.6T total / ~48B active MoE, 1M context.
+- **Role:** Long-horizon agentic tasks (complex coding across codebases, full project builds, visual coding, creative design, 3D). Trained with large-scale agentic RL on long trajectories; optimized for Chinese domestic accelerators.
+- **Status:** API live (OpenAI/Anthropic-compatible endpoints, limited-time low pricing ~$0.30/$1.20 per M tokens). Web chat available. GitHub and Hugging Face weights listed as coming soon. Strong self-reported scores on Terminal-Bench variants, BrowseComp, MCP Atlas, AutomationBench, etc.
 
 ### DeepSeek dsh-superagent v0.1.0 (open-sourced Nov 1, 2026)
 - **Type:** MIT-licensed research-prototype coding agent (TypeScript bundle for DeepSeek Harness).
@@ -33,7 +48,7 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Role:** Calibrated probability outputs for labels/decisions. Extremely low cost ($0.01/1M input on Baseten).
 - **Status:** Weights on Hugging Face. Complements larger decision models like Drex Max.
 
-### Mistral Large 4 (ML4 / “Le Chonk”) (weights Oct 29, 2026; ongoing traction Nov 2)
+### Mistral Large 4 (ML4 / “Le Chonk”) (weights Oct 29, 2026; ongoing traction Nov 3)
 - **Type:** Trillion-parameter open-weight flagship (Mistral). Weights on Hugging Face + API.
 - **Role:** Cybersecurity defense, advanced coding and agentic tasks. Claims ~47% fewer tokens than GLM-5.3 with comparable performance; improved Terminal-Bench and tops open models on Coding Agent Index (vendor). Enables self-hosted control.
 - **Status:** Open weights released. Fine-tuning support in TRL (LoRA on single high-end node). Dual-use acknowledged; continues high HF activity. Part of new multimodal generation with more models planned.
