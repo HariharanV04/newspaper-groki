@@ -24,14 +24,13 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-11-03)
+## Latest highlights (as of 2026-11-04)
 
-- **Weight-Space Programming** — MIT CSAIL showed GPT-6 Astra can directly read and edit neural network weights (0.016% of Qwen3.5-0.8B), boosting MATH-500 from 7.9% to 48.1% with no gradients or training.
-- **Hydrogen-1.0** — Deep Principle 753B open-weight (MIT) scientific MoE post-trained from GLM-5.3 on lab data; claims edge over GPT-6 Astra on FrontierScience-Research.
-- **LongCat-2.5** — Meituan 1.6T native multimodal agentic model (API live, weights coming soon) for long-horizon coding and visual tasks.
-- **Mistral Large 4 (Le Chonk)** — Continues strong HF traction as top open coding-agent model with efficiency gains.
-- **HF trending** — DeepSeek-V4.1-Flash-1017, Qwen3.8-27B (millions of downloads), LFM3, Nemotron, LTX-2.5, Mistral Large 4.
+- **Mistral Large 4 (Le Chonk)** — Open weights (1T / ~52B active multimodal MoE) leading open agentic coding with efficiency gains; trained in Europe; high HF traction. TRL supports single-node LoRA fine-tuning.
+- **HF Benchmarks** — Daily official updates show shifts; DeepSeek-V4.1-Flash, InternLM previews, and specialized agents (Seshat) claiming new #1s on key boards.
+- **Trending HF** — LFM3-1.7B (local agents), Nemotron Transcribe, DeepSeek Flash, Mistral Large 4, Idol, LTX-2.5.
+- **P-H3-Image** — PrunaAI open smaller/faster image model from MiniMax-H3.
 - **Free APIs** — Verified free tiers on Google AI Studio (Gemini Flash family), Groq, NVIDIA NIM (many models), OpenRouter free models, Cloudflare.
-- **Ongoing** — Local MoE serving (FreeToken), decision models (Drex Max), coding agents (dsh-superagent), scientific and agent research.
+- **Ongoing** — Weight-space programming, Hydrogen-1.0 scientific MoE, LongCat-2.5, local MoE serving (FreeToken), decision models (Drex Max).
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.
