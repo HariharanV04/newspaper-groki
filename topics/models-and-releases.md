@@ -2,16 +2,21 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-11-03
+**Last refined:** 2026-11-04
 
 ---
 
 ## Frontier / Flagship & Large Open
 
+### Mistral Large 4 (ML4 / “Le Chonk”) (weights Oct 29, 2026; high traction Nov 4)
+- **Type:** Trillion-parameter open-weight flagship (Mistral). ~1T total / 49-52B active multimodal MoE (text+image), 1M context. Weights on Hugging Face + API.
+- **Role:** Cybersecurity defense, advanced coding and agentic tasks. Claims ~47% fewer tokens than GLM-5.3 with comparable performance; improved Terminal-Bench 4.0 to ~41%. Tops open models on Coding Agent Index (vendor). Enables self-hosted control. Continued RL post-preview; trained on 3,800 Nvidia Grace Blackwell GPUs in Europe.
+- **Status:** Open weights released. Fine-tuning support in TRL 1.17 (LoRA on single 8xB300 node keeping FP8). Dual-use acknowledged; continues high HF activity. Part of new multimodal generation with more models planned.
+
 ### Weight-Space Programming / GPT-6 Astra weight editing (MIT CSAIL, Nov 2, 2026)
 - **Type:** Research demonstration (not a new model release). GPT-6 Astra used as editor of existing networks.
 - **Role:** Shows frontier LLMs can inspect raw weights, diagnose failure modes (e.g., reasoning loops), and directly rewrite small percentages of parameters without gradients or training. Also identified trained behaviors from weights alone and wrote small policy networks from scratch.
-- **Status:** Public report + full logs (MIT CSAIL). Key result: 0.016% edit to Qwen3.5-0.8B raised MATH-500 7.9%→48.1%, GSM8K 13.8%→67.1%, IFEval 21%→62.3%. Community interest high; reproduction efforts noted.
+- **Status:** Public report + full logs (MIT CSAIL). Key result: 0.016% edit to Qwen3.5-0.8B raised MATH-500 7.9%→48.1%, GSM8K 13.8%→67.1%, IFEval 21%→62.3%. Community interest high; reproduction efforts noted. Related HF demos circulating.
 
 ### Hydrogen-1.0 (Deep Principle, Nov 2, 2026)
 - **Type:** 753B open-weight scientific MoE (MIT, ~40B active, 1M context). Post-trained from Z.ai GLM-5.3 on domain lab data (chemistry, materials science, life sciences) + discovery trajectories.
@@ -48,25 +53,20 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Role:** Calibrated probability outputs for labels/decisions. Extremely low cost ($0.01/1M input on Baseten).
 - **Status:** Weights on Hugging Face. Complements larger decision models like Drex Max.
 
-### Mistral Large 4 (ML4 / “Le Chonk”) (weights Oct 29, 2026; ongoing traction Nov 3)
-- **Type:** Trillion-parameter open-weight flagship (Mistral). Weights on Hugging Face + API.
-- **Role:** Cybersecurity defense, advanced coding and agentic tasks. Claims ~47% fewer tokens than GLM-5.3 with comparable performance; improved Terminal-Bench and tops open models on Coding Agent Index (vendor). Enables self-hosted control.
-- **Status:** Open weights released. Fine-tuning support in TRL (LoRA on single high-end node). Dual-use acknowledged; continues high HF activity. Part of new multimodal generation with more models planned.
-
 ### Google DeepMind Gemini 4 Carbon (Oct 28, 2026; limited access ongoing)
 - **Type:** Closed frontier model, successor to Gemini 4 Argon. Google’s strongest to date.
 - **Role:** Long-horizon agentic coding, cybersecurity defense (vulnerability finding/patching), multi-day autonomous workflows. Tops AA Intelligence Index v5.0 at 59. Strong on SEC-bench, ExploitGym, CWE-bench, Terminal-Bench, secure code gen.
 - **Status:** Announced; limited access to cyber defenders via Fairwind Program. Broader rollout later. Intro pricing $2/$10 per M tokens (later $4/$20). No open weights. Engaged in US gov pre-release testing.
 
-### NVIDIA Nemotron 3.5 Transcribe (ongoing)
-- **Type:** Open-weight speech model for intelligent transcription.
+### NVIDIA Nemotron 3.5 Transcribe (ongoing, high HF activity Nov 4)
+- **Type:** Open-weight speech model for intelligent transcription (30B-A4B).
 - **Role:** Multilingual (40 langs) transcription, translation, speaker diarization/attribution, audio Q&A. Strong on open ASR leaderboards.
-- **Status:** Weights on HF; active relevance for speech agents. Free NIM endpoints available.
+- **Status:** Weights on HF; active relevance for speech agents. Free NIM endpoints available. Trending.
 
-### Liquid AI LFM3 family (Oct 27, 2026; trending)
+### Liquid AI LFM3 family (Oct 27, 2026; top trending Nov 4)
 - **Type:** Six open-weight ~2B models from shared LFM3-1.7B-Base backbone. Text (1.73B, 256K ctx), VL (video), Audio (speech in/out), Omni, and two decision models (typed outputs). Tri-hybrid architecture.
 - **Role:** Local/edge agents, specialized fine-tuning, multimodal on-device. ~1 GB at 4-bit. Single-GPU fine-tune.
-- **Status:** Weights + GGUF/MLX/ONNX/FP8 on HF. High activity (LFM3-1.7B, VL variants). Liquid reports strong agentic/local performance (self-reported). LFM Open License. WebGPU demos noted.
+- **Status:** Weights + GGUF/MLX/ONNX/FP8 on HF. High activity (LFM3-1.7B top trending). Liquid reports strong agentic/local performance (self-reported). LFM Open License. WebGPU demos noted.
 
 ### OpenAI GPT-6.1 Terra (Oct 26, 2026)
 - **Type:** Mid-tier closed model (1.05M context) optimized for visual reasoning and computer use.
@@ -126,13 +126,14 @@ Living document. New entries go at the top. Older entries are refined or marked 
 ### DeepSeek DeepInfer + V4.1-Flash (Open-source inference Oct 20; model Oct 17)
 - **Type:** Production inference stack (DeepInfer, Apache 2.0) for DeepSeek-V4.1-Flash (multimodal MoE, 1M context, MIT weights).
 - **Role:** High-throughput, low-latency serving. Dual NVIDIA / Huawei.
-- **Status:** Framework on GitHub; model live. Ongoing relevance and high downloads. NVFP4 size-optimized variants for Blackwell.
+- **Status:** Framework on GitHub; model live. Ongoing relevance and high downloads. NVFP4 size-optimized variants for Blackwell. Top HF activity Nov 4.
 
 ### Other recent
 - Qwen3.8 variants (esp. 27B high downloads), DeepSeek Flash updates, Kling 4.0, Canva image model, OlmoEarth, various decision and embedding models continue as notable.
 - Unlimited-OCR-2 (Baidu), Qwen3.5-4B-3D-Coder, Cosmic Lightning 2B, LTX-2.5 video, SAM3, etc.
 - OpenAI GPT-Rosalind-6 (biology model on GPT-6 Astra weights, recent report).
 - JetBrains Mellum2.1 with MTP head for speculative decoding speedups.
+- PrunaAI P-H3-Image: smaller/faster open image model derived from MiniMax-H3.
 
 ## Other / Infrastructure
 
@@ -143,7 +144,7 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - Nemotron small models for local agents
 - LFM3 family for multimodal edge
 - Transformers ongoing support
-- TRL, Diffusers updates (FLUX.3 Image Klein, Pika H3 Flex)
+- TRL, Diffusers updates (FLUX.3 Image Klein, Pika H3 Flex, multi-teacher distillation)
 - Cisco Project Quarry (agent behavior detection, open-sourced Oct 28)
 - POCKET-Darwin-180B CPU GGUF for high-end no-GPU inference
 - FreeToken edge MoE serving runtime
