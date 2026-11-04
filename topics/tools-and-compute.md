@@ -2,7 +2,7 @@
 
 Living reference for free/low-cost GPUs, hosting, inference stacks, and developer tooling. Quotas and offerings change; update entries in place.
 
-**Last refined:** 2026-11-03
+**Last refined:** 2026-11-04
 
 ---
 
@@ -21,7 +21,7 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 | Requesty / AIHubMix / other aggregators | Free model routes | Card-free free plans with daily quotas |
 | Modal / Lightning AI | Free monthly compute / studios | Check current balances (e.g. Modal $30/mo) |
 | NVIDIA Run:ai (open-sourced) | Full GPU orchestration (Apache 2.0) | Self-host; supply own K8s/GPUs |
-| Startup programs | Credit grants | Vary (e.g. Inference.net up to $10k) |
+| Startup programs | Credit grants | Vary (e.g. Inference.net up to $10k, Hostkey GPU grants) |
 | RunPod / Vast.ai | Cheap spot GPUs | Paid but low $/hr |
 
 ## Hosting & Serving
@@ -29,7 +29,7 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - **DeepSeek dsh-superagent + Harness** — Local MIT coding agent that watches a GitHub repo and executes requests in isolated workers. Runs on user machine.
 - **Nace Drex Max v1** — Open 27B decision model for local agent decisions (probabilities over options). GGUF/llama.cpp/Ollama support; Apple Silicon and NVIDIA friendly.
 - **Baseten joey-1** — Tiny 2B decision model (MIT on HF) for calibrated labels at very low API cost.
-- **Mistral Large 4** — Open weights on HF; API available. Fine-tuning via TRL (LoRA on high-end nodes). Full inference requires significant multi-node resources; quantized/serving recipes emerging.
+- **Mistral Large 4** — Open weights on HF; API available. Fine-tuning via TRL 1.17 (LoRA on single high-end node). Full inference requires significant multi-node resources; quantized/serving recipes emerging.
 - **Hydrogen-1.0** — Open MIT weights (gated on HF); scientific MoE runnable on multi-GPU (tested on 8 GPUs with SGLang). Quantized variants for Blackwell/AMD.
 - **LongCat-2.5** — API available now (low limited-time pricing); weights coming soon for self-hosting.
 - **Pika H3 Flex** — Open weights + Diffusers/ComfyUI support for local video+audio gen. High VRAM needs (H100-class for full). API for lower-cost hosted use.
@@ -39,11 +39,12 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary for large open MoEs and dense models (Nanbeige TP=4, Beam, Muse, DeepSeek, MiniMax, Nemotron, upcoming Kimi, Mistral Large 4)
 - **Ollama / Unsloth / llama.cpp / MLX** — excellent for local small models like LFM3, Nemotron Bolt E4B, Flint, Drex Max quantizations, and emerging Nanbeige quantizations (e.g. NVFP4). CPU GGUF options like POCKET-Darwin-180B.
 - **Hugging Face Spaces + Hub + Inference** — models, ZeroGPU, Carbon-X demos, TorchNeuron
-- **Diffusers + ComfyUI** — image/video pipelines (FLUX.3 Image Klein with layout control, Pika H3 Flex, LTX-2.5, Kandinsky 6 etc.)
+- **Diffusers + ComfyUI** — image/video pipelines (FLUX.3 Image Klein with layout control, Pika H3 Flex, LTX-2.5, Kandinsky 6, P-H3-Image etc.)
 - Voice agent SDKs (Voxtral 3 + LiveKit); Dessa research preview waitlist
 - Specialized: Carbon-X for DNA/genomics workflows; Liquid API/Playground for LFM3
 - Replit for Government: access to intelligence and custom tool-building for public servants.
 - Coding agents with free tiers: GitHub Copilot Free, opencode, Kilo Code, etc.
+- Cloudflare Pages + Workers for free full-stack AI app hosting (unlimited bandwidth options).
 
 ## Agent & Developer Tooling
 
@@ -56,7 +57,7 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - Agent harnesses for Flash models (MiniMax, DeepSeek) and new teachers (Nanbeige); self-hosted options for Mistral Large 4 cyber/coding use cases
 - MCP, tool-calling, memory systems
 - On-device stacks (LFM3, Flint, Muse Glimmer, Bolt E4B, FreeToken for larger MoEs)
-- TRL for post-training (incl. Mistral Large 4 examples); accelerator backends (TorchNeuron, TorchTPU)
+- TRL for post-training (incl. Mistral Large 4 single-node LoRA, multi-teacher distillation); accelerator backends (TorchNeuron, TorchTPU)
 - Microsoft TokenEconomizer: free tool cutting AI coding token costs by up to 31%
 - DeepMind agent demos (prompt-to-physical robot) and scientific automation (gene therapy injection, forest mapping)
 
@@ -65,7 +66,7 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - Experimenting with local coding agents (dsh-superagent) and decision layers (Drex Max, joey-1) for efficient agent workflows
 - Running large MoEs locally via FreeToken on consumer hardware (GPU+CPU+RAM pooling)
 - Experimenting with large open-weight models for self-hosted control (Mistral Large 4 for coding/cyber, Hydrogen-1.0 for science)
-- Testing open video generation stacks (Pika H3 Flex via Diffusers/ComfyUI) and trending HF models (DeepSeek Flash, LFM3, Qwen)
+- Testing open video generation stacks (Pika H3 Flex, P-H3-Image via Diffusers/ComfyUI) and trending HF models (DeepSeek Flash, LFM3, Qwen)
 - Experimenting with LFM3 family for multimodal local agents and single-GPU specialization
 - Experimenting with multi-agent scaling via open Agensh
 - Running new local models (LFM3, Flint, Nemotron Bolt E4B, Drex Max) and specialized scientific models (Carbon-X, Rosalind biology, Hydrogen-1.0)
