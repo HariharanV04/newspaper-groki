@@ -24,13 +24,13 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-11-04)
+## Latest highlights (as of 2026-11-05)
 
-- **Mistral Large 4 (Le Chonk)** — Open weights (1T / ~52B active multimodal MoE) leading open agentic coding with efficiency gains; trained in Europe; high HF traction. TRL supports single-node LoRA fine-tuning.
-- **HF Benchmarks** — Daily official updates show shifts; DeepSeek-V4.1-Flash, InternLM previews, and specialized agents (Seshat) claiming new #1s on key boards.
-- **Trending HF** — LFM3-1.7B (local agents), Nemotron Transcribe, DeepSeek Flash, Mistral Large 4, Idol, LTX-2.5.
-- **P-H3-Image** — PrunaAI open smaller/faster image model from MiniMax-H3.
-- **Free APIs** — Verified free tiers on Google AI Studio (Gemini Flash family), Groq, NVIDIA NIM (many models), OpenRouter free models, Cloudflare.
-- **Ongoing** — Weight-space programming, Hydrogen-1.0 scientific MoE, LongCat-2.5, local MoE serving (FreeToken), decision models (Drex Max).
+- **Kimi K3.1 Pro** — Open weights released (2.8T / 104B active multimodal MoE, 1M context). Tops Agent Arena among open models; strong agentic coding and long-horizon gains.
+- **Ripple-65B Preview** — Dense 65B Apache 2.0 model from RicursiveAI; self-reported US open-weight SOTA on Terminal-Bench 2.1 (80.5) at fraction of larger model cost.
+- **OpenAI Images 2.6** — Faster generation, GIFs, SVG, new API models.
+- **Trending HF** — Nemotron Transcribe, DeepSeek Flash, Idol, Kimi K3.1 Pro, LFM3-1.7B, Mistral Large 4.
+- **Free APIs** — Stable free tiers on Gemini AI Studio, Groq, NVIDIA NIM, Cloudflare Workers AI, Colab, HF ZeroGPU, OpenRouter.
+- **Ongoing** — Mistral Large 4 efficiency leadership, llama.cpp FP8, Together inference compiler, agent research on routing and long-horizon reliability.
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.
