@@ -2,13 +2,23 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-11-04
+**Last refined:** 2026-11-05
 
 ---
 
 ## Frontier / Flagship & Large Open
 
-### Mistral Large 4 (ML4 / “Le Chonk”) (weights Oct 29, 2026; high traction Nov 4)
+### Kimi K3.1 Pro (Moonshot AI; weights released Nov 4-5, 2026)
+- **Type:** 2.8T total / 104B active multimodal MoE (text+image), 1M context, MXFP4 weights (quantization-aware training). 93 layers (69 KDA + 24 Gated DSA), 896 experts (16 active + 2 shared), MoonViT-V2 vision encoder.
+- **Role:** Frontier-class agentic coding, long-horizon tasks, 3D/CAD, finance, work/chat. Tops Agent Arena among open models (#1 open / #13 overall) on 17.5K+ real sessions (+5.1% net improvement; strong Bash reliability +7.9%, steerability, user satisfaction). Terminal-Bench 4.0 65.7% (near proprietary leaders). Cyber data filtered for open release.
+- **Status:** Open weights on Hugging Face (`moonshotai/Kimi-K3.1-Pro`). API live ($2/$10, Highspeed $4/$20). Recommended: vLLM, SGLang, TokenSpeed. Large hardware needs (multi-node). High HF activity immediately after release. License MIT-style with conditions for large commercial API users.
+
+### Ripple-65B Preview (Ricursive Intelligence, Nov 4, 2026)
+- **Type:** Dense 65B transformer (Apache 2.0), pretrained from scratch on 12T tokens, up to 1M context. Thin-and-deep architecture (80 layers, d=5120) with modernizations (SWA, gated attention, value residual from embedding, etc.). BF16, NVFP4, and base checkpoints.
+- **Role:** Agentic coding specialist. Self-reported US open-weight SOTA on Terminal-Bench 2.1 (80.5), edging much larger models (Reflection Beam 501B, Muse Spark Open 816B, etc.). Strong SWE-bench Pro Hard. Developed as general-purpose variant of proprietary chip-design model for ~$32M total cost.
+- **Status:** Weights on Hugging Face; available on Together AI, GMI Cloud, OpenRouter. Fits locally on MacBook Pro or NVIDIA DGX Spark in quantized form. High interest for efficient open coding agents.
+
+### Mistral Large 4 (ML4 / “Le Chonk”) (weights Oct 29, 2026; high traction Nov 5)
 - **Type:** Trillion-parameter open-weight flagship (Mistral). ~1T total / 49-52B active multimodal MoE (text+image), 1M context. Weights on Hugging Face + API.
 - **Role:** Cybersecurity defense, advanced coding and agentic tasks. Claims ~47% fewer tokens than GLM-5.3 with comparable performance; improved Terminal-Bench 4.0 to ~41%. Tops open models on Coding Agent Index (vendor). Enables self-hosted control. Continued RL post-preview; trained on 3,800 Nvidia Grace Blackwell GPUs in Europe.
 - **Status:** Open weights released. Fine-tuning support in TRL 1.17 (LoRA on single 8xB300 node keeping FP8). Dual-use acknowledged; continues high HF activity. Part of new multimodal generation with more models planned.
@@ -58,12 +68,12 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Role:** Long-horizon agentic coding, cybersecurity defense (vulnerability finding/patching), multi-day autonomous workflows. Tops AA Intelligence Index v5.0 at 59. Strong on SEC-bench, ExploitGym, CWE-bench, Terminal-Bench, secure code gen.
 - **Status:** Announced; limited access to cyber defenders via Fairwind Program. Broader rollout later. Intro pricing $2/$10 per M tokens (later $4/$20). No open weights. Engaged in US gov pre-release testing.
 
-### NVIDIA Nemotron 3.5 Transcribe (ongoing, high HF activity Nov 4)
+### NVIDIA Nemotron 3.5 Transcribe (ongoing, high HF activity Nov 5)
 - **Type:** Open-weight speech model for intelligent transcription (30B-A4B).
 - **Role:** Multilingual (40 langs) transcription, translation, speaker diarization/attribution, audio Q&A. Strong on open ASR leaderboards.
 - **Status:** Weights on HF; active relevance for speech agents. Free NIM endpoints available. Trending.
 
-### Liquid AI LFM3 family (Oct 27, 2026; top trending Nov 4)
+### Liquid AI LFM3 family (Oct 27, 2026; top trending Nov 5)
 - **Type:** Six open-weight ~2B models from shared LFM3-1.7B-Base backbone. Text (1.73B, 256K ctx), VL (video), Audio (speech in/out), Omni, and two decision models (typed outputs). Tri-hybrid architecture.
 - **Role:** Local/edge agents, specialized fine-tuning, multimodal on-device. ~1 GB at 4-bit. Single-GPU fine-tune.
 - **Status:** Weights + GGUF/MLX/ONNX/FP8 on HF. High activity (LFM3-1.7B top trending). Liquid reports strong agentic/local performance (self-reported). LFM Open License. WebGPU demos noted.
@@ -93,11 +103,6 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Role:** Flagship teacher for Nanbeige4.3 series; agentic coding and cowork tasks. Self-reported SOTA in ~30B open class on most agent/coding benches (e.g. Terminal-Bench 2.1 80.9, DeepSWE 65.5).
 - **Status:** Weights + Base on HF. Transformers/SGLang/vLLM support (TP=4). Thinking default on. Quantizations appearing. Ongoing traction.
 
-### Moonshot AI Kimi K3.1 Pro (Oct 23, 2026; weights due Nov 4)
-- **Type:** 2.8T total / 104B active MoE, 1M context, multimodal (text+image).
-- **Role:** Frontier-class coding, agentic, 3D/CAD, finance. Independent Intelligence Index 55 (4th). Strong Terminal-Bench and other agent scores. Cyber data filtered for open release.
-- **Status:** API live ($2/$10). Open weights due Nov 4, 2026. Highspeed variant available. Large hardware needs.
-
 ### Microsoft Agensh (open-sourced Oct 24, 2026)
 - **Type:** Decentralized multi-agent harness (MIT) for up to 1,024 self-organizing coding agents.
 - **Role:** Scales agent organizations without central orchestrator; improves ProgramBench pass rates via concurrent self-assignment, shared Git/messaging/context.
@@ -126,9 +131,12 @@ Living document. New entries go at the top. Older entries are refined or marked 
 ### DeepSeek DeepInfer + V4.1-Flash (Open-source inference Oct 20; model Oct 17)
 - **Type:** Production inference stack (DeepInfer, Apache 2.0) for DeepSeek-V4.1-Flash (multimodal MoE, 1M context, MIT weights).
 - **Role:** High-throughput, low-latency serving. Dual NVIDIA / Huawei.
-- **Status:** Framework on GitHub; model live. Ongoing relevance and high downloads. NVFP4 size-optimized variants for Blackwell. Top HF activity Nov 4.
+- **Status:** Framework on GitHub; model live. Ongoing relevance and high downloads. NVFP4 size-optimized variants for Blackwell. Top HF activity Nov 5.
 
 ### Other recent
+- OpenAI Images 2.6 (Nov 5): Faster image generation with GIFs, SVG, complexity control; new API models.
+- webAI TwIL-8B (Nov 4-5): ~8.8B reasoning model with strong self-reported MATH-500.
+- Tencent Hy4 GA: Vision + computer use added.
 - Qwen3.8 variants (esp. 27B high downloads), DeepSeek Flash updates, Kling 4.0, Canva image model, OlmoEarth, various decision and embedding models continue as notable.
 - Unlimited-OCR-2 (Baidu), Qwen3.5-4B-3D-Coder, Cosmic Lightning 2B, LTX-2.5 video, SAM3, etc.
 - OpenAI GPT-Rosalind-6 (biology model on GPT-6 Astra weights, recent report).
@@ -137,17 +145,20 @@ Living document. New entries go at the top. Older entries are refined or marked 
 
 ## Other / Infrastructure
 
-- Kimi K3.1 Pro (open weights pending Nov 4)
+- Kimi K3.1 Pro (open weights released Nov 4-5)
+- Ripple-65B Preview (dense efficient coding agent)
 - Carbon-X genomic model
 - Flint local coding
 - DeepInfer open inference
 - Nemotron small models for local agents
 - LFM3 family for multimodal edge
 - Transformers ongoing support
-- TRL, Diffusers updates (FLUX.3 Image Klein, Pika H3 Flex, multi-teacher distillation)
+- TRL, Diffusers updates (FLUX.3 Image Klein, Pika H3 Flex, multi-teacher distillation, Mistral Large 4 fine-tuning)
 - Cisco Project Quarry (agent behavior detection, open-sourced Oct 28)
 - POCKET-Darwin-180B CPU GGUF for high-end no-GPU inference
 - FreeToken edge MoE serving runtime
+- llama.cpp v0.9.0 (FP8, new architectures)
+- Together AI continuous inference optimization compiler
 
 ---
 
