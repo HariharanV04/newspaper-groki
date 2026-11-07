@@ -1,6 +1,6 @@
 # Current AI Briefing
 
-**Last updated:** 2026-11-06
+**Last updated:** 2026-11-07
 
 This file is always overwritten with the latest full snapshot. For history and refined topic tracking, see `topics/` and `archive/`.
 
@@ -8,55 +8,53 @@ This file is always overwritten with the latest full snapshot. For history and r
 
 ## Major Frontier & Open Model Releases (Past 24h focus)
 
-### New / notable in past ~24h (Nov 5-6)
-- **OpenAI GPT-6 Cyber**: Specialized cybersecurity model for authorized vulnerability research and exploit development. Scores 48.5% on ExploitGym (up from 32.1% for GPT-5.6 Cyber). Researchers used it to find 81 previously unknown high-severity Firefox vulnerabilities and develop 948 working Linux kernel exploits (including many previously unknown). Rated "Critical" under OpenAI's Preparedness Framework. Available initially to approved Daybreak Red customers via API/Codex. Pricing ~$20/$100 per M tokens. Stronger adherence to authorized scope (near-zero out-of-bounds).
-- **Google Gemini Omni 1.2 Flash**: Generally available. Extends native video clips to 15 seconds (from 10), 30% lower pricing ($0.07/s for 720p), better reference adherence. For video generation/editing.
-- **Thinking Machines Inkling 2 Small**: 594B total / 17B active MoE. Scores 31 on Artificial Analysis Intelligence Index. Apache 2.0 weights planned; runs on Tinker.
-- **Kimi K3.1 Pro (Moonshot AI)**: Open weights fully live and dominating HF trending. 2.8T total / 104B active multimodal MoE, 1M context, MXFP4. Tops open-weight on Agent Arena (#1 open, #13 overall) on 17.5K+ real long-horizon sessions (+5.1% net). Near frontier on Terminal-Bench 4.0 (~65.7). Strong Bash reliability, coding, work/chat. ~1.56TB weights; vLLM/SGLang/Huawei support. Custom license.
-- **Ripple-65B Preview (Ricursive)**: Dense 65B Apache 2.0, self-reported US open-weight SOTA on Terminal-Bench 2.1 (80.5). High interest for efficient agentic coding.
-- **Tencent Hy4**: Full release with visual understanding and computer-use (CLI + GUI, trained on Blender/CAD etc.).
+### New / notable in past ~24h (Nov 6-7)
+- **Protegrity-PII**: Open-weights 278M-parameter token-level encoder (XLM-RoBERTa) for PII detection/classification across 69 entity types (beyond names/contacts to accounts, health, credentials, biometrics, etc.). On public PII-SCOPE benchmark: 0.910 typed recall at 0.902 precision, outperforming AWS Comprehend, Microsoft Presidio, OpenAI Privacy Filter. Processes 1M characters in 0.49s (~$0.0005) on single RTX 6000 Blackwell. Self-hosted for AI pipelines; technical report on arXiv; weights on HF.
+- **Nous Research Arete-27B**: Post-trained (SFT ~52.8M tokens) Qwen3.8-27B to reinforce Western values / reduce state-aligned responses. Propaganda rate on 803-prompt eval dropped from 22% (base) to ~1% (matching Western models); fact mean improved 2.32 → 2.98/5. No significant capability regression on Hermes Bench or Terminal-Bench-2.1. Vision encoder frozen; weights, eval, training data public on HF under Apache 2.0.
+- **Kakao Kanana-2-v-decide**: 3.67B multimodal decision model (on Kanana-2-v-3b) returning probabilities over choices/yes-no/scores (not free text). Accepts text/JSON/chat + up to 10 images (20k token context). Open weights under Kanana Open License on HF.
+- **Kimi K3.1 Pro (Moonshot)**: Continues dominating HF trending (top model). 2.8T total / 104B active multimodal MoE, 1M context, MXFP4 (~1.56TB). NVIDIA free API endpoint available (build.nvidia.com, OpenAI-compatible, rate-limited). Strong agentic/coding performance.
+- **Ripple-65B Preview (Ricursive)**: Dense 65B Apache 2.0 remains of interest for efficient agentic coding; self-reported strong Terminal-Bench 2.1.
 
 ### Ongoing traction & recent
-- Mistral Large 4 continues high HF activity as efficient 1T open multimodal MoE for coding/cyber defense.
-- NVIDIA Cosmos 3 open models for interactive world simulation.
-- Baidu ERNIE 5.5 Flash Base (280B MoE / 14B active) open-source.
-- HF trending: moonshotai/Kimi-K3.1-Pro leading, LTX-2.5, Nemotron Transcribe, Mistral Large 4, Qwen3.8-27B.
-- Community: Quantized variants, GGUFs, agent fine-tunes circulating.
+- Mistral Large 4 high activity as efficient 1T open multimodal MoE.
+- HF trending: moonshotai/Kimi-K3.1-Pro leading, LTX-2.5, Qwen3.8-27B, Nemotron Transcribe, Mistral Large 4, Ripple-65B, DeepSeek variants.
+- Other: ERNIE-5.5-Flash-Base, Ling models, quantized GGUFs circulating.
 
 ## Hugging Face & Ecosystem Updates
-- Trending / high activity (Nov 5-6): moonshotai/Kimi-K3.1-Pro (top), Lightricks/LTX-2.5, nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B, mistralai/Mistral-Large-4, Qwen3.8-27B, Pika-H3-Flex.
-- Blog: SuperCLUE split leaders for evaluation, Phonon on-device TTS framework, Dharma Field Extractor (schema-first docs), Palette (IBM slide gen), Clover block-diffusion agents.
-- Ecosystem: TRL fine-tuning support for large MoEs (incl. Mistral Large 4 on single node), Transformers/Diffusers/vLLM/SGLang day-0 support for new models, llama.cpp FP8.
+- Trending / high activity: Kimi-K3.1-Pro (massive), Lightricks/LTX-2.5 (image-to-video), Qwen/Qwen3.8-27B, nvidia/Nemotron Transcribe, mistralai/Mistral-Large-4, ricursiveAI/Ripple-65B-Preview, various Qwen 3D-Coder and DeepSeek Flash GGUFs.
+- Blog (Nov 6): Harness-Specific LoRA Adapters for training compact policies inside coding-agent runtimes (with safeguards); accent-specific private speech for Open ASR Leaderboard (Egyptian/Nigerian English); SuperCLUE split leaders insight for workload-specific evals; Phonon practical framework for on-device TTS.
+- Ecosystem: Transformers 5.22.2 (hardened Jinja sandboxing + NCCL device ID fix); TRL 1.17 continues enabling LoRA on large models (e.g., Mistral Large 4 on single 8×B300); Diffusers security patches.
 
-## Research (recent arXiv / HF Papers ~Nov 5-6 focus)
-- HF Daily Papers: "Turns Matter: Advancing Streaming Video RL via Turn-Level Credit" leading; papers on native Vision-Language-Action policies, adaptive task refresh for self-improvement, efficient diffusion VLMs.
-- Agent & long-horizon: Memory compression for agents, criteria exposure in embodied self-improvement, multi-hop reasoning on knowledge graphs, self-hosted AI stacks.
-- Efficiency & infra: Low-bit inference, quantized VLMs for edge, training-free sparse attention variants.
-- Other: Scientific automation (ChemE-as-Code), anomaly detection, ML repo migration benchmarks.
+## Research (recent arXiv / HF Papers ~Nov 5-7 focus)
+- **SwarmEvolve** (arXiv:2611.08483, Brown): Latent agent swarms for evolutionary discovery/optimization. Hundreds of low-cost agents reason in latent space (KV-cache sharing, no text decoding), novelty filtering via hidden states. On 21 math/scientific computing problems: highest average score, reaches SOTA baselines' 60-min scores in median 3-8 min. With Qwen3-8B improves on AlphaEvolve (frontier LLM) solutions on several problems. Fast, low-cost program search.
+- **Scientist World** (arXiv:2611.08478): Pipeline converting papers into executable research environments/baselines for AI-Scientists. First 1,000 verified environments released. Frontier AI-Scientists surpassed human reported results 74% of the time; ~6,400 hours of traces; +158% ideation boost for small model matching frontier.
+- Other: SAVeR² reasoning-based safety alignment via verifiable rewards; ARMs adaptive red-teaming for multimodal; ReproBridge for ML reproducibility; various agent safety, evaluation, efficiency papers.
+- Themes: Agent swarms/latent reasoning for science, runnable research worlds, safety/alignment for reasoning models, evaluation frameworks.
 
 ## Free GPUs, Hosting & Developer Tools
-**Free / low-cost compute (verified ~Nov 5-6 2026):**
-- Google Colab free tier, Kaggle Notebooks (~30 GPU-h/week T4x2/P100), Hugging Face ZeroGPU (shared Blackwell for Spaces).
-- NVIDIA NIM (build.nvidia.com): Free endpoints for many open models (Nemotron, GLM, DeepSeek, etc.).
-- Groq free tier, Google AI Studio / Gemini free (Flash family + Omni), Cloudflare Workers AI, SambaNova, OpenRouter free models, Modal ($30/mo free + startup credits).
-- Local: FreeToken (GPU+CPU+RAM pooling for large MoEs), Ollama, llama.cpp (FP8), MLX, vLLM/SGLang.
-- Coding agents free tiers: GitHub Copilot Free, Cline, Kilo Code, opencode, Google Antigravity, etc.
-- Startup credits: Modal up to $25k, various cloud/AI platforms.
+**Free / low-cost compute (as of Nov 7 2026):**
+- Kaggle: ~30 GPU hours/week (T4x2 or P100, 12h sessions).
+- Google Colab free: limited GPU access, 12h max.
+- Lightning AI: credits (~75h T4 or similar).
+- Hugging Face ZeroGPU: shared RTX Pro 6000 Blackwell, ~5 min/day for Spaces demos.
+- Modal: $30 free compute/month + startup credits (up to higher).
+- NVIDIA NIM free endpoints (including Kimi K3.1 Pro), Groq, Google AI Studio, OpenRouter free models, Cloudflare Workers AI.
+- Local: Ollama, llama.cpp (incl. FP8/GGUF), vLLM/SGLang, MLX, FreeToken for MoE pooling.
+- Startup/research credits: NVIDIA Inception, Modal, Nebius, cloud trials (GCP/Azure).
 
 **Hosting & tools:**
-- Open weights of Kimi K3.1 Pro (massive), Ripple-65B, Mistral Large 4 available for self-hosting or low-cost endpoints. Multi-node or heavy quant for largest.
-- Video: Gemini Omni 1.2 Flash API, Pika H3 Flex, LTX-2.5 open weights + Diffusers/ComfyUI.
-- Coding agents: Cline (top open), Cursor, Claude Code, OpenAI Codex, Google Antigravity trending.
-- Inference optimization: Together compiler, llama.cpp FP8, TRL LoRA for 1T models.
-- Cloudflare Pages + Workers for free AI app hosting.
+- Open weights: Kimi K3.1 Pro (heavy), Arete-27B (easy 27B), Protegrity-PII (tiny), Ripple-65B, Mistral Large 4 available for self-host or endpoints.
+- Coding agents trending: Claude Code (high merge rates), Cursor, OpenAI Codex, GitHub Copilot, Google Antigravity, Cline (open), Devin.
+- Inference: Day-0 support in Transformers/vLLM/SGLang; TRL for fine-tuning large models.
+- Video/image: LTX-2.5, Flux.3, Pika H3 Flex, Gemini Omni.
 
 ## Trending Themes
-- Open-weight frontier agents closing gaps (Kimi K3.1 Pro dominating HF and Agent Arena; Ripple-65B efficient dense coding).
-- Specialized closed cyber models (GPT-6 Cyber for authorized vuln research) with strong alignment to scope.
-- Video generation advancing (longer clips, lower cost with Omni 1.2 Flash).
-- Accessible free/local inference and coding agents keeping capabilities open to developers.
-- Research on agent memory, self-improvement, efficient inference, and evaluation frameworks.
-- Inference stacks (vLLM/SGLang day-0, TRL) reducing barriers to large open models.
+- Open-weight giants (Kimi K3.1 Pro) + targeted alignment fine-tunes (Arete-27B de-biasing Chinese base models).
+- Lightweight specialized models (Protegrity-PII for privacy in AI pipelines).
+- Agent research advancing: latent swarms for discovery (SwarmEvolve), runnable scientific environments (Scientist World).
+- Accessible free/local compute and coding agents democratizing capabilities.
+- HF ecosystem maturing with security patches, LoRA for 1T models, decision models.
+- Evaluation focus: workload-specific, accent coverage, safety for reasoning/agents.
 
 ---
-*Always verify latest benchmarks, pricing, VRAM needs, licenses, and availability on official sources (HF model cards, vendor blogs, arXiv, GitHub). Vendor-reported scores are not independent. Caution on unauthenticated claims and gated releases. For cyber models, access is heavily restricted to authorized users.*
+*Always verify latest benchmarks, pricing, VRAM needs, licenses, and availability on official sources (HF model cards, vendor blogs, arXiv, GitHub). Vendor-reported scores are not independent. Caution on unauthenticated claims and gated releases. For cyber/specialized models, access is often restricted.*
