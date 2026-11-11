@@ -2,11 +2,31 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-11-06
+**Last refined:** 2026-11-11
 
 ---
 
 ## Frontier / Flagship & Large Open
+
+### Anthropic Claude Fable 5.2 & Mythos 5.2 (Nov 9, 2026)
+- **Type:** Closed frontier models (same underlying model). Fable with strong cyber/bio safeguards; Mythos with fewer safeguards for vetted programs.
+- **Role:** Hard technical work — complex coding, scientific research, long-horizon agentic tasks. Tops AA Intelligence Index (65 max). FrontierSWE v2 69.9%, Terminal-Bench-Science 0.1 74.6%, strong OSWorld and coding. Pre-release: 1,000 agents formalized Fermat’s Last Theorem in 30h; designed three working electronic devices; solved open black-hole physics problems.
+- **Status:** Generally available (Fable). $8 input / $40 output per M tokens (down from 5.1). ~30% faster. Optional 2.5x fast mode at double price. 1M context, 128K max output. On Anthropic API, AWS, Google Cloud, Microsoft Foundry. Mythos limited to Life Sciences / Cyber Verification programs.
+
+### Google Gemini 4 Carbon (announced Oct 28; generally available Nov 10, 2026)
+- **Type:** Closed frontier model (Gemini 4 series strongest). 
+- **Role:** Long-horizon agentic coding, cybersecurity defense, multi-day workflows. Competitive with Fable 5.2 (slightly trails on most published coding/science benches; leads some business workflows). AlphaProof Code agents formally verified Signal protocol security properties on real AArch64 machine code.
+- **Status:** Paid Gemini API, AI Ultra, business. Intro pricing $2/$10 per M tokens through Nov 30, then $4/$20. 1M context. No open weights. Previously Fairwind cyber program only.
+
+### Meta Muse Ember (Nov 9, 2026)
+- **Type:** Small closed multimodal model for agent subtasks.
+- **Role:** High-volume tool calling, coding subtasks, request routing, information extraction, long-document parsing. Native text/image/audio/video. 1M context.
+- **Status:** API. $0.10 input / $0.50 output per M tokens (higher above 200K). Matches Haiku/Luna price tier. Strong Terminal-Bench 4.0 vs Haiku (vendor).
+
+### Meituan LongCat-2.5 (API earlier; full weights Nov 9, 2026 under MIT)
+- **Type:** Native multimodal 1.6T total / ~48B active MoE, 1M context.
+- **Role:** Long-horizon agentic coding, visual tasks, full project builds. Strong self-reported Terminal-Bench and agent scores. Trained with large-scale agentic RL; optimized for Chinese domestic accelerators.
+- **Status:** Full weights on Hugging Face (MIT). API available. Multimodal (screenshots/video). No major third-party inference hosts yet.
 
 ### OpenAI GPT-6 Cyber (released Nov 5, 2026)
 - **Type:** Specialized closed cybersecurity model (variant of GPT-6 Astra lineage).
@@ -48,10 +68,7 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Role:** Scientific research assistant for formulating questions, designing experiments, and discovery in specialized domains. Self-reported edge over GPT-6 Astra on FrontierScience-Research (38.3% vs 33.3%).
 - **Status:** Weights on Hugging Face (gated) and ModelScope; NVFP4/MXFP4 variants. API via NeuroSpark and Mira app. Full training data/recipe not released. Independent verification pending.
 
-### LongCat-2.5 (Meituan, Nov 2, 2026)
-- **Type:** Native multimodal 1.6T total / ~48B active MoE, 1M context.
-- **Role:** Long-horizon agentic tasks (complex coding across codebases, full project builds, visual coding, creative design, 3D). Trained with large-scale agentic RL on long trajectories; optimized for Chinese domestic accelerators.
-- **Status:** API live (OpenAI/Anthropic-compatible endpoints, limited-time low pricing ~$0.30/$1.20 per M tokens). Web chat available. GitHub and Hugging Face weights listed as coming soon. Strong self-reported scores on Terminal-Bench variants, BrowseComp, MCP Atlas, AutomationBench, etc.
+### LongCat-2.5 (Meituan, Nov 2, 2026) — see updated entry above for weights release.
 
 ### DeepSeek dsh-superagent v0.1.0 (open-sourced Nov 1, 2026)
 - **Type:** MIT-licensed research-prototype coding agent (TypeScript bundle for DeepSeek Harness).
@@ -77,11 +94,6 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Type:** 2B decision model post-trained from Qwen3.5-2B (MIT).
 - **Role:** Calibrated probability outputs for labels/decisions. Extremely low cost ($0.01/1M input on Baseten).
 - **Status:** Weights on Hugging Face. Complements larger decision models like Drex Max.
-
-### Google DeepMind Gemini 4 Carbon (Oct 28, 2026; limited access ongoing)
-- **Type:** Closed frontier model, successor to Gemini 4 Argon. Google’s strongest to date.
-- **Role:** Long-horizon agentic coding, cybersecurity defense (vulnerability finding/patching), multi-day autonomous workflows. Tops AA Intelligence Index v5.0 at 59. Strong on SEC-bench, ExploitGym, CWE-bench, Terminal-Bench, secure code gen.
-- **Status:** Announced; limited access to cyber defenders via Fairwind Program. Broader rollout later. Intro pricing $2/$10 per M tokens (later $4/$20). No open weights. Engaged in US gov pre-release testing.
 
 ### NVIDIA Nemotron 3.5 Transcribe (ongoing, high HF activity Nov 6)
 - **Type:** Open-weight speech model for intelligent transcription (30B-A4B).
@@ -149,6 +161,9 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Status:** Framework on GitHub; model live. Ongoing relevance and high downloads. NVFP4 size-optimized variants for Blackwell. Top HF activity earlier Nov.
 
 ### Other recent
+- Baidu ERNIE-5.5-Flash-Preview and ERNIE-Light-DT-1.0 listed on OpenRouter (Nov 10-11).
+- xAI Grok 4.8 finished pre-training (stack rewritten in C) and entered RL.
+- NVIDIA GR00T 2 open world-action robotics model (Cosmos-based).
 - Tencent Hy4 (Nov): Vision understanding + computer use (CLI/GUI).
 - OpenAI Images 2.6 (Nov 5): Faster image generation with GIFs, SVG, complexity control; new API models.
 - webAI TwIL-8B (Nov 4-5): ~8.8B reasoning model with strong self-reported MATH-500.
@@ -162,6 +177,10 @@ Living document. New entries go at the top. Older entries are refined or marked 
 
 ## Other / Infrastructure
 
+- Claude Fable 5.2 / Mythos 5.2 (frontier technical work, price cut)
+- Gemini 4 Carbon (GA, competitive pricing)
+- Muse Ember (small agent model)
+- LongCat-2.5 (full MIT weights)
 - GPT-6 Cyber (specialized authorized cyber research)
 - Kimi K3.1 Pro (open weights released Nov 4-5, dominating)
 - Ripple-65B Preview (dense efficient coding agent)
