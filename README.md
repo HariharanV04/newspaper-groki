@@ -24,14 +24,14 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-11-06)
+## Latest highlights (as of 2026-11-11)
 
-- **OpenAI GPT-6 Cyber** — Specialized model for authorized vulnerability research. 48.5% on ExploitGym, discovered 81 high-severity Firefox bugs and 948 Linux kernel exploits. Restricted to Daybreak Red; rated Critical.
-- **Kimi K3.1 Pro** — Open weights dominating HF (2.8T / 104B active multimodal MoE, 1M context). Tops Agent Arena among open models; near-frontier agentic coding.
-- **Gemini Omni 1.2 Flash** — Longer video clips (15s), 30% cheaper.
-- **Ripple-65B Preview** — Dense 65B Apache 2.0 model from RicursiveAI; self-reported US open-weight SOTA on Terminal-Bench 2.1.
-- **Trending HF** — Kimi K3.1 Pro leading, LTX-2.5, Nemotron Transcribe, Mistral Large 4.
-- **Free APIs** — Stable free tiers on Gemini AI Studio (incl. Omni), Groq, NVIDIA NIM, Colab, HF ZeroGPU, OpenRouter, Modal credits.
-- **Ongoing** — Mistral Large 4 efficiency leadership, llama.cpp FP8, Together inference compiler, agent research on routing, memory, and long-horizon reliability. Cline and other open coding agents popular.
+- **Anthropic Claude Fable 5.2 / Mythos 5.2** — ~30% faster, $8/$40, tops AA Intelligence Index (65). 1,000 agents formalized Fermat in 30h; strong coding/science. Mythos gated for vetted cyber/life-sciences.
+- **Google Gemini 4 Carbon GA** — Intro $2/$10 (to Nov 30). Competitive with Fable; AlphaProof Code verified Signal protocol on real machine code.
+- **Meta Muse Ember** — Small/cheap multimodal agent model ($0.10/$0.50) for tool calls, routing, extraction.
+- **Meituan LongCat-2.5** — Full MIT open weights (1.6T MoE / ~48B active multimodal).
+- **Trending HF** — idol (image-to-3D), uncensored DeepSeek, Kimi K3.1 Pro, Ripple-65B, MiniMax-H3-Image, LTX-2.5, Qwen3.8-27B.
+- **Free APIs / GPUs** — Stable free tiers on Kaggle (~30h/week), Colab, HF ZeroGPU, Lightning/Modal credits, NVIDIA NIM, Groq, Gemini AI Studio, OpenRouter, Cloudflare. New AMD MI300X credits.
+- **Ongoing** — Frontier price war, agent formalization/verification/robotics leaps (GR00T 2), Claude workspace features (Whiteboards/Sheets/Data), open-weight traction (Kimi, Mistral Large 4).
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.
