@@ -2,7 +2,7 @@
 
 Living reference for free/low-cost GPUs, hosting, inference stacks, and developer tooling. Quotas and offerings change; update entries in place.
 
-**Last refined:** 2026-11-06
+**Last refined:** 2026-11-11
 
 ---
 
@@ -15,18 +15,24 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 | Hugging Face ZeroGPU | Shared RTX Pro 6000 Blackwell for Gradio Spaces | Short daily quota (minutes); demo-oriented |
 | NVIDIA NIM / build.nvidia.com | Free endpoints for many open models (Nemotron, DeepSeek-V4.1-Flash, GLM, Muse, Gemma, etc.) | OpenAI-compatible; NVIDIA Developer Program key (phone verification in supported countries). Rate limits vary. |
 | Groq free tier | Fast inference on supported models (gpt-oss, Qwen3.8-27B, etc.) | Rate limits (e.g. 30 RPM / 1k RPD for coding models); no card |
-| Google AI Studio / Gemini free | Flash models (Gemini 3.x family + Omni), Gemma 4 | May train on prompts; usage per model; no card for free tier. Omni 1.2 Flash available. |
+| Google AI Studio / Gemini free | Flash models (Gemini 3.x family + Omni), Gemma 4 | May train on prompts; usage per model; no card for free tier. Omni 1.2 Flash available. Carbon is paid. |
 | OpenRouter free | Limited free models / daily requests (Nemotron, Gemma, Inkling, etc.) | Card-free options; ~50-1000 requests/day depending on plan |
 | Cloudflare Workers AI | 10k neurons/day | Edge inference |
 | SambaNova Cloud | Free use of hosted open models until payment method linked | Rate limits apply |
 | Requesty / AIHubMix / other aggregators | Free model routes | Card-free free plans with daily quotas |
-| Modal / Lightning AI | Free monthly compute / studios | Check current balances (e.g. Modal $30/mo + startup credits up to $25k) |
+| Modal / Lightning AI | Free monthly compute / studios | Check current balances (e.g. Modal $30/mo + startup credits; Lightning up to ~30 credits / ~50 GPU hours on T4 + free Studio) |
+| AMD Developer Cloud | $100 complimentary credit on Instinct MI300X | Approved developers via AI Developer Program |
+| IteraCompute / others | Free token routes (e.g. up to 30M tokens/month Auto on open models) | No card for some; rate limited |
 | NVIDIA Run:ai (open-sourced) | Full GPU orchestration (Apache 2.0) | Self-host; supply own K8s/GPUs |
-| Startup programs | Credit grants | Vary (e.g. Inference.net up to $10k, Hostkey GPU grants, Novita, Google/AWS/Microsoft) |
+| Startup programs | Credit grants | Vary (e.g. Inference.net up to $10k, Hostkey GPU grants, Novita, Google/AWS/Microsoft, GMI Cloud, etc.) |
 | RunPod / Vast.ai | Cheap spot GPUs | Paid but low $/hr |
 
 ## Hosting & Serving
 
+- **Claude Fable 5.2 / Mythos 5.2** — Closed frontier. API on Anthropic, AWS, Google Cloud, Microsoft Foundry. $8/$40. Mythos gated.
+- **Gemini 4 Carbon** — Closed. Paid Gemini API / AI Ultra. Intro $2/$10 through Nov 30.
+- **Muse Ember** — Closed small agent model. API $0.10/$0.50.
+- **LongCat-2.5** — Full MIT weights on HF (1.6T MoE). Serve with vLLM/SGLang once recipes mature; API available.
 - **Kimi K3.1 Pro** — Open weights on HF (2.8T MoE, ~1.56TB). Serve with vLLM, SGLang, or TokenSpeed. Multi-node recommended; quantized options emerging. API also available. Dominating HF.
 - **Ripple-65B Preview** — Dense 65B on HF (Apache 2.0). Available on Together AI, GMI Cloud, OpenRouter. Quantized builds fit MacBook / DGX Spark.
 - **GPT-6 Cyber** — Closed specialized model for authorized cyber research. Restricted to Daybreak Red customers via API/Codex. Not self-hostable.
@@ -36,19 +42,18 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - **Baseten joey-1** — Tiny 2B decision model (MIT on HF) for calibrated labels at very low API cost.
 - **Mistral Large 4** — Open weights on HF; API available. Fine-tuning via TRL 1.17 (LoRA on single high-end node). Full inference requires significant multi-node resources; quantized/serving recipes emerging.
 - **Hydrogen-1.0** — Open MIT weights (gated on HF); scientific MoE runnable on multi-GPU (tested on 8 GPUs with SGLang). Quantized variants for Blackwell/AMD.
-- **LongCat-2.5** — API available now (low limited-time pricing); weights coming soon for self-hosting.
 - **Pika H3 Flex** — Open weights + Diffusers/ComfyUI support for local video+audio gen. High VRAM needs (H100-class for full). API for lower-cost hosted use.
 - **LFM3 local stacks** — GGUF/MLX/ONNX/FP8 for LiquidAI LFM3 family; single-GPU fine-tune + edge inference (llama.cpp, MLX, vLLM, Transformers). High recent HF activity.
 - **DeepInfer** — DeepSeek production stack; high efficiency; dual hardware. NVFP4 variants for reduced download/size on Blackwell.
 - **FreeToken** — Apache-2.0 edge-native MoE serving engine. Pools GPU + CPU + system RAM for large models (DeepSeek Flash, Qwen, GLM) on gaming PCs/laptops. OpenAI/Anthropic-compatible APIs. Strong for models that don't fully fit in VRAM. Desktop app + CLI available.
-- **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary for large open MoEs and dense models (Nanbeige TP=4, Beam, Muse, DeepSeek, MiniMax, Nemotron, Kimi K3.1 Pro, Mistral Large 4, Ripple-65B). llama.cpp v0.9.0 adds native FP8 and multi-node TP. Day-0 support for new releases.
+- **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary for large open MoEs and dense models (Nanbeige TP=4, Beam, Muse, DeepSeek, MiniMax, Nemotron, Kimi K3.1 Pro, Mistral Large 4, Ripple-65B, LongCat). llama.cpp v0.9.0 adds native FP8 and multi-node TP. Day-0 support for new releases.
 - **Ollama / Unsloth / llama.cpp / MLX** — excellent for local small models like LFM3, Nemotron Bolt E4B, Flint, Drex Max quantizations, and emerging Nanbeige quantizations (e.g. NVFP4). CPU GGUF options like POCKET-Darwin-180B.
 - **Hugging Face Spaces + Hub + Inference** — models, ZeroGPU, Carbon-X demos, TorchNeuron
-- **Diffusers + ComfyUI** — image/video pipelines (FLUX.3 Image Klein with layout control, Pika H3 Flex, LTX-2.5, Kandinsky 6, P-H3-Image, Gemini Omni via API etc.)
+- **Diffusers + ComfyUI** — image/video pipelines (FLUX.3 Image Klein with layout control, Pika H3 Flex, LTX-2.5, MiniMax-H3-Image, Kandinsky 6, P-H3-Image, Gemini Omni via API etc.)
 - Voice agent SDKs (Voxtral 3 + LiveKit); Dessa research preview waitlist
 - Specialized: Carbon-X for DNA/genomics workflows; Liquid API/Playground for LFM3
 - Replit for Government: access to intelligence and custom tool-building for public servants.
-- Coding agents with free tiers: GitHub Copilot Free (now also in Xcode), Cline (highly recommended open), Kilo Code, opencode, Claude Code, Cursor, Google Antigravity, etc.
+- Coding agents with free tiers: GitHub Copilot Free (now also in Xcode), Cline (highly recommended open), Kilo Code, opencode, Claude Code, Cursor, Google Antigravity, etc. Claude now adds Whiteboards/Sheets/Data workspace features.
 - Cloudflare Pages + Workers for free full-stack AI app hosting (unlimited bandwidth options).
 - Together AI continuous inference optimization compiler (reported up to 2.6x speedups).
 
@@ -67,15 +72,17 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - Microsoft TokenEconomizer: free tool cutting AI coding token costs by up to 31%
 - DeepMind agent demos (prompt-to-physical robot) and scientific automation (gene therapy injection, forest mapping)
 - GitHub Copilot in Xcode; Google Antigravity agent-first IDE; Cline as top open agentic coding tool
+- Anthropic Claude Whiteboards, Sheets (beta), Data (GA) for collaborative AI workspaces
 
 ## Developer Focus Areas (current)
 
-- Experimenting with newly open Kimi K3.1 Pro and Ripple-65B for self-hosted agentic coding and long-horizon tasks
-- Authorized use of GPT-6 Cyber for defensive vulnerability research (restricted access)
+- Evaluating Claude Fable 5.2 vs Gemini 4 Carbon on coding/science tasks (price/performance tradeoffs; Carbon intro pricing ends Nov 30)
+- Experimenting with newly open LongCat-2.5 and continuing Kimi K3.1 Pro / Ripple-65B for self-hosted agentic coding and long-horizon tasks
+- Authorized use of GPT-6 Cyber for defensive vulnerability research (restricted access); Mythos 5.2 for vetted programs
 - Experimenting with local coding agents (dsh-superagent, Cline) and decision layers (Drex Max, joey-1) for efficient agent workflows
 - Running large MoEs locally via FreeToken on consumer hardware (GPU+CPU+RAM pooling)
-- Experimenting with large open-weight models for self-hosted control (Mistral Large 4 for coding/cyber, Hydrogen-1.0 for science, Kimi K3.1 Pro)
-- Testing open video generation stacks (Pika H3 Flex, LTX-2.5 via Diffusers/ComfyUI, Gemini Omni API) and trending HF models (Kimi, DeepSeek Flash, LFM3, Qwen)
+- Experimenting with large open-weight models for self-hosted control (Mistral Large 4 for coding/cyber, Hydrogen-1.0 for science, Kimi K3.1 Pro, LongCat)
+- Testing open video generation stacks (Pika H3 Flex, LTX-2.5, MiniMax-H3-Image via Diffusers/ComfyUI, Gemini Omni API) and trending HF models (idol, uncensored variants, Qwen)
 - Experimenting with LFM3 family for multimodal local agents and single-GPU specialization
 - Experimenting with multi-agent scaling via open Agensh
 - Running new local models (LFM3, Flint, Nemotron Bolt E4B, Drex Max) and specialized scientific models (Carbon-X, Rosalind biology, Hydrogen-1.0)
@@ -83,6 +90,7 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - Serving efficient MoEs with open stacks; speech research (Dessa, Nemotron Transcribe); image/video gen with Omni and Images 2.6
 - Leveraging free tiers, NIM, Run:ai self-host, non-NVIDIA options; cost optimization with TokenEconomizer and Together compiler
 - Scientific and public-sector agent tools (PlanAssist, Replit for Government, ForTy forest map)
+- Robotics world-action models (GR00T 2) and formal verification agents (AlphaProof Code)
 
 ---
 
