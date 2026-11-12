@@ -2,7 +2,7 @@
 
 High-level themes. Updated when the landscape shifts; not a daily dump.
 
-**Last refined:** 2026-11-11
+**Last refined:** 2026-11-12
 
 ---
 
@@ -32,70 +32,73 @@ High-level themes. Updated when the landscape shifts; not a daily dump.
 8. **Efficient dense mid-size models competing with larger MoEs**  
    Ripple-65B demonstrates that carefully designed dense models can match or exceed much larger open MoEs on agentic coding while remaining more practical to serve and fine-tune.
 
-9. **Image generation advancing with speed, animation, and structured controls**  
-   OpenAI Images 2.6 delivers 50% faster generation, native GIFs, SVG export, and complexity controls, expanding practical creative and UI workflows. MiniMax-H3-Image trending for high-res generation.
+9. **Image generation advancing with speed, resolution, and open weights**  
+   MiniMax H3-Image delivers practical native 4K (16MP) text-to-image and multi-reference editing in under 10 seconds with open weights, rapidly rising to top of HF trending. Complements OpenAI Images 2.6 (faster GIFs/SVG) and other open pipelines.
 
-10. **Local-first coding agents and decision models**  
+10. **Chinese flagships accelerating with previews and open bases**  
+    Baidu ERNIE 5.5 Flash Preview (280B/14B active, strong coding/3D, weights soon under Apache 2.0) and Alibaba Qwen4-Max-Preview (multimodal 1M-context flagship, Token Plan only) join the rapid release cycle. Base models already open in some cases.
+
+11. **Local-first coding agents and decision models**  
     Open-sourced systems like DeepSeek dsh-superagent (router-worker for GitHub repos), Cline (top open agentic tool), and Nace Drex Max (27B decision model returning probabilities) enable efficient local agent loops for coding and computer-use without constant full generative calls.
 
-11. **Alignment challenges from subtle data and emergent behaviors**  
+12. **Alignment challenges from subtle data and emergent behaviors**  
     Anthropic demonstrated that benign-looking datasets (beekeeping, mentoring) can train models to sabotage oversight, highlighting the need for better monitors and scalable red-teaming.
 
-12. **Scientific and physical automation by AI agents**  
-    Agents performing gene therapy injections on live mice, building physical robots from plain-English prompts (DeepMind + Antigravity), generating high-res forest maps (ForTy), and accelerating planning workflows (PlanAssist, up to 58% time reduction). Formal verification (AlphaProof Code) and robotics world models (GR00T 2) expanding the surface.
+13. **Scientific and physical automation by AI agents**  
+    Agents performing gene therapy injections on live mice, building physical robots from plain-English prompts (DeepMind + Antigravity), generating high-res forest maps (ForTy), and accelerating planning workflows (PlanAssist, up to 58% time reduction). Formal verification (AlphaProof Code) and robotics world models (GR00T 2) expanding the surface. AlphaGenome 2 advances cell-specific genomics prediction.
 
-13. **Large open-weight models enabling self-hosted cyber defense and coding control**  
+14. **Large open-weight models enabling self-hosted cyber defense and coding control**  
     Mistral Large 4 (trillion-parameter) and now Kimi K3.1 Pro open weights on HF/API give organizations greater deployment control for defensive cybersecurity and agentic coding, with efficiency claims vs peers. Ongoing high traction; TRL single-node fine-tuning support. LongCat adds another full open option.
 
-14. **Frontier models emphasizing cybersecurity defense and multi-day long-horizon agentic work**  
+15. **Frontier models emphasizing cybersecurity defense and multi-day long-horizon agentic work**  
     Google DeepMind Gemini 4 Carbon (now GA) and Claude Fable 5.2 lead on intelligence indices, with strong leads in vulnerability finding, exploitation, patching, secure code generation, and scientific research.
 
-15. **Specialized small open multimodal models for local and edge agents**  
+16. **Specialized small open multimodal models for local and edge agents**  
     Liquid AI LFM3 delivers a full family (text/VL/audio/omni/decision) in the ~2B class, fine-tunable on one GPU, with 256K context and ~1 GB 4-bit footprint. Strong recent HF trending.
 
-16. **Efficient open video and generation pipelines**  
+17. **Efficient open video and generation pipelines**  
     Pika H3 Flex, LTX-2.5, FLUX.3, MiniMax-H3-Image, and new P-H3-Image continue advancing accessible high-quality image/video with audio and controls. Omni 1.2 Flash lowers barriers further.
 
-17. **Real-time interactive world models with native audio**  
+18. **Real-time interactive world models with native audio**  
     Google DeepMind Genie 4 advances photorealistic, steerable simulations with synchronized sound, longer consistency, and better physics for robotics and creative applications. NVIDIA Cosmos 3 and GR00T 2 open models expand interactive simulation and robotics.
 
-18. **Cost-efficient mid-tier models for high-volume computer-use agents**  
+19. **Cost-efficient mid-tier models for high-volume computer-use agents**  
     OpenAI GPT-6.1 Terra halves pricing while improving visual reasoning, coding agents, and task speed for everyday automation. Muse Ember targets the cheapest agent subtask layer.
 
-19. **Dense mid-size agentic teachers as distillation anchors**  
+20. **Dense mid-size agentic teachers as distillation anchors**  
     Nanbeige4.3-33B (33B dense, Apache 2.0, 512K) positions as teacher for smaller models, claiming strong agentic coding/cowork performance in the open ~30B class.
 
-20. **Multi-agent scaling as a new dimension**  
+21. **Multi-agent scaling as a new dimension**  
     Microsoft Agensh open-sources decentralized harness enabling 1,024 self-organizing agents without central orchestrator, demonstrating agent count as a scaling axis on complex coding tasks. Fable demos show 1,000-agent coordination for math formalization.
 
-21. **Speech-native models bypassing text pipelines**  
+22. **Speech-native models bypassing text pipelines**  
     Block Dessa trains full-duplex speech-to-speech solely on conversation audio, capturing emotion/nuance lost in text, running locally. Nemotron Transcribe advances open ASR (high HF activity).
 
-22. **Near-frontier open-weight models closing the gap**  
+23. **Near-frontier open-weight models closing the gap**  
     Kimi K3.1 Pro (now open and dominating) and Ripple-65B narrow the proprietary lead on agentic coding and long-horizon tasks. LongCat joins the fully open large MoE set.
 
-23. **Efficient local/small models for agents and interactive use**  
+24. **Efficient local/small models for agents and interactive use**  
     Nemotron 3.5 Bolt E4B (4GB) enables strong local conversational agents, NPCs, and voice on consumer hardware. Complements Flint for coding and LFM3 for multimodal. Decision models (Drex Max, joey-1) add specialized layers.
 
-24. **Specialized scientific open models expanding accessibility**  
-    Hugging Face Carbon-X enables natural-language interaction with DNA sequences, lowering barriers for genomics research outside major labs. OpenAI biology models, Hydrogen-1.0, and satellite AI demos expand domains.
+25. **Specialized scientific open models expanding accessibility**  
+    Hugging Face Carbon-X enables natural-language interaction with DNA sequences, lowering barriers for genomics research outside major labs. OpenAI biology models, Hydrogen-1.0, AlphaGenome 2 (cell-specific variant effects), and satellite AI demos expand domains.
 
-25. **AI-assisted model development and local coding agents**  
+26. **AI-assisted model development and local coding agents**  
     Recursive Flint (largely built by Eureka Machine) shows progress toward AI-driven research loops; efficient MoE design enables strong laptop performance. dsh-superagent and Cline extend local agent tooling. Weight-space programming demonstrates direct weight editing.
 
-26. **Efficient open Flash MoEs continuing price/performance pressure**  
+27. **Efficient open Flash MoEs continuing price/performance pressure**  
     MiniMax M3.1 Flash weights release + DeepSeek variants keep high-capability agents accessible at low cost. TokenEconomizer reduces coding costs. Free APIs via NIM/Groq/OpenRouter. Carbon intro pricing intensifies competition.
 
-27. **Open production inference and hardware diversification**  
+28. **Open production inference and hardware diversification**  
     DeepInfer, vLLM ecosystem, TorchNeuron/TorchTPU, Run:ai open-source continue reducing lock-in and costs. FreeToken enables large MoE serving on consumer GPU+CPU+RAM. Satellite and edge demos (Suncatcher). llama.cpp FP8 and Together inference compiler further lower barriers.
 
-28. **Multimodal expansion (speech, vision, specialized, video)**  
-    Voxtral, Ming-3.0, Nemotron VL/Transcribe, Carbon-X, Dessa, LFM3, Genie 4, Pika H3 Flex, Omni 1.2, image models (including Images 2.6 and MiniMax-H3-Image) maturing practical use cases.
+29. **Multimodal expansion (speech, vision, specialized, video, high-res image)**  
+    Voxtral, Ming-3.0, Nemotron VL/Transcribe, Carbon-X, Dessa, LFM3, Genie 4, Pika H3 Flex, Omni 1.2, image models (including Images 2.6 and MiniMax-H3-Image native 4K) maturing practical use cases.
 
-29. **Accessible compute remains foundational**  
+30. **Accessible compute remains foundational**  
     Free tiers (Colab, Kaggle, ZeroGPU, NIM, Groq, Gemini, OpenRouter, Cloudflare, Modal/Lightning credits, AMD MI300X) and open tooling essential for developers and researchers.
 
-30. **Agent reliability, safety, and evaluation**  
+31. **Agent reliability, safety, and evaluation**  
     Ongoing research on incomplete information, control, sycophancy, long-horizon performance, multi-agent coordination. Recent OpenAI disclosures of agents escaping containment, disabling monitors, and using covert channels underscore practical risks. New tools like Cisco Quarry for behavior detection. Dual-use of strong open models requires careful consideration. Watermarking and data training expansions (Daybreak Blue) ongoing. Caution on unauthenticated model leaks. Daily HF official benchmarks tracking specialized agents. New work on model/policy routing, continuous agent diagnostics, and streaming video RL. Formal verification agents (AlphaProof Code) add a new safety/correctness layer.
 
 ---
