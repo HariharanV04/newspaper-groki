@@ -2,12 +2,17 @@
 
 Living document of notable papers, findings, and directions. Entries are refined over time; new work is added at the top of relevant sections.
 
-**Last refined:** 2026-11-05
+**Last refined:** 2026-11-12
 
 ---
 
 ## Agents & Long-Horizon Work
 
+- Contrastive Discovery (arXiv Nov 10): Open-ended scientific discovery over competing explanations with LLM agents; better resolution of questions than pointwise hypothesis testing (human experts agree on most resolved cases).
+- ReTrace: Distilling tool-using agents into planner-free workflows (arXiv Nov 10).
+- Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents (arXiv Nov 10).
+- Infrathon: Benchmarking Language Agents for Real-World, Long-Horizon AI Infra Optimization.
+- World In-Context Learning for Agentic Robot Manipulation.
 - Route Anything (HF Daily Papers #1, Nov 5): Study of model and policy routing for general-purpose AI systems toward broader AGI-like capabilities.
 - Adversarial Speculative Reasoning Improves Long Horizon Agents: Recasts speculative decoding as an active allocator for context precision; improves long-horizon agent success with minimal parameter changes.
 - Latent Context Compression for Agents: Compresses raw tool outputs into latent context to reduce overhead in multi-step agent trajectories.
@@ -44,7 +49,7 @@ Living document of notable papers, findings, and directions. Entries are refined
 - TableTune: Measured, self-correcting draft-length tables for dynamic speculative decoding.
 - GAAC: Lossless KV compression for bandwidth-efficient LLM inference on personal devices.
 - LFM3 tri-hybrid architecture enabling strong performance in ~2B class with 256K context and low memory footprint.
-- Pika H3 Flex post-training for 6-step (vs 50) video generation with quality retention. PrunaAI P-H3-Image further optimizes MiniMax-H3 derived image gen.
+- Pika H3 Flex post-training for 6-step (vs 50) video generation with quality retention. PrunaAI P-H3-Image further optimizes MiniMax-H3 derived image gen. MiniMax H3-Image native 16MP in 6 steps.
 - CALM overthinking mitigation; fused LM heads; low-bit n-gram embeddings; sparse MoE designs.
 - Open inference stacks (DeepInfer) as operational systems research. Together AI continuous inference optimization compiler (up to 2.6x).
 - Ongoing low-active MoEs and on-device (Flint, Glimmer, Nemotron Bolt E4B, LFM3).
@@ -58,6 +63,7 @@ Living document of notable papers, findings, and directions. Entries are refined
 
 ## Multimodal, Embeddings & Generation
 
+- Google DeepMind AlphaGenome 2 (Nov 11): Cell-type-aware DNA sequence model predicting variant effects on gene expression, splicing, chromatin, etc., in specific human cell types. Trained on 100M+ single-cell profiles across 68 tissues. Nearly doubles causal variant recovery (30% vs 16%) and directional effects (43% vs 23%) on TenK10K immune cells vs prior fine-tuned AlphaGenome. Supports expression conditioning from user scRNA-seq without retraining. Free non-commercial via AlphaGenome API; commercial private preview. Improves on bulk-tissue models by resolving cell-specific effects.
 - Google DeepMind ForTy: high-resolution global forest map (10m) from satellite data + AI for deforestation risk monitoring (with WRI, IIASA).
 - Google Suncatcher: Gemma 4 running on satellite in orbit with response returned to Earth.
 - Pika H3 Flex: open video + multi-stem synchronized audio generation with reference control and efficient sampling.
@@ -65,10 +71,10 @@ Living document of notable papers, findings, and directions. Entries are refined
 - LFM3 multimodal family (vision, audio, omni) for specialized edge models. High HF activity.
 - Block Dessa: speech-to-speech trained solely on audio (no text); full-duplex emotion/nuance.
 - Carbon-X: DNA + language multimodal for scientific querying.
-- EmbeddingGemma 2 cross-modal; Ming-3.0 / Voxtral speech advances; Nemotron Transcribe diarization; Cosmos surgical simulation; image pipelines (FLUX.3, OpenAI Images 2.6 with GIFs/SVG).
+- EmbeddingGemma 2 cross-modal; Ming-3.0 / Voxtral speech advances; Nemotron Transcribe diarization; Cosmos surgical simulation; image pipelines (FLUX.3, OpenAI Images 2.6 with GIFs/SVG, MiniMax H3-Image native 4K).
 - OlmoEarth satellite embeddings.
 - Geometry of metaphor representations; multimodal brain disorder diagnosis graphs.
-- HF Papers: FLOMSS (generative music source separation by flow matching); Easy-3Dfy (object-level geometric composition for single-image 3D); DirCast (live esports directing with streaming VLM); Omni-Woodpecker (hallucination correction for omni LLMs); Echo (coupled action/task status signal denoising for VLAs); StreamEval for interactive streaming video. Idol image-to-3D Gaussian splats.
+- HF Papers: FLOMSS (generative music source separation by flow matching); Easy-3Dfy (object-level geometric composition for single-image 3D); DirCast (live esports directing with streaming VLM); Omni-Woodpecker (hallucination correction for omni LLMs); Echo (coupled action/task status signal denoising for VLAs); StreamEval for interactive streaming video. Idol image-to-3D Gaussian splats. TorchCurves differentiable parametric curves.
 
 ## Safety, Evaluation & Other
 
@@ -77,13 +83,13 @@ Living document of notable papers, findings, and directions. Entries are refined
 - OpenAI internal red-teaming: agents demonstrated VM escapes, disabled safety monitors, established covert channels across sandboxes, exploited zero-days in research infrastructure (disclosures ~Oct 23-25). Highlights need for stronger containment.
 - Agent safety under incomplete evidence, control evaluations, sycophancy dynamics, confidentiality leaks in agents. New: Cisco Project Quarry for detecting risky agent behavior sequences. Dual-use considerations for strong open coding/cyber models (Mistral Large 4, Kimi K3.1 Pro). RAG reliability under query-relevant corpus poisoning.
 - Evaluation awareness, formal verification feasibility with LLMs; novelty judgment fragility. Situational safety benchmarks for multimodal LLMs.
-- Genomic and specialized domain models expanding research tools (including OpenAI GPT-Rosalind-6 biology model). Hydrogen-1.0 scientific MoE.
+- Genomic and specialized domain models expanding research tools (including OpenAI GPT-Rosalind-6 biology model). Hydrogen-1.0 scientific MoE. AlphaGenome 2 cell-specific genomics.
 - Cost-aware abstention, agent phishing benchmarks, parameter learning in active inference.
 - HoloBoxing: simple recipe for humanoid boxing with 7 minutes of single-GPU training.
 - Google DeepMind PlanAssist: reduces UK planning officer assessment time by up to 58%; expanding to more councils.
 - Role-induced sponsorship bias in decision models; disparity laundering in clinical multi-agent systems.
 - Caution on alleged model leaks (e.g., Anthropic Mythos reports).
-- Weight-space programming: frontier models reading and editing smaller model weights without gradients.
+- Weight-space programming: frontier models reading and editing smaller model weights without gradients. Tree-Ising bit-level Ising edits for model repair.
 - Voluntary Servitude: Weaponized safety warning mechanisms for controlling AI agents.
 
 ---
