@@ -2,7 +2,7 @@
 
 Living reference for free/low-cost GPUs, hosting, inference stacks, and developer tooling. Quotas and offerings change; update entries in place.
 
-**Last refined:** 2026-11-11
+**Last refined:** 2026-11-12
 
 ---
 
@@ -29,6 +29,7 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 
 ## Hosting & Serving
 
+- **MiniMax H3-Image** — Open weights on HF for native 4K T2I + multi-ref editing. ComfyUI native; quantized options emerging. Community license (regional exclusions). API also available.
 - **Claude Fable 5.2 / Mythos 5.2** — Closed frontier. API on Anthropic, AWS, Google Cloud, Microsoft Foundry. $8/$40. Mythos gated.
 - **Gemini 4 Carbon** — Closed. Paid Gemini API / AI Ultra. Intro $2/$10 through Nov 30.
 - **Muse Ember** — Closed small agent model. API $0.10/$0.50.
@@ -49,9 +50,9 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary for large open MoEs and dense models (Nanbeige TP=4, Beam, Muse, DeepSeek, MiniMax, Nemotron, Kimi K3.1 Pro, Mistral Large 4, Ripple-65B, LongCat). llama.cpp v0.9.0 adds native FP8 and multi-node TP. Day-0 support for new releases.
 - **Ollama / Unsloth / llama.cpp / MLX** — excellent for local small models like LFM3, Nemotron Bolt E4B, Flint, Drex Max quantizations, and emerging Nanbeige quantizations (e.g. NVFP4). CPU GGUF options like POCKET-Darwin-180B.
 - **Hugging Face Spaces + Hub + Inference** — models, ZeroGPU, Carbon-X demos, TorchNeuron
-- **Diffusers + ComfyUI** — image/video pipelines (FLUX.3 Image Klein with layout control, Pika H3 Flex, LTX-2.5, MiniMax-H3-Image, Kandinsky 6, P-H3-Image, Gemini Omni via API etc.)
+- **Diffusers + ComfyUI** — image/video pipelines (FLUX.3 Image Klein with layout control, Pika H3 Flex, LTX-2.5, MiniMax-H3-Image native 4K, Kandinsky 6, P-H3-Image, Gemini Omni via API etc.)
 - Voice agent SDKs (Voxtral 3 + LiveKit); Dessa research preview waitlist
-- Specialized: Carbon-X for DNA/genomics workflows; Liquid API/Playground for LFM3
+- Specialized: Carbon-X and AlphaGenome 2 for DNA/genomics workflows; Liquid API/Playground for LFM3
 - Replit for Government: access to intelligence and custom tool-building for public servants.
 - Coding agents with free tiers: GitHub Copilot Free (now also in Xcode), Cline (highly recommended open), Kilo Code, opencode, Claude Code, Cursor, Google Antigravity, etc. Claude now adds Whiteboards/Sheets/Data workspace features.
 - Cloudflare Pages + Workers for free full-stack AI app hosting (unlimited bandwidth options).
@@ -82,12 +83,12 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - Experimenting with local coding agents (dsh-superagent, Cline) and decision layers (Drex Max, joey-1) for efficient agent workflows
 - Running large MoEs locally via FreeToken on consumer hardware (GPU+CPU+RAM pooling)
 - Experimenting with large open-weight models for self-hosted control (Mistral Large 4 for coding/cyber, Hydrogen-1.0 for science, Kimi K3.1 Pro, LongCat)
-- Testing open video generation stacks (Pika H3 Flex, LTX-2.5, MiniMax-H3-Image via Diffusers/ComfyUI, Gemini Omni API) and trending HF models (idol, uncensored variants, Qwen)
+- Testing open video/image generation stacks (MiniMax H3-Image native 4K via ComfyUI/Diffusers, Pika H3 Flex, LTX-2.5, Gemini Omni API) and trending HF models (idol, uncensored variants, Qwen, Arete)
 - Experimenting with LFM3 family for multimodal local agents and single-GPU specialization
 - Experimenting with multi-agent scaling via open Agensh
-- Running new local models (LFM3, Flint, Nemotron Bolt E4B, Drex Max) and specialized scientific models (Carbon-X, Rosalind biology, Hydrogen-1.0)
+- Running new local models (LFM3, Flint, Nemotron Bolt E4B, Drex Max) and specialized scientific models (Carbon-X, AlphaGenome 2, Rosalind biology, Hydrogen-1.0)
 - Evaluating MiniMax M3.1 Flash open weights and Kimi K3.1 Pro; testing Nanbeige4.3-33B on multi-GPU or quant
-- Serving efficient MoEs with open stacks; speech research (Dessa, Nemotron Transcribe); image/video gen with Omni and Images 2.6
+- Serving efficient MoEs with open stacks; speech research (Dessa, Nemotron Transcribe); image/video gen with Omni, Images 2.6, and H3-Image
 - Leveraging free tiers, NIM, Run:ai self-host, non-NVIDIA options; cost optimization with TokenEconomizer and Together compiler
 - Scientific and public-sector agent tools (PlanAssist, Replit for Government, ForTy forest map)
 - Robotics world-action models (GR00T 2) and formal verification agents (AlphaProof Code)
