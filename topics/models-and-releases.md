@@ -2,11 +2,26 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-11-11
+**Last refined:** 2026-11-12
 
 ---
 
 ## Frontier / Flagship & Large Open
+
+### MiniMax H3-Image (Nov 10-11, 2026)
+- **Type:** Open-weight image generation/editing model (33.1B DiT based on MiniMax H3 architecture, without audio layers).
+- **Role:** Native 4K / ~16MP (4096×4096 up to 6272×2688) text-to-image and multi-reference editing (up to 16 images) in under 10 seconds (6-step distilled sampling, no CFG). Strong prompt adherence and creative control. One checkpoint for T2I + editing.
+- **Status:** Weights on Hugging Face (`MiniMaxAI/MiniMax-H3-Image`); community license (excludes EU, UK, South Korea, US). Also via MiniMax API, MiniMax Code, Hailuo AI (launch discounts). Native ComfyUI support (day-0). Rapidly trending on HF. Optional prompt expander available.
+
+### Baidu ERNIE 5.5 Flash Preview (Nov 11, 2026)
+- **Type:** Post-trained MoE language model on ERNIE 5.5 Flash Base (280B total / 14B active, 1M context).
+- **Role:** Coding, 3D modeling (Blender/CAD scripts), knowledge work, content creation. Fast decoding (>200 tokens/s). Competitive on coding/agent benches (self-reported).
+- **Status:** API live on Baidu Qianfan (`ernie-5.5-flash-preview`). Weights to be open-sourced under Apache 2.0 by November 25. Intermediate checkpoint; further post-training ongoing. Base model previously open (with regional license restrictions).
+
+### Alibaba Qwen4-Max-Preview (Nov 11, 2026)
+- **Type:** Closed multimodal flagship preview (next-gen Qwen family). Text, image, and video input.
+- **Role:** Deep reasoning (on by default), coding, office productivity, frontend design, complex agentic tasks. Tool calling, web search, structured outputs. Compatible with OpenAI Chat Completions/Responses and Anthropic Messages APIs. 1M context; up to 393,216 output tokens (shared with reasoning).
+- **Status:** Available only via Alibaba Cloud Token Plan (Personal/Team) from Nov 11 to Nov 25 (UTC+8). No open weights, no published parameter count, no public benchmarks or standard per-token pricing. Early access also in QwenWork, Qoder, Qwen app, QwenStudio. Preview model to be retired after window.
 
 ### Anthropic Claude Fable 5.2 & Mythos 5.2 (Nov 9, 2026)
 - **Type:** Closed frontier models (same underlying model). Fable with strong cyber/bio safeguards; Mythos with fewer safeguards for vetted programs.
