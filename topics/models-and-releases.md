@@ -2,16 +2,31 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-11-12
+**Last refined:** 2026-11-13
 
 ---
 
 ## Frontier / Flagship & Large Open
 
-### MiniMax H3-Image (Nov 10-11, 2026)
+### Google Gemini 4 Hydrogen (Nov 12, 2026)
+- **Type:** Closed fast agentic model (Gemini 4 series; adapted from Carbon).
+- **Role:** Rapid execution across everyday coding and diverse agentic workflows. 1M unified input+output context. Thinking levels LOW/MEDIUM/HIGH (default)/XHIGH. Claims 2.5× faster than Gemini 3.8 Flash at default, stronger Terminal-Bench, fewer fabrications; competitive with / surpasses Argon on some independent indexes at higher thinking.
+- **Status:** Generally available globally (Gemini API, AI Studio, Search, Gemini app, Antigravity for Pro/Ultra, business, Android Studio). $1.50 / $7.50 per M tokens. Replaces prior Flash role for many surfaces.
+
+### Edge0-145B / Edge0-120B (Nov 12-13, 2026)
+- **Type:** Open-weight latent MoE (145B total / ~10B active; 120B / ~8.6B active). Derived from Qwen3.8-Flash-Next, natively 4-bit trained. 48 layers, 512 experts, K=10, latent compression.
+- **Role:** Local/laptop/single-GPU agentic coding and reasoning. High reported throughput on consumer NVIDIA (e.g. 100+ tok/s agent decode on 5090-class). Strong self-reported Terminal-Bench 2.1 (~86.5), DeepSWE, GPQA.
+- **Status:** Weights on Hugging Face (Q3_K and NVFP4 variants). Runs via edge0-infer + edge0-strata (fork of Strata) on Linux/Windows with NVIDIA GPU + CUDA 13. Also supports Mac in some constrained configs. License: personal/research/internal OK; commercial/paid service requires separate agreement + underlying Qwen terms. Memory claims vary by source and quantization.
+
+### MiniMax H3-Image (Nov 10-11, 2026; ongoing top trending)
 - **Type:** Open-weight image generation/editing model (33.1B DiT based on MiniMax H3 architecture, without audio layers).
-- **Role:** Native 4K / ~16MP (4096×4096 up to 6272×2688) text-to-image and multi-reference editing (up to 16 images) in under 10 seconds (6-step distilled sampling, no CFG). Strong prompt adherence and creative control. One checkpoint for T2I + editing.
-- **Status:** Weights on Hugging Face (`MiniMaxAI/MiniMax-H3-Image`); community license (excludes EU, UK, South Korea, US). Also via MiniMax API, MiniMax Code, Hailuo AI (launch discounts). Native ComfyUI support (day-0). Rapidly trending on HF. Optional prompt expander available.
+- **Role:** Native 4K / ~16MP (4096×4096 up to 6272×2688) text-to-image and multi-reference editing (up to 16 images) in under 10-16 seconds (6-step distilled sampling, no CFG). Strong prompt adherence. One checkpoint for T2I + editing.
+- **Status:** Weights on Hugging Face (`MiniMaxAI/MiniMax-H3-Image`); community license (excludes EU, UK, South Korea, US). Also via MiniMax API, MiniMax Code, Hailuo AI (launch discounts). Native ComfyUI / Diffusers support. Rapidly trending on HF. Optional prompt expander available.
+
+### PAN 2 (IFM / MBZUAI, Nov 10, 2026)
+- **Type:** Open 29B world model (MMDiT diffusion backbone + frozen Qwen3.5-9B text encoder + Wan 2.2 VAE). Apache 2.0.
+- **Role:** Action-conditioned video simulation of future world states (text description + optional starting image → up to ~20s video at 704×1248 / 24 fps). Supports simulative reasoning for agents (imagine outcomes before acting). Generative Latent Prediction architecture.
+- **Status:** Weights, training and inference code released. Supported in Diffusers, vLLM, FastVideo, ComfyUI community nodes. Ranks highly among open models on Physics-IQ (vendor).
 
 ### Baidu ERNIE 5.5 Flash Preview (Nov 11, 2026)
 - **Type:** Post-trained MoE language model on ERNIE 5.5 Flash Base (280B total / 14B active, 1M context).
@@ -26,7 +41,7 @@ Living document. New entries go at the top. Older entries are refined or marked 
 ### Anthropic Claude Fable 5.2 & Mythos 5.2 (Nov 9, 2026)
 - **Type:** Closed frontier models (same underlying model). Fable with strong cyber/bio safeguards; Mythos with fewer safeguards for vetted programs.
 - **Role:** Hard technical work — complex coding, scientific research, long-horizon agentic tasks. Tops AA Intelligence Index (65 max). FrontierSWE v2 69.9%, Terminal-Bench-Science 0.1 74.6%, strong OSWorld and coding. Pre-release: 1,000 agents formalized Fermat’s Last Theorem in 30h; designed three working electronic devices; solved open black-hole physics problems.
-- **Status:** Generally available (Fable). $8 input / $40 output per M tokens (down from 5.1). ~30% faster. Optional 2.5x fast mode at double price. 1M context, 128K max output. On Anthropic API, AWS, Google Cloud, Microsoft Foundry. Mythos limited to Life Sciences / Cyber Verification programs.
+- **Status:** Generally available (Fable). $8 input / $40 output per M tokens (down from 5.1). ~30% faster. Optional 2.5x fast mode at double price. 1M context, 128K max output. On Anthropic API, AWS, Google Cloud, Microsoft Foundry. Mythos limited to Life Sciences / Cyber Verification programs. Expanding workspace: Whiteboards, Sheets, Data, Meetings.
 
 ### Google Gemini 4 Carbon (announced Oct 28; generally available Nov 10, 2026)
 - **Type:** Closed frontier model (Gemini 4 series strongest). 
@@ -192,7 +207,10 @@ Living document. New entries go at the top. Older entries are refined or marked 
 
 ## Other / Infrastructure
 
-- Claude Fable 5.2 / Mythos 5.2 (frontier technical work, price cut)
+- Gemini 4 Hydrogen (fast agentic, wide availability)
+- Edge0-145B/120B (local latent MoE on consumer GPU)
+- PAN 2 (open world model for agent simulation)
+- Claude Fable 5.2 / Mythos 5.2 (frontier technical work, price cut, workspace expansion)
 - Gemini 4 Carbon (GA, competitive pricing)
 - Muse Ember (small agent model)
 - LongCat-2.5 (full MIT weights)
@@ -205,12 +223,13 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - Nemotron small models for local agents
 - LFM3 family for multimodal edge
 - Transformers ongoing support
-- TRL, Diffusers updates (FLUX.3 Image Klein, Pika H3 Flex, multi-teacher distillation, Mistral Large 4 fine-tuning)
+- TRL, Diffusers updates (FLUX.3 Image Klein, Pika H3 Flex, multi-teacher distillation, Mistral Large 4 fine-tuning, H3-Image/PAN 2)
 - Cisco Project Quarry (agent behavior detection, open-sourced Oct 28)
 - POCKET-Darwin-180B CPU GGUF for high-end no-GPU inference
 - FreeToken edge MoE serving runtime
 - llama.cpp v0.9.0 (FP8, new architectures)
 - Together AI continuous inference optimization compiler
+- NVIDIA Snapshot (GPU checkpoint/restore for fast inference scale-out)
 
 ---
 
