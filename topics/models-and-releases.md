@@ -2,9 +2,26 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-11-15
+**Last refined:** 2026-11-16
 
 ---
+
+## New / Stabilizing Infrastructure (Nov 15-16)
+
+### Alibaba Qwen4-Max (Nov 16, 2026)
+- **Type:** Closed flagship MoE (reported ~2.4T total / ~71B active + N-gram embeddings), native vision, 1M context.
+- **Role:** Long-horizon agentic work, coding, professional tools, 3D/scientific discovery. Efficiency-focused (claims significant token/cost reductions vs Qwen3.8-Max).
+- **Status:** API live on QwenCloud ($1.50/$4.50); available in Qwen Studio, QwenWork, Qoder. Smaller Qwen4 open weights planned. Preview was Token Plan only earlier.
+
+### Meituan LongCat-2.5 (weights Nov 9; high coverage Nov 15-16)
+- **Type:** Open-weight (MIT) multimodal MoE (1.6T total / ~48B active). Text/image/video input.
+- **Role:** Long-horizon agentic coding and visual tasks. Trained on Chinese hardware (Huawei Ascend; no Nvidia).
+- **Status:** Weights on Hugging Face. API with promotional pricing. Self-hosting requires large multi-accelerator setups. Strong self-reported Terminal-Bench scores.
+
+### Claude Fable 5.2 image generation (Nov 15-16)
+- **Type:** Closed frontier model capability (same as gated Mythos 5.2).
+- **Role:** Image synthesis via Python code driving simulated brushstrokes (hundreds of thousands of strokes, physics of paint/bristles/canvas) rather than diffusion. Demonstrated photorealistic results.
+- **Status:** Available on Anthropic API / platforms ($8/$40). Mythos restricted to vetted programs. Strong reported robotics sim performance.
 
 ## New / Stabilizing Infrastructure (Nov 14-15)
 
