@@ -24,17 +24,16 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-11-16)
+## Latest highlights (as of 2026-11-17)
 
 - **Alibaba Qwen4-Max** — Full launch: new MoE (~2.4T/71B active), native vision, 1M context, $1.50/$4.50. Efficiency claims for long-horizon work; smaller open weights planned.
-- **Meituan LongCat-2.5** — MIT open weights (1.6T/~48B active multimodal agent model). Trained on Chinese hardware (no Nvidia). Strong self-reported agent benchmarks; on HF.
-- **Claude Fable 5.2 brushstroke imaging** — Generates images via Python-simulated paint strokes (hundreds of thousands) instead of diffusion.
-- **GPT-6 Astra** — Credited with leading detailed proof construction for a lattice Standard Model candidate.
+- **Tencent Hy4 flash** — Ultra-low-cost multimodal MoE (224B total / 12B active, 1M context) at $0.07/$0.281 per M tokens.
+- **Meituan LongCat-Video-Avatar 1.6** — MIT open weights for improved audio-driven human video generation (better lip sync, motion, long videos).
 - **Unsloth Dynamic V3.1 GGUFs for Qwen3.8-27B** — 5–10% accuracy gains on Terminal Bench, DeepSWE and more vs prior quants; runnable on 12GB RAM.
-- **Inkling 2 Small weights live** — Thinking Machines 594B/17B MoE under Apache 2.0 on HF with day-0 serving support.
-- **MiniMax H3-Image** — Continues top HF trending: native 4K T2I + multi-ref editing, open weights (community license with regional exclusions).
-- **Gemini 4 Hydrogen** — Google’s fast agentic model (1M context, $1.50/$7.50, xhigh thinking); widely available incl. free tiers.
-- **Trending HF** — Uncensored DeepSeek variants, MiniMax-H3-Image, Qwen3.8-27B, LTX-2.5, Inkling-2-Small, LongCat-2.5, Arete-27B, Kimi K3.1 Pro, idol.
-- **Free APIs / GPUs** — Stable free tiers on Kaggle (~30h/week), Modal ($30/mo), E2B ($100), HF ZeroGPU, Lightning credits, NVIDIA Build, Groq, Gemini AI Studio (incl. Hydrogen), OpenRouter (free Ling-3.2-flash 1M), Cloudflare. AMD MI300X credits.
+- **Inkling 2 Small weights live** — Thinking Machines open multimodal MoE under Apache 2.0 on HF with day-0 serving support.
+- **MiniMax H3-Image** — Continues top HF trending: native 4K T2I + multi-ref editing, open weights.
+- **Gemini 4 Hydrogen** — Google’s fast agentic model widely available incl. free tiers.
+- **Trending HF** — Uncensored DeepSeek variants leading, MiniMax-H3-Image, Qwen3.8-27B, LTX-2.5, Inkling-2-Small, ZONOS3-Mini, idol.
+- **Free APIs / GPUs** — Kaggle (~30h/week more predictable), Colab T4, Modal ($30/mo), E2B ($100), HF ZeroGPU, Lightning credits, NVIDIA Build, Groq, Gemini AI Studio (incl. Hydrogen), OpenRouter (free Ling-3.2-flash 1M), Cloudflare. AMD MI300X credits.
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.
