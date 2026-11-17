@@ -2,26 +2,31 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-11-16
+**Last refined:** 2026-11-17
 
 ---
 
-## New / Stabilizing Infrastructure (Nov 15-16)
+## New / Stabilizing Infrastructure (Nov 16-17)
 
 ### Alibaba Qwen4-Max (Nov 16, 2026)
-- **Type:** Closed flagship MoE (reported ~2.4T total / ~71B active + N-gram embeddings), native vision, 1M context.
+- **Type:** Closed flagship MoE (~2.4T total / 71B active + N-gram embeddings), native vision, 1M context.
 - **Role:** Long-horizon agentic work, coding, professional tools, 3D/scientific discovery. Efficiency-focused (claims significant token/cost reductions vs Qwen3.8-Max).
-- **Status:** API live on QwenCloud ($1.50/$4.50); available in Qwen Studio, QwenWork, Qoder. Smaller Qwen4 open weights planned. Preview was Token Plan only earlier.
+- **Status:** API live on QwenCloud ($1.50/$4.50); available in Qwen Studio, QwenWork, Qoder. Smaller Qwen4 open weights planned. 1M free quota for 90 days on some plans.
+
+### Tencent Hy4 flash (Nov 16, 2026)
+- **Type:** Closed low-cost multimodal MoE (224B total incl. Engram / 12B active), 1M context.
+- **Role:** Cost-efficient multimodal and long-context work.
+- **Status:** API live at $0.07 input / $0.281 output per M tokens on TokenHub. Weights and OpenRouter listing promised later. Available in WorkBuddy and Yuanbao.
+
+### Meituan LongCat-Video-Avatar 1.6 (Nov 15, 2026)
+- **Type:** Open-weight (MIT) audio-driven human video generation.
+- **Role:** Improved lip sync, facial/body expressiveness, and long-video consistency (>10 min videos).
+- **Status:** Weights + technical report on Hugging Face / ModelScope. Strong internal preference rankings.
 
 ### Meituan LongCat-2.5 (weights Nov 9; high coverage Nov 15-16)
 - **Type:** Open-weight (MIT) multimodal MoE (1.6T total / ~48B active). Text/image/video input.
 - **Role:** Long-horizon agentic coding and visual tasks. Trained on Chinese hardware (Huawei Ascend; no Nvidia).
 - **Status:** Weights on Hugging Face. API with promotional pricing. Self-hosting requires large multi-accelerator setups. Strong self-reported Terminal-Bench scores.
-
-### Claude Fable 5.2 image generation (Nov 15-16)
-- **Type:** Closed frontier model capability (same as gated Mythos 5.2).
-- **Role:** Image synthesis via Python code driving simulated brushstrokes (hundreds of thousands of strokes, physics of paint/bristles/canvas) rather than diffusion. Demonstrated photorealistic results.
-- **Status:** Available on Anthropic API / platforms ($8/$40). Mythos restricted to vetted programs. Strong reported robotics sim performance.
 
 ## New / Stabilizing Infrastructure (Nov 14-15)
 
@@ -56,7 +61,5 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Type:** Open-weight image generation/editing model (33.1B DiT based on MiniMax H3 architecture, without audio layers).
 - **Role:** Native 4K / ~16MP (4096×4096 up to 6272×2688) text-to-image and multi-reference editing (up to 16 images) in under 10-16 seconds (6-step distilled sampling, no CFG). Strong prompt adherence. One checkpoint for T2I + editing.
 - **Status:** Weights on Hugging Face (`MiniMaxAI/MiniMax-H3-Image`); community license (excludes EU, UK, South Korea, US). Also via MiniMax API, MiniMax Code, Hailuo AI (launch discounts). Native ComfyUI / Diffusers support. Rapidly trending on HF. Optional prompt expander available.
-
-[... previous content continues with Edge0, PAN 2, Baidu ERNIE, Qwen4-Max-Preview, Claude Fable 5.2, Gemini 4 Carbon, Muse Ember, LongCat-2.5, GPT-6 Cyber, Kimi K3.1 Pro, etc. as refined earlier ...]
 
 *Note: Full historical entries remain below this refined top section. Older items (pre-Nov 12) are retained for continuity and marked as ongoing where still relevant.*
