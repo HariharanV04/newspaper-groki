@@ -2,9 +2,46 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-11-17
+**Last refined:** 2026-11-19
 
 ---
+
+## New / Stabilizing Infrastructure (Nov 17-19)
+
+### Google Gemini 4 Neon (Nov 18, 2026)
+- **Type:** Closed mid-tier Gemini 4 model (adapted from Carbon). Multimodal (text/image/audio/video), 1M context, thinking levels low/medium/high/xhigh.
+- **Role:** Frontier-level intelligence for complex coding, knowledge work, and science at higher speed and lower cost than top-end models.
+- **Status:** API $3/$15 per M tokens (cached $0.15; batch/flex half). Live in Gemini API/AI Studio, Antigravity (Pro/Ultra), Gemini app, GitHub Copilot. Strong AA Index (~61 xhigh), Vals, Agent Arena rankings. No free tier.
+
+### Microsoft MAI Code 2 / Code 2 Flash / Cyber 2 Flash et al. (Nov 17, 2026 Ignite)
+- **Type:** Closed sparse MoE + vision coding/security/image/realtime models (1M+ context for coding).
+- **Role:** Enterprise agentic coding and cyber at aggressive price-performance (claims Code 2 ~98% GPT-6.1 Sol at ~40% price; near Opus at fraction of cost).
+- **Status:** Available in GitHub Copilot (various tiers); licensed weights for Azure customization. Decision models also GA.
+
+### OpenAI GPT-6.2 Astra and Sol (Nov 17, 2026)
+- **Type:** Closed frontier/everyday models. 1.05M context, text+image.
+- **Role:** Cheaper agentic/coding and general work (Astra ~20% price cut; Sol everyday).
+- **Status:** Live in ChatGPT Work, Codex, API, GitHub Copilot. Background-mode beta added.
+
+### Tencent Hy4 flash (open weights Nov 17-18, 2026)
+- **Type:** Open multimodal MoE (220-224B total / 12B active, incl. Engram), 1M context.
+- **Role:** Cost-efficient multimodal and long-context work; now self-hostable.
+- **Status:** Weights (base/FP8) on HF/ModelScope under Tencent Hy License. Prior ultra-cheap API ($0.07/$0.281). Available in WorkBuddy/Yuanbao.
+
+### SenseTime SenseNova-Loop-9B (Nov 17, 2026)
+- **Type:** Open Apache 2.0 ~9B multimodal (text/image). Looped architecture (32 physical layers → 56 executions via shared middle block + mHC).
+- **Role:** Parameter-efficient depth for agents/coding/data analysis; competitive with Qwen3.8-27B on several benches.
+- **Status:** Weights + code on HF/GitHub. 512K context; 4-bit ~4.9GB, low VRAM (~10GiB at 64K). Day-0 quant support.
+
+### Reson8 Rumble-2-Flash (highlighted Nov 18)
+- **Type:** Open 0.5B speech ASR (Apache 2.0), 40+ languages.
+- **Role:** Efficient multilingual ASR matching much larger models on phone calls and HF Open ASR leaderboard.
+- **Status:** Open weights on HF. Practical for edge/deploy balancing accuracy and throughput.
+
+### Phancy Phai-A1 (Nov 18, 2026)
+- **Type:** Open (Apache) fast coding/agent model post-trained from Qwen, 1M context.
+- **Role:** PC/Huawei Ascend runnable agentic coding.
+- **Status:** Open weights released.
 
 ## New / Stabilizing Infrastructure (Nov 16-17)
 
@@ -13,53 +50,14 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Role:** Long-horizon agentic work, coding, professional tools, 3D/scientific discovery. Efficiency-focused (claims significant token/cost reductions vs Qwen3.8-Max).
 - **Status:** API live on QwenCloud ($1.50/$4.50); available in Qwen Studio, QwenWork, Qoder. Smaller Qwen4 open weights planned. 1M free quota for 90 days on some plans.
 
-### Tencent Hy4 flash (Nov 16, 2026)
-- **Type:** Closed low-cost multimodal MoE (224B total incl. Engram / 12B active), 1M context.
+### Tencent Hy4 flash (API Nov 16; weights later)
+- **Type:** Closed then open low-cost multimodal MoE (224B total incl. Engram / 12B active), 1M context.
 - **Role:** Cost-efficient multimodal and long-context work.
-- **Status:** API live at $0.07 input / $0.281 output per M tokens on TokenHub. Weights and OpenRouter listing promised later. Available in WorkBuddy and Yuanbao.
+- **Status:** API live at $0.07 input / $0.281 output per M tokens on TokenHub. Weights now open (see above).
 
 ### Meituan LongCat-Video-Avatar 1.6 (Nov 15, 2026)
 - **Type:** Open-weight (MIT) audio-driven human video generation.
 - **Role:** Improved lip sync, facial/body expressiveness, and long-video consistency (>10 min videos).
 - **Status:** Weights + technical report on Hugging Face / ModelScope. Strong internal preference rankings.
 
-### Meituan LongCat-2.5 (weights Nov 9; high coverage Nov 15-16)
-- **Type:** Open-weight (MIT) multimodal MoE (1.6T total / ~48B active). Text/image/video input.
-- **Role:** Long-horizon agentic coding and visual tasks. Trained on Chinese hardware (Huawei Ascend; no Nvidia).
-- **Status:** Weights on Hugging Face. API with promotional pricing. Self-hosting requires large multi-accelerator setups. Strong self-reported Terminal-Bench scores.
-
-## New / Stabilizing Infrastructure (Nov 14-15)
-
-### Unsloth Dynamic V3.1 GGUFs for Qwen3.8-27B (Nov 11, 2026; high ongoing traction)
-- **Type:** Improved quantized GGUF builds of the popular 27B dense vision-language model using Unsloth’s Dynamic V3.1 algorithm.
-- **Role:** Highest-accuracy local inference for Qwen3.8-27B on consumer hardware. 5–10% average gains on Terminal Bench, DeepSWE, LiveCodeBench and other agentic/coding benchmarks vs prior UD3 and competing quants (GSQ-RCO, Exllama-v3) at similar sizes. Quants 2-bit to 6-bit updated; smallest builds run on ~12GB RAM.
-- **Status:** Available on Hugging Face (`unsloth/Qwen3.8-27B-GGUF`). Also applied to DeepSeek-V4.1-Flash and Qwen3.8-Flash-Next. Documentation and benchmarks on Unsloth site. Compatible with llama.cpp and Unsloth Desktop.
-
-### Weight-space programming advances (recent)
-- **Type:** Technique for direct weight editing of small models without gradient-based training.
-- **Role:** Lifts Qwen 3.5 0.8B from 7.4% to 58.7% on Math 500. Demonstrates continued progress in reading and modifying trained behaviors.
-- **Status:** Weights and details shared via HF posts and related research. Builds on earlier MIT CSAIL work.
-
-### BananaMind/BETU-SLM-Leaderboard (recent)
-- **Type:** Community leaderboard focused on small language models.
-- **Role:** Ranks models by Overall Index (weighted mix of Hellaswag, ARC Easy, PIQA, Arithmark 3, Tiny Theory of Mind, BananaMind Base Bench). Simple one-command addition of custom models.
-- **Status:** Released and active.
-
-## Frontier / Flagship & Large Open
-
-### Google Gemini 4 Hydrogen (Nov 12, 2026)
-- **Type:** Closed fast agentic model (Gemini 4 series; adapted from Carbon).
-- **Role:** Rapid execution across everyday coding and diverse agentic workflows. 1M unified input+output context. Thinking levels LOW/MEDIUM/HIGH (default)/XHIGH. Claims 2.5× faster than Gemini 3.8 Flash at default, stronger Terminal-Bench, fewer fabrications; competitive with / surpasses Argon on some independent indexes at higher thinking.
-- **Status:** Generally available globally (Gemini API, AI Studio all tiers, Search, Gemini app, Antigravity for Pro/Ultra, business, Android Studio). $1.50 / $7.50 per M tokens. Replaces prior Flash role for many surfaces. Free tier available in AI Studio.
-
-### Inkling 2 Small (weights Nov 12, 2026)
-- **Type:** Open-weight multimodal MoE (594B total / 17B active). Apache 2.0.
-- **Role:** Agentic coding, vision, knowledge work, and reasoning. Strong open rankings in Agent Arena and Code Arena.
-- **Status:** Weights live on Hugging Face. Day-0 support in vLLM, SGLang, Unsloth. API available via multiple providers.
-
-### MiniMax H3-Image (Nov 10-11, 2026; ongoing top trending)
-- **Type:** Open-weight image generation/editing model (33.1B DiT based on MiniMax H3 architecture, without audio layers).
-- **Role:** Native 4K / ~16MP (4096×4096 up to 6272×2688) text-to-image and multi-reference editing (up to 16 images) in under 10-16 seconds (6-step distilled sampling, no CFG). Strong prompt adherence. One checkpoint for T2I + editing.
-- **Status:** Weights on Hugging Face (`MiniMaxAI/MiniMax-H3-Image`); community license (excludes EU, UK, South Korea, US). Also via MiniMax API, MiniMax Code, Hailuo AI (launch discounts). Native ComfyUI / Diffusers support. Rapidly trending on HF. Optional prompt expander available.
-
-*Note: Full historical entries remain below this refined top section. Older items (pre-Nov 12) are retained for continuity and marked as ongoing where still relevant.*
+*Note: Full historical entries remain below this refined top section. Older items are retained for continuity and marked as ongoing where still relevant. See git history for complete prior content.*
