@@ -24,16 +24,15 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-11-17)
+## Latest highlights (as of 2026-11-19)
 
-- **Alibaba Qwen4-Max** — Full launch: new MoE (~2.4T/71B active), native vision, 1M context, $1.50/$4.50. Efficiency claims for long-horizon work; smaller open weights planned.
-- **Tencent Hy4 flash** — Ultra-low-cost multimodal MoE (224B total / 12B active, 1M context) at $0.07/$0.281 per M tokens.
-- **Meituan LongCat-Video-Avatar 1.6** — MIT open weights for improved audio-driven human video generation (better lip sync, motion, long videos).
-- **Unsloth Dynamic V3.1 GGUFs for Qwen3.8-27B** — 5–10% accuracy gains on Terminal Bench, DeepSWE and more vs prior quants; runnable on 12GB RAM.
-- **Inkling 2 Small weights live** — Thinking Machines open multimodal MoE under Apache 2.0 on HF with day-0 serving support.
-- **MiniMax H3-Image** — Continues top HF trending: native 4K T2I + multi-ref editing, open weights.
-- **Gemini 4 Hydrogen** — Google’s fast agentic model widely available incl. free tiers.
-- **Trending HF** — Uncensored DeepSeek variants leading, MiniMax-H3-Image, Qwen3.8-27B, LTX-2.5, Inkling-2-Small, ZONOS3-Mini, idol.
-- **Free APIs / GPUs** — Kaggle (~30h/week more predictable), Colab T4, Modal ($30/mo), E2B ($100), HF ZeroGPU, Lightning credits, NVIDIA Build, Groq, Gemini AI Studio (incl. Hydrogen), OpenRouter (free Ling-3.2-flash 1M), Cloudflare. AMD MI300X credits.
+- **Google Gemini 4 Neon** — Mid-tier ($3/$15, 1M context, multimodal). Frontier-level for coding/knowledge/science; faster claims; live in API, Studio, Antigravity, Copilot.
+- **Microsoft MAI models** — Code 2 / Flash / Cyber 2 Flash etc. at Ignite: strong price-performance claims; available in GitHub Copilot.
+- **OpenAI GPT-6.2 Astra & Sol** — Cheaper successors (1.05M context); in ChatGPT, Codex, API, Copilot.
+- **Tencent Hy4 flash open weights** — 220B+ MoE / 12B active multimodal 1M on HF.
+- **SenseNova-Loop-9B** — Open ~9B looped multimodal (Apache), competitive with 27B-class, low VRAM.
+- **Rumble-2-Flash** — Open 0.5B multilingual ASR matching larger models.
+- **Trending HF** — Haru-4B (audio), Qwen pi-adapted (agent), LTX-2.5, Inkling-2-Small, MiniMax-H3-Image, Hy4-flash.
+- **Free APIs / GPUs** — Kaggle (~30h/week), Modal ($30/mo), E2B ($100), HF ZeroGPU, Colab, Lightning, NVIDIA NIM, Groq, Gemini AI Studio, OpenRouter, Cloudflare. AMD and startup credits.
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.
