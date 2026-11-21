@@ -2,11 +2,37 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-11-20
+**Last refined:** 2026-11-21
 
 ---
 
-## New / Stabilizing Infrastructure (Nov 18-20)
+## New / Stabilizing Infrastructure (Nov 20-21)
+
+### Thinking Machines Inkling 2 Mini (Nov 20, 2026)
+- **Type:** Open Apache 2.0 looped MoE multimodal (~26.4B total / 3.4B active; research varloop option). Text+image in, text out, 1M context. ~20GB checkpoint.
+- **Role:** High-capability local/edge model for agents, coding, chat, RAG. Leads open models <100B on several agent benches.
+- **Status:** Weights on HF. Supports Transformers, llama.cpp, MLX, SGLang. Available on Tinker. Designed for 32GB+ unified memory devices.
+
+### Tencent Hy4 full open weights (Nov 20, 2026)
+- **Type:** Natively multimodal MoE flagship (770B total / 49B active + vision). 1M context, vision + computer use.
+- **Role:** Long-horizon multimodal agentic work, coding, office, research. Now self-hostable.
+- **Status:** Hy4, Hy4-FP8, base on HF/ModelScope/GitCode under Tencent Hy License 1.0 (commercial restrictions for large MaaS). Day-0 vLLM/SGLang. System Card with safety evals (cyber/bio). GGUF available.
+
+### Tencent WeMM-Video family (Nov 20, 2026)
+- **Type:** Omni-modal (text/image/audio/video → text). 2B/4B/9B dense + 35B-A3B MoE.
+- **Role:** Joint audio-visual video understanding. Claimed open SOTA.
+- **Status:** Apache 2.0 weights + quantized builds on HF. Technical report released.
+
+### Cloudflare Clairic (Nov 20, 2026)
+- **Type:** Open Apache 2.0 27B (on Qwen3.8-27B) + 9B flash for structured schema extraction from text/JSON/images.
+- **Role:** High-accuracy structured data extraction, faster than OCR pipelines.
+- **Status:** Weights on HF. Flash low-latency.
+
+### NVIDIA Nemotron-Labs-Sigma (Nov 21, 2026)
+- **Type:** 14 open continuous diffusion language model checkpoints.
+- **Status:** Open weights released.
+
+## Ongoing / Recent (Nov 17-19)
 
 ### Google Gemini 4 Neon (Nov 18, 2026)
 - **Type:** Closed mid-tier Gemini 4 model (adapted from Carbon). Multimodal (text/image/video/audio/PDF), 1M context, thinking levels low/medium/high/xhigh.
@@ -42,27 +68,5 @@ Living document. New entries go at the top. Older entries are refined or marked 
 - **Type:** Open multimodal MoE (220-224B total / 12B active, incl. Engram), 1M context.
 - **Role:** Cost-efficient multimodal and long-context work; now self-hostable.
 - **Status:** Weights (base/FP8) on HF/ModelScope under Tencent Hy License. Strongly trending. Prior ultra-cheap API ($0.07/$0.281).
-
-## Ongoing / Recent (Nov 16-17)
-
-### OpenAI GPT-6.2 Astra and Sol (Nov 17, 2026)
-- **Type:** Closed frontier/everyday models. 1.05M context, text+image.
-- **Role:** Cheaper agentic/coding and general work (Astra ~20% price cut; Sol everyday).
-- **Status:** Live in ChatGPT Work, Codex, API, GitHub Copilot. Background-mode discounts available. GPT-Live-1.1 voice improvements (Nov 19-20).
-
-### Microsoft MAI Code 2 / Code 2 Flash / Cyber 2 Flash et al. (Nov 17, 2026 Ignite)
-- **Type:** Closed sparse MoE + vision coding/security/image/realtime models (1M+ context for coding).
-- **Role:** Enterprise agentic coding and cyber at aggressive price-performance.
-- **Status:** Available in GitHub Copilot (various tiers); licensed weights for Azure customization.
-
-### SenseTime SenseNova-Loop-9B (Nov 17, 2026)
-- **Type:** Open Apache 2.0 ~9B multimodal (text/image). Looped architecture.
-- **Role:** Parameter-efficient depth for agents/coding/data analysis; competitive with Qwen3.8-27B on several benches.
-- **Status:** Weights + code on HF/GitHub. 512K context; low VRAM (4-bit ~4.9GB).
-
-### Alibaba Qwen4-Max (Nov 16, 2026)
-- **Type:** Closed flagship MoE (~2.4T total / 71B active), native vision, 1M context.
-- **Role:** Long-horizon agentic work, coding, professional tools.
-- **Status:** API live ($1.50/$4.50); smaller open weights planned.
 
 *Note: Full historical entries remain below this refined top section. Older items are retained for continuity and marked as ongoing where still relevant. See git history for complete prior content.*
