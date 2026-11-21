@@ -2,9 +2,26 @@
 
 High-level themes. Updated when the landscape shifts; not a daily dump.
 
-**Last refined:** 2026-11-19
+**Last refined:** 2026-11-21
 
 ---
+
+## Dominant Themes (late Nov 2026)
+
+1. **Local and edge-capable open multimodal models**  
+   Inkling 2 Mini (~26B/3B active looped MoE, ~20GB, Apache 2.0) runs on consumer unified-memory devices and leads open models under 100B on agentic benches. Compact efficient architectures (looped, low-active MoE, small ASR like Rumble-2-Flash) + strong quantization/GGUF/MLX support make frontier-adjacent performance practical without cloud GPUs.
+
+2. **Chinese open multimodal scale + efficiency**  
+   Full Hy4 770B/49B active multimodal flagship open weights (vision + computer use, 1M context) under Tencent Hy License + WeMM-Video omni family (Apache). Hy4-flash earlier ultra-cheap API + open weights. Continues pattern of high-capability open releases from Chinese labs with commercial caveats for large-scale MaaS.
+
+3. **Agent-generated science and executable verification**  
+   alphaXiv experiment: hundreds of agents autonomously produced nearly a thousand papers, founded a journal, and used code-based peer review that overturned half of challenged claims. Parallel AI-assisted formal mathematics (Riemann/GRH Lean work). Shifts from pure generation toward self-auditing research volume.
+
+4. **Structured extraction, omni understanding, and tool-boundary agents**  
+   Clairic for schema filling from mixed inputs; WeMM for joint audio-visual. Coding agents (Claude Code, Cursor, Codex, Copilot, Antigravity) integrating new models with emphasis on tool safety and long-horizon reliability.
+
+5. **Stable free/low-cost compute alongside local stacks**  
+   Kaggle ~30h/week remains the most reliable free GPU quota. Modal, ZeroGPU, Cloudflare, E2B, Lightning, NIM, Groq, OpenRouter free tiers continue. Startup credits active. Local inference maturity (llama.cpp, Unsloth, MLX) now covers high-capability small/medium models.
 
 ## Dominant Themes (mid-late Nov 2026)
 
