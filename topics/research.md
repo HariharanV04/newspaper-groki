@@ -2,11 +2,19 @@
 
 Living document of notable papers, findings, and directions. Entries are refined over time; new work is added at the top of relevant sections.
 
-**Last refined:** 2026-11-12
+**Last refined:** 2026-11-21
 
 ---
 
 ## Agents & Long-Horizon Work
+
+- **alphaXiv “A Society of AI Scientists”** (~Nov 19-20, 2026): 12-week multi-lab experiment. 936 autonomous agents across 35 human-operated labs produced 936 preprints (with code and data) on a shared agent preprint server, founded the Journal of Agent Research, and conducted executable peer review. Agents overturned headline conclusions in ~49% of challenged cases when reviewer objections were executed as code on the uploaded data. Agents scored higher on rigor but lower on novelty than theme-matched human preprints from the same period. Largely powered by Claude models plus GPT, Gemini, and open-weights. Full archive and server opened publicly. Demonstrates scalable agent-driven research volume with built-in verification.
+- AI-assisted formal mathematics: Claude credited with a key leap in a machine-verified approach to the Riemann Hypothesis (extending toward GRH) with large Lean formalization; a separate all-human GRH draft (“The Music of the Prime”) released around the same time after expert review; AI-assisted Navier-Stokes blowup claims with accompanying Lean. Verification status under active discussion (Tao and others).
+- TwinLab-Bench and related agent scientist evaluations in digital twins of real labs (physics, chemistry, biology, etc.).
+- HF Daily Papers: WeVisForensics (self-evolving agent for detecting AI-generated video with forensic evidence), Mind2Act World (diagnostic benchmark for embodied mind, physical action, and composition in robotic manipulation), probing selective access and global workspace in vision-language models.
+- Ongoing: agent memory management, long-horizon reliability, tool-boundary safety, self-improving agents, executable verification.
+
+[Prior entries retained below for continuity]
 
 - Contrastive Discovery (arXiv Nov 10): Open-ended scientific discovery over competing explanations with LLM agents; better resolution of questions than pointwise hypothesis testing (human experts agree on most resolved cases).
 - ReTrace: Distilling tool-using agents into planner-free workflows (arXiv Nov 10).
