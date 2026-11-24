@@ -2,17 +2,26 @@
 
 Living document of notable papers, findings, and directions. Entries are refined over time; new work is added at the top of relevant sections.
 
-**Last refined:** 2026-11-21
+**Last refined:** 2026-11-24
 
 ---
 
-## Agents & Long-Horizon Work
+## Efficiency, Memory & Architectures
 
-- **alphaXiv “A Society of AI Scientists”** (~Nov 19-20, 2026): 12-week multi-lab experiment. 936 autonomous agents across 35 human-operated labs produced 936 preprints (with code and data) on a shared agent preprint server, founded the Journal of Agent Research, and conducted executable peer review. Agents overturned headline conclusions in ~49% of challenged cases when reviewer objections were executed as code on the uploaded data. Agents scored higher on rigor but lower on novelty than theme-matched human preprints from the same period. Largely powered by Claude models plus GPT, Gemini, and open-weights. Full archive and server opened publicly. Demonstrates scalable agent-driven research volume with built-in verification.
+- **MemOnce** (HF Papers / arXiv ~Nov 23, 2026): Scalable memory architecture for LLMs. Memory encoder-decoder caches compact final-layer hidden states and decodes layer-specific KV caches on demand; memory sparse attention for adaptive retrieval. Applied to Qwen3.5-4B at 1M context: 1,313× cache size reduction and 6.9× prefill speedup. Linear-time complexity while cutting GPU memory for long-horizon tasks.
+- Loop Transformer designs: GLM-5.4 (28 shared layers ×2 at 750B scale with gated progressive updates + hybrid KV), Inkling 2 Mini (middle 12 layers ×3), SenseNova-Loop-9B. Extra passes buy reasoning depth without proportional parameter growth; practical at scale with careful gating and cache reuse.
+- cmHC: Manifold-constrained Hyper-Connections stabilize residual stream mixing across multiple streams by constraining matrices to the Birkhoff polytope.
+- Speculative decoding refinements (DICE: pre-sampling randomness for better draft-target alignment).
+- Clover-35B-A3B-Preview: MoE diffusion language model (35B/3B) with thinking-mode generation; technical report claims strong SWE-bench Verified.
+
+## Agents, Formal Verification & Science
+
+- Gemini 4 agent teams (DeepMind, ~Nov 23): Discovered faster quantum circuits and proved optimizations in Lean. Reported large cost reductions (e.g., ~290× for arcsin routine, ~11.8× for inertial confinement fusion-related work). Demonstrates agentic algorithm discovery with formal verification.
+- Anthropic Claude: Claimed production of a Lean proof of Valiant’s VP ≠ VNP (open since 1979). Not yet independently human-verified. Parallel AI-assisted progress on Riemann Hypothesis formalization continues under discussion.
+- alphaXiv “A Society of AI Scientists” (~Nov 19-20, 2026): 12-week multi-lab experiment. 936 autonomous agents across 35 human-operated labs produced 936 preprints (with code and data) on a shared agent preprint server, founded the Journal of Agent Research, and conducted executable peer review. Agents overturned headline conclusions in ~49% of challenged cases when reviewer objections were executed as code on the uploaded data. Agents scored higher on rigor but lower on novelty than theme-matched human preprints from the same period. Largely powered by Claude models plus GPT, Gemini, and open-weights. Full archive and server opened publicly. Demonstrates scalable agent-driven research volume with built-in verification.
 - AI-assisted formal mathematics: Claude credited with a key leap in a machine-verified approach to the Riemann Hypothesis (extending toward GRH) with large Lean formalization; a separate all-human GRH draft (“The Music of the Prime”) released around the same time after expert review; AI-assisted Navier-Stokes blowup claims with accompanying Lean. Verification status under active discussion (Tao and others).
 - TwinLab-Bench and related agent scientist evaluations in digital twins of real labs (physics, chemistry, biology, etc.).
-- HF Daily Papers: WeVisForensics (self-evolving agent for detecting AI-generated video with forensic evidence), Mind2Act World (diagnostic benchmark for embodied mind, physical action, and composition in robotic manipulation), probing selective access and global workspace in vision-language models.
-- Ongoing: agent memory management, long-horizon reliability, tool-boundary safety, self-improving agents, executable verification.
+- HF Daily Papers: WeVisForensics (self-evolving agent for detecting AI-generated video with forensic evidence), Mind2Act World (diagnostic benchmark for embodied mind, physical action, and composition in robotic manipulation), probing selective access and global workspace in vision-language models; non-penetrating world models; video foresight reasoning via on-policy self-distillation.
 
 [Prior entries retained below for continuity]
 
@@ -49,25 +58,6 @@ Living document of notable papers, findings, and directions. Entries are refined
 - WildAWM: open-source pipeline for synthesizing computer-use agent environments and tasks.
 - Recent: Direct Pass@k Optimization for Thought Pruning; EpiSEM-Bench (safety under missing evidence); Simulated Control Evals; Who Is Sycophantic to Whom; Jev-DLC; Separate Field Scoring; OA-RAG ontology-based agentic RAG. Weight-space programming (MIT CSAIL) for direct weight editing.
 - Prior strong: Diversity-Preserving SMC for Diffusion LLM Decoding, EvoSkill v2, LEAPS long-context, Quantum Circuit Discovery, evidence management, world models, DecisionPivot.
-
-## Efficiency, Diffusion & Architectures
-
-- FreeToken (arXiv:2608.16157): Edge-native MoE serving that treats GPU+CPU+host RAM as a unified platform. Bandwidth-adaptive execution enables large MoEs (35B on laptop, 284B on gaming desktop, 753B on workstation) at interactive speeds. Open source (Apache 2.0).
-- Microsoft TokenEconomizer: free tool reducing AI coding costs by up to 31% via token optimization (Microsoft + UC Berkeley).
-- TableTune: Measured, self-correcting draft-length tables for dynamic speculative decoding.
-- GAAC: Lossless KV compression for bandwidth-efficient LLM inference on personal devices.
-- LFM3 tri-hybrid architecture enabling strong performance in ~2B class with 256K context and low memory footprint.
-- Pika H3 Flex post-training for 6-step (vs 50) video generation with quality retention. PrunaAI P-H3-Image further optimizes MiniMax-H3 derived image gen. MiniMax H3-Image native 16MP in 6 steps.
-- CALM overthinking mitigation; fused LM heads; low-bit n-gram embeddings; sparse MoE designs.
-- Open inference stacks (DeepInfer) as operational systems research. Together AI continuous inference optimization compiler (up to 2.6x).
-- Ongoing low-active MoEs and on-device (Flint, Glimmer, Nemotron Bolt E4B, LFM3).
-- Unmasking policies in diffusion LMs; speculative acceptance diagnostics; KV cache management (WAKMan).
-- Clover-35B-A3B block-diffusion agents for coding/tool-use.
-- JetBrains Mellum MTP head: multi-token prediction for faster decoding.
-- TRL multi-teacher on-policy distillation and single-node LoRA for large models like Mistral Large 4.
-- Coarse Semantic Blocks for Efficient Training-Free Sparse Attention.
-- Quantized serving measurements for mid-size open LLMs (speed vs accuracy tradeoffs).
-- llama.cpp v0.9.0 native FP8 support.
 
 ## Multimodal, Embeddings & Generation
 
