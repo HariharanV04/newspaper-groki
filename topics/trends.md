@@ -2,26 +2,30 @@
 
 High-level themes. Updated when the landscape shifts; not a daily dump.
 
-**Last refined:** 2026-11-21
+**Last refined:** 2026-11-24
 
 ---
 
 ## Dominant Themes (late Nov 2026)
 
-1. **Local and edge-capable open multimodal models**  
-   Inkling 2 Mini (~26B/3B active looped MoE, ~20GB, Apache 2.0) runs on consumer unified-memory devices and leads open models under 100B on agentic benches. Compact efficient architectures (looped, low-active MoE, small ASR like Rumble-2-Flash) + strong quantization/GGUF/MLX support make frontier-adjacent performance practical without cloud GPUs.
+1. **Loop Transformer architectures for deeper reasoning**  
+   Z.ai GLM-5.4 (750B-scale flagship looping 28 GLM-5 layers twice, claimed 2T-3T class), Thinking Machines Inkling 2 Mini (local ~26B/3B active, middle layers ×3, still #1 trending), SenseNova-Loop and others. Shared-weight repeated passes increase effective depth with controlled memory via gated updates and hybrid KV caches. Practical both at frontier scale and on consumer hardware.
 
-2. **Chinese open multimodal scale + efficiency**  
-   Full Hy4 770B/49B active multimodal flagship open weights (vision + computer use, 1M context) under Tencent Hy License + WeMM-Video omni family (Apache). Hy4-flash earlier ultra-cheap API + open weights. Continues pattern of high-capability open releases from Chinese labs with commercial caveats for large-scale MaaS.
+2. **Local and edge-capable open multimodal models**  
+   Inkling 2 Mini (~26B/3B active looped MoE, ~20GB, Apache 2.0) runs on consumer unified-memory devices and leads open models under 100B on agentic benches. Compact efficient architectures (looped, low-active MoE, small ASR like Rumble-2-Flash) + strong quantization/GGUF/MLX support make frontier-adjacent performance practical without cloud GPUs. Heavy HF activity continues.
 
-3. **Agent-generated science and executable verification**  
-   alphaXiv experiment: hundreds of agents autonomously produced nearly a thousand papers, founded a journal, and used code-based peer review that overturned half of challenged claims. Parallel AI-assisted formal mathematics (Riemann/GRH Lean work). Shifts from pure generation toward self-auditing research volume.
+3. **Open specialized and medical models under permissive licenses**  
+   Ant Group LingSante family (MIT) for clinical reasoning, tool-calling, and multimodal health imaging/reports; Ling-3.2-air multimodal MoE; China Telecom Xing4.1-Preview (Apache); small CPU document parsers. Expands self-hosted options beyond general chat/coding into domain applications.
 
-4. **Structured extraction, omni understanding, and tool-boundary agents**  
-   Clairic for schema filling from mixed inputs; WeMM for joint audio-visual. Coding agents (Claude Code, Cursor, Codex, Copilot, Antigravity) integrating new models with emphasis on tool safety and long-horizon reliability.
+4. **Agent-driven infrastructure security and code workflows**  
+   OpenAI + Cisco Shirudo: open-source eBPF runtime enabling agents to deploy signed temporary shields on running Linux systems without restarts. Anthropic Claude Ship for automated GitHub PR review/patch/approval. Continues shift toward machine-speed defensive and collaborative agent tooling.
 
-5. **Stable free/low-cost compute alongside local stacks**  
-   Kaggle ~30h/week remains the most reliable free GPU quota. Modal, ZeroGPU, Cloudflare, E2B, Lightning, NIM, Groq, OpenRouter free tiers continue. Startup credits active. Local inference maturity (llama.cpp, Unsloth, MLX) now covers high-capability small/medium models.
+5. **Agent-generated science and executable verification**  
+   alphaXiv experiment: hundreds of agents autonomously produced nearly a thousand papers, founded a journal, and used code-based peer review that overturned half of challenged claims. Parallel AI-assisted formal mathematics (Riemann/GRH Lean work, VP
+eq VNP claim, quantum circuit discovery with Lean proofs). Shifts from pure generation toward self-auditing research volume and formally verified agent discoveries.
+
+6. **Stable free/low-cost compute alongside local stacks**  
+   Kaggle ~30h/week remains the most reliable free GPU quota. Modal, ZeroGPU, Cloudflare, E2B, Lightning, NIM, Groq, OpenRouter free tiers continue. Shadeform marketplace offers competitive H100 pricing (~$2.73/hr). Startup credits active. Local inference maturity (llama.cpp, Unsloth, MLX) now covers high-capability small/medium models including Inkling Mini.
 
 ## Dominant Themes (mid-late Nov 2026)
 
