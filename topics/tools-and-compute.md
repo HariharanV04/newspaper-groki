@@ -2,7 +2,7 @@
 
 Living reference for free/low-cost GPUs, hosting, inference stacks, and developer tooling. Quotas and offerings change; update entries in place.
 
-**Last refined:** 2026-11-16
+**Last refined:** 2026-11-24
 
 ---
 
@@ -10,8 +10,8 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 
 | Provider | What you get | Notes / Limits |
 |----------|--------------|----------------|
-| Google Colab (free) | Hosted notebook, limited T4 | Session limits (~12h); quota fluctuates |
-| Kaggle Notebooks | T4 ×2, ~30h/week | Phone verification; multi-GPU / TPU options |
+| Google Colab (free) | Hosted notebook, limited T4 (16GB) | Session limits (~12h); quota fluctuates; signed-out sees CPU/T4/v5e TPU |
+| Kaggle Notebooks | 2×T4, ~30h/week (sometimes higher) | Phone verification; sessions ≤12h GPU; best reliable free quota for experiments |
 | Hugging Face ZeroGPU | Shared RTX Pro 6000 Blackwell for Gradio Spaces | Short daily quota (minutes); demo-oriented |
 | NVIDIA NIM / build.nvidia.com | Free endpoints for many open models (Nemotron, DeepSeek-V4.1-Flash, GLM, Muse, Gemma, etc.) | OpenAI-compatible; NVIDIA Developer Program key (phone verification in supported countries). Rate limits vary. |
 | Groq free tier | Fast inference on supported models (gpt-oss, Qwen3.8-27B, etc.) | Rate limits (e.g. 30 RPM / 1k RPD for coding models); no card |
@@ -27,18 +27,24 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 | IteraCompute / others | Free token routes (e.g. up to 30M tokens/month Auto on open models) | No card for some; rate limited |
 | NVIDIA Run:ai (open-sourced) | Full GPU orchestration (Apache 2.0) | Self-host; supply own K8s/GPUs |
 | Startup programs | Credit grants | Vary (e.g. Inference.net up to $10k, Hostkey GPU grants, Novita, Google/AWS/Microsoft, GMI Cloud, fal, Together AI, Baseten, etc.) |
-| RunPod / Vast.ai | Cheap spot GPUs | Paid but low $/hr |
+| RunPod / Vast.ai / Lambda / Nebius | Cheap spot / on-demand GPUs | H100 ~$3.8-4.5/hr typical; Shadeform marketplace from ~$2.73/hr H100 |
 | Leafcloud (emerging) | Free Blackwell slices (waitlist) | 50h/month planned for RTX PRO 6000 slices |
+| SageMaker Studio Lab | Limited GPU hours | ~4h/day approved accounts |
 
 ## Hosting & Serving
 
+- **Shirudo** (OpenAI + Cisco, Nov 23, 2026): Open-source (BSD 2-Clause; BPF dual BSD/GPL) Linux runtime based on eBPF/Tetragon. Lets AI agents generate and deploy cryptographically signed temporary "shields" that block vulnerable code paths on running systems without restarts while permanent patches are tested/rolled out. Pre-release; requires special kernel + TPM 2.0. GitHub: shirudo-dev/shirudo. Demonstrated on Java4Shell-style exploits via Codex-generated shields.
+- **Claude Ship** (Anthropic, Nov 23): Suite of GitHub-integrated agents (Code Review, PR Steward, Claude Approvals) for automated routine PR review, patching, and approval based on repo policies.
+- **GLM-5.4**: Hosted in Z.ai Coding Plan / ZCode / Chat. API and weights after safety.
+- **Inkling 2 Mini**: Open Apache 2.0 on HF (~20GB). Day-0 support in Transformers, vLLM, SGLang, Unsloth, llama.cpp, MLX, Ollama. Practical local on 32GB+ unified memory. Heavy GGUF activity.
+- **Ling / LingSante**: Open MIT weights on HF for multimodal and medical models.
 - **Qwen4-Max** — Closed flagship. API on QwenCloud ($1.50/$4.50). Smaller open weights planned.
 - **LongCat-2.5** — Full MIT weights on HF (1.6T MoE / ~48B active multimodal). Serve with vLLM/SGLang once recipes mature; large multi-node/accelerator needs. API available.
 - **MiniMax H3-Image** — Open weights on HF for native 4K T2I + multi-ref editing. ComfyUI native; quantized options emerging. Community license (regional exclusions). API also available.
-- **Unsloth Dynamic V3.1 GGUFs** — Highest-accuracy local builds for Qwen3.8-27B (and related) on 12GB+ RAM via llama.cpp / Unsloth Desktop.
+- **Unsloth Dynamic V3.1 GGUFs** — Highest-accuracy local builds for Qwen3.8-27B (and related) on 12GB+ RAM via llama.cpp / Unsloth Desktop. Improvements for Inkling decoding.
 - **Inkling 2 Small** — Open Apache 2.0 weights on HF (594B/17B MoE). Day-0 vLLM/SGLang/Unsloth support. API available.
 - **Claude Fable 5.2 / Mythos 5.2** — Closed frontier. API on Anthropic, AWS, Google Cloud, Microsoft Foundry. $8/$40. Mythos gated. Brushstroke image gen capability.
-- **Gemini 4 Hydrogen / Carbon** — Closed. Hydrogen $1.50/$7.50 widely available incl. free AI Studio; Carbon intro pricing ends Nov 30.
+- **Gemini 4 Hydrogen / Carbon / Neon** — Closed. Hydrogen $1.50/$7.50 widely available incl. free AI Studio; Neon $3/$15; Carbon intro pricing ends Nov 30.
 - **Muse Ember** — Closed small agent model. API $0.10/$0.50.
 - **Kimi K3.1 Pro** — Open weights on HF (2.8T MoE, ~1.56TB). Serve with vLLM, SGLang, or TokenSpeed. Multi-node recommended; quantized options emerging. API also available. Dominating HF.
 - **Ripple-65B Preview** — Dense 65B on HF (Apache 2.0). Available on Together AI, GMI Cloud, OpenRouter. Quantized builds fit MacBook / DGX Spark.
@@ -53,46 +59,51 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - **LFM3 local stacks** — GGUF/MLX/ONNX/FP8 for LiquidAI LFM3 family; single-GPU fine-tune + edge inference (llama.cpp, MLX, vLLM, Transformers). High recent HF activity.
 - **DeepInfer** — DeepSeek production stack; high efficiency; dual hardware. NVFP4 variants for reduced download/size on Blackwell.
 - **FreeToken** — Apache-2.0 edge-native MoE serving engine. Pools GPU + CPU + system RAM for large models (DeepSeek Flash, Qwen, GLM) on gaming PCs/laptops. OpenAI/Anthropic-compatible APIs. Strong for models that don't fully fit in VRAM. Desktop app + CLI available.
-- **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary for large open MoEs and dense models. llama.cpp v1.0.0 adds API stability, FP8 KV, MoE expert cache. Day-0 support for new releases including Inkling 2 Small.
-- **Ollama / Unsloth / llama.cpp / MLX** — excellent for local small models and Dynamic V3.1 GGUFs (Qwen3.8-27B high accuracy on 12GB+).
+- **vLLM / SGLang / llama.cpp / TensorRT-LLM** — primary for large open MoEs and dense models. llama.cpp v1.0.0 adds API stability, FP8 KV, MoE expert cache. Day-0 support for new releases including Inkling 2 Mini/Small.
+- **Ollama / Unsloth / llama.cpp / MLX** — excellent for local small models and Dynamic V3.1 GGUFs (Qwen3.8-27B high accuracy on 12GB+). Inkling Mini practical.
 - **Hugging Face Spaces + Hub + Inference** — models, ZeroGPU, demos.
 - **Diffusers + ComfyUI** — image/video pipelines (MiniMax-H3-Image native 4K, PAN 2, LTX-2.5, Kandinsky, Pika, etc.)
 - Voice agent SDKs; specialized scientific models.
-- Coding agents with free tiers: GitHub Copilot Free, Cline (open), Kilo Code, opencode, Claude Code, Cursor, Google Antigravity, etc.
+- Coding agents with free tiers: GitHub Copilot Free, Cline (open), Kilo Code, opencode, Claude Code, Cursor, Google Antigravity, OpenHands, etc.
 - Cloudflare Pages + Workers for free full-stack AI app hosting.
 - Ranked hosting platforms: Baseten (managed APIs, free plan, top ranked), BentoML, NVIDIA Triton Inference Server (open-source).
+- Tools like gpu-free-serve: Tunnel Colab/Kaggle free GPUs as local OpenAI-compatible endpoints via cloudflared/ngrok for editor integration.
 
 ## Agent & Developer Tooling
 
+- **Shirudo** — agent-driven eBPF shields for runtime Linux protection without restarts
+- **Claude Ship** — automated GitHub PR review/patch/approval agents
 - **dsh-superagent** — local router-worker coding agent for GitHub repos
 - **Drex Max / joey-1** — open decision models for efficient agent loops (computer-use, routing)
 - **LFM3** — open multimodal family for specialized local agents and fine-tuning
 - **Agensh** — open decentralized multi-agent harness for scaling coding agent organizations (up to 1,024)
 - Local coding agents (Flint on laptop)
 - Local conversational agents / NPCs (Nemotron Bolt E4B)
-- Agent harnesses for Flash models and new teachers; self-hosted options for Mistral Large 4, Kimi K3.1 Pro, Inkling 2 Small, LongCat-2.5
+- Agent harnesses for Flash models and new teachers; self-hosted options for Mistral Large 4, Kimi K3.1 Pro, Inkling 2 Mini/Small, LongCat-2.5, Ling family
 - MCP, tool-calling, memory systems
-- On-device stacks (LFM3, Flint, Muse Glimmer, Bolt E4B, FreeToken for larger MoEs, Unsloth GGUFs)
+- On-device stacks (LFM3, Flint, Muse Glimmer, Bolt E4B, FreeToken for larger MoEs, Unsloth GGUFs, Inkling Mini)
 - TRL for post-training; accelerator backends
 - Microsoft TokenEconomizer: free tool cutting AI coding token costs by up to 31%
 - DeepMind agent demos and scientific automation
-- GitHub Copilot in Xcode; Google Antigravity agent-first IDE; Cline as top open agentic coding tool
+- GitHub Copilot in Xcode; Google Antigravity agent-first IDE; Cline as top open agentic coding tool; OpenHands
 - Anthropic Claude Whiteboards, Sheets (beta), Data (GA) for collaborative AI workspaces
 - Tencent LoopForge: self-hosted sandboxed coding agent workspace (MIT)
 
 ## Developer Focus Areas (current)
 
-- Evaluating Qwen4-Max efficiency claims vs Gemini 4 Hydrogen / Claude Fable 5.2 on long-horizon agentic and coding tasks
+- Testing GLM-5.4 Loop Transformer for generalized coding (vision + code for creative/3D tasks) once API/weights available
+- Evaluating Qwen4-Max efficiency claims vs Gemini 4 Neon / Claude Fable 5.2 on long-horizon agentic and coding tasks
 - Experimenting with newly open LongCat-2.5 (MIT, large VRAM) for self-hosted multimodal agents
-- Running high-accuracy local Qwen3.8-27B via Unsloth Dynamic V3.1 GGUFs on consumer hardware
-- Experimenting with Inkling 2 Small and continuing Kimi K3.1 Pro / Ripple-65B for self-hosted agentic coding
+- Running high-accuracy local Qwen3.8-27B and Inkling 2 Mini via Unsloth Dynamic GGUFs on consumer hardware
+- Experimenting with Inkling 2 Mini/Small and continuing Kimi K3.1 Pro / Ripple-65B for self-hosted agentic coding
 - Authorized use of GPT-6 Cyber for defensive vulnerability research (restricted access); Mythos 5.2 for vetted programs
-- Experimenting with local coding agents (dsh-superagent, Cline, LoopForge) and decision layers (Drex Max, joey-1) for efficient agent workflows
+- Experimenting with local coding agents (dsh-superagent, Cline, LoopForge, Claude Ship) and decision layers (Drex Max, joey-1) for efficient agent workflows
 - Running large MoEs locally via FreeToken on consumer hardware (GPU+CPU+RAM pooling)
-- Testing open video/image generation stacks (MiniMax H3-Image native 4K via ComfyUI/Diffusers, Pika H3 Flex, LTX-2.5, Fable brushstroke method, Gemini Omni API) and trending HF models (idol, uncensored variants, Qwen, Arete)
-- Leveraging free tiers, NIM, Run:ai self-host, non-NVIDIA options; cost optimization with TokenEconomizer
-- Scientific and public-sector agent tools
+- Testing open video/image generation stacks (MiniMax H3-Image native 4K via ComfyUI/Diffusers, Pika H3 Flex, LTX-2.5, Fable brushstroke method, Gemini Omni API) and trending HF models (Inkling, idol, uncensored variants, Qwen, Arete)
+- Leveraging free tiers, NIM, Run:ai self-host, non-NVIDIA options; cost optimization with TokenEconomizer; Shadeform for cheap H100 access
+- Scientific and public-sector agent tools; medical models (LingSante)
 - Robotics world-action models and formal verification agents
+- Evaluating Shirudo for agent-native runtime security on Linux
 
 ---
 
