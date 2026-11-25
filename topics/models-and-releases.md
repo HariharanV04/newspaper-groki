@@ -2,21 +2,48 @@
 
 Living document. New entries go at the top. Older entries are refined or marked superseded rather than duplicated.
 
-**Last refined:** 2026-11-24
+**Last refined:** 2026-11-25
 
 ---
 
-## New / Stabilizing Infrastructure (Nov 23-24)
+## New / Stabilizing Infrastructure (Nov 24-25)
 
-### Z.ai / Zhipu GLM-5.4 (Nov 23, 2026)
-- **Type:** Closed (hosted) Loop Transformer flagship. ~750B scale; 28 shared layers of GLM-5 base run twice. 1M context, native vision.
+### Z.ai / Zhipu GLM-5.4 (Nov 23-24, 2026)
+- **Type:** Closed (hosted) Loop Transformer flagship. ~750B scale; 28 shared layers of GLM-5 base run twice. 1M context, native multimodal.
 - **Role:** Generalized Coding — deeper reasoning for code that produces video, games, 3D models, mechanical designs, etc. Claims 2T-3T-class intelligence with controlled compute overhead.
 - **Status:** Live in GLM Coding Plan, ZCode, Z.ai Chat. API and open weights planned after safety work. Improved vulnerability detection vs prior version. Speeds up to ~200 tok/s off-peak. Watch for marathon-thinking edge cases.
 
-### Ant Group Ling-3.2-air (Nov 23, 2026)
-- **Type:** Open MIT multimodal MoE (124B total / 5.5B active), 256K+ context.
+### Baidu ERNIE 5.5 Flash Preview (Nov 23-24, 2026)
+- **Type:** Open Apache 2.0 MoE (280B total / 14B active), 1M context, tool calling. Post-trained checkpoint (base has geo restrictions).
+- **Role:** Efficient high-capability multimodal/reasoning with thinking modes.
+- **Status:** Weights on HF/ModelScope (FP8/FP4/BF16 + draft head). Day-0 vLLM plugin support. Unfinished checkpoint per vendor.
+
+### PrismML Ternary Bonsai 2.5 27B (Nov 24, 2026)
+- **Type:** Open weights GGUF ternary-quantized (~5.9GB). Built on Qwen3.8-27B.
+- **Role:** Long-horizon agent runs with reduced overthinking/tokens. SWE-bench Verified gains reported.
+- **Status:** Available for llama.cpp (NVIDIA/Intel) and MLX (Mac). Local-friendly.
+
+### Ant Group Ling-3.2-air (Nov 23-24, 2026)
+- **Type:** Open MIT multimodal MoE (124B total / 5.5B active), 1M context.
 - **Role:** Document reasoning, back-office workflows, multimodal agents.
-- **Status:** Weights on HF.
+- **Status:** Weights on HF. Strong reported agentic gains.
+
+### Tencent Hy-MT3 (Nov 24, 2026)
+- **Type:** Open Apache 2.0 translation family (1.8B/7B/30B-A3B). 102 languages.
+- **Role:** High-quality game/localization/image-text translation with fewer errors.
+- **Status:** Weights + quantized on HF/ModelScope. vLLM/SGLang recipes. TransRubric grader open-sourced.
+
+### SenseTime SenseNova U1.6 (Nov 24, 2026)
+- **Type:** Open Apache 2.0 8B unified image model with self-correction.
+- **Role:** Understand/generate/edit images; auto-fixes blur, typos, numbering.
+- **Status:** Weights + LoRAs/FP8/GGUF/ComfyUI on HF.
+
+### Other recent (Nov 24)
+- NVIDIA Nemotron-Labs-Image-30B-A3B: Open visual model on HF.
+- Sand AI MAGI-2: 480B video gen (1080p + audio); open weights soon.
+- Cognition SWE-2.1: RL-trained coding model (free on Devin tiers).
+
+## New / Stabilizing Infrastructure (Nov 23-24)
 
 ### Ant Group LingSante medical models (Nov 23, 2026)
 - **Type:** Open MIT. LingSante-3.1-flash (560B/25B active hybrid-linear MoE, 1M context) and LingSante-3.1-air-VL (124B/5.5B active multimodal).
