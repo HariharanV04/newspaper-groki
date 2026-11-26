@@ -2,7 +2,7 @@
 
 High-level themes. Updated when the landscape shifts; not a daily dump.
 
-**Last refined:** 2026-11-24
+**Last refined:** 2026-11-26
 
 ---
 
@@ -21,11 +21,10 @@ High-level themes. Updated when the landscape shifts; not a daily dump.
    OpenAI + Cisco Shirudo: open-source eBPF runtime enabling agents to deploy signed temporary shields on running Linux systems without restarts. Anthropic Claude Ship for automated GitHub PR review/patch/approval. Continues shift toward machine-speed defensive and collaborative agent tooling.
 
 5. **Agent-generated science and executable verification**  
-   alphaXiv experiment: hundreds of agents autonomously produced nearly a thousand papers, founded a journal, and used code-based peer review that overturned half of challenged claims. Parallel AI-assisted formal mathematics (Riemann/GRH Lean work, VP
-eq VNP claim, quantum circuit discovery with Lean proofs). Shifts from pure generation toward self-auditing research volume and formally verified agent discoveries.
+   alphaXiv experiment: hundreds of agents autonomously produced nearly a thousand papers, founded a journal, and used code-based peer review that overturned half of challenged claims. Parallel AI-assisted formal mathematics (Riemann/GRH Lean work, VP≠VNP claim, quantum circuit discovery with Lean proofs). Shifts from pure generation toward self-auditing research volume and formally verified agent discoveries.
 
-6. **Stable free/low-cost compute alongside local stacks**  
-   Kaggle ~30h/week remains the most reliable free GPU quota. Modal, ZeroGPU, Cloudflare, E2B, Lightning, NIM, Groq, OpenRouter free tiers continue. Shadeform marketplace offers competitive H100 pricing (~$2.73/hr). Startup credits active. Local inference maturity (llama.cpp, Unsloth, MLX) now covers high-capability small/medium models including Inkling Mini.
+6. **Stable free/low-cost compute alongside local stacks and discounted preemptible options**  
+   Kaggle ~30h/week remains the most reliable free GPU quota. Modal, ZeroGPU, Cloudflare, E2B, Lightning, NIM, Groq, OpenRouter free tiers continue. Together AI preemptible compute at flat 50% of on-demand for interruptible workloads. Shadeform marketplace offers competitive H100 pricing (~$2.73/hr). Startup credits active. Local inference maturity (llama.cpp, Unsloth, MLX) now covers high-capability small/medium models including Inkling Mini.
 
 ## Dominant Themes (mid-late Nov 2026)
 

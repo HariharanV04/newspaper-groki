@@ -2,7 +2,7 @@
 
 Living reference for free/low-cost GPUs, hosting, inference stacks, and developer tooling. Quotas and offerings change; update entries in place.
 
-**Last refined:** 2026-11-25
+**Last refined:** 2026-11-26
 
 ---
 
@@ -28,16 +28,18 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 | NVIDIA Run:ai (open-sourced) | Full GPU orchestration (Apache 2.0) | Self-host; supply own K8s/GPUs |
 | Startup programs | Credit grants | Vary (e.g. Inference.net up to $10k, Hostkey GPU grants, Novita, Google/AWS/Microsoft, GMI Cloud, fal, Together AI, Baseten, etc.) |
 | RunPod / Vast.ai / Lambda / Nebius | Cheap spot / on-demand GPUs | H100 ~$3.8-4.5/hr typical; Shadeform marketplace from ~$2.73/hr H100 |
+| **Together AI Preemptible** | Same NVIDIA GPUs as on-demand at flat 50% rate | Interruptible; 5-min drain/SIGTERM for checkpoint; auto-refill; sub-hourly billing. For training/batch/sweeps. K8s/Slurm. |
 | Leafcloud (emerging) | Free Blackwell slices (waitlist) | 50h/month planned for RTX PRO 6000 slices |
 | SageMaker Studio Lab | Limited GPU hours | ~4h/day approved accounts |
 | ModelScope / Baidu AI Studio / Paperspace Gradient | Additional free quotas / public GPU notebooks | Check current daily/one-time limits |
 
 ## Hosting & Serving
 
+- **Together AI Preemptible Compute** (Nov 24-25, 2026): GA on GPU Clusters. Flat 50% of on-demand for same hardware. 5-minute drain window, automatic capacity refill. Sub-hourly metering. Ideal for checkpointed training, evals, batch inference.
 - **Shirudo** (OpenAI + Cisco, Nov 23, 2026): Open-source (BSD 2-Clause; BPF dual BSD/GPL) Linux runtime based on eBPF/Tetragon. Lets AI agents generate and deploy cryptographically signed temporary "shields" that block vulnerable code paths on running systems without restarts while permanent patches are tested/rolled out. Pre-release; requires special kernel + TPM 2.0. GitHub: shirudo-dev/shirudo. Demonstrated on Java4Shell-style exploits via Codex-generated shields.
 - **Claude Ship** (Anthropic, Nov 23): Suite of GitHub-integrated agents (Code Review, PR Steward, Claude Approvals) for automated routine PR review, patching, and approval based on repo policies.
 - **GLM-5.4**: Hosted in Z.ai Coding Plan / ZCode / Chat. API and weights after safety.
-- **ERNIE 5.5 Flash Preview**: Open Apache 2.0 on HF. Day-0 vLLM plugin. FP8/FP4 options.
+- **ERNIE 5.5 Flash Preview**: Open Apache 2.0 on HF. Day-0 vLLM/SGLang plugin. FP8/FP4 options + speculative decoding.
 - **Inkling 2 Mini**: Open Apache 2.0 on HF (~20GB). Day-0 support in Transformers, vLLM, SGLang, Unsloth, llama.cpp, MLX, Ollama. Practical local on 32GB+ unified memory. Heavy GGUF activity. Still #1 trending.
 - **Ternary Bonsai 2.5 27B**: Open GGUF ternary (~5.9GB). llama.cpp / MLX. Optimized for agents.
 - **Ling / LingSante**: Open MIT weights on HF for multimodal and medical models.
@@ -57,7 +59,7 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - **DeepSeek dsh-superagent + Harness** — Local MIT coding agent that watches a GitHub repo and executes requests in isolated workers. Runs on user machine.
 - **Nace Drex Max v1** — Open 27B decision model for local agent decisions (probabilities over options). GGUF/llama.cpp/Ollama support; Apple Silicon and NVIDIA friendly.
 - **Baseten joey-1** — Tiny 2B decision model (MIT on HF) for calibrated labels at very low API cost.
-- **Mistral Large 4** — Open weights on HF; API available. Fine-tuning via TRL 1.17 (LoRA on single high-end node). Full inference requires significant multi-node resources; quantized/serving recipes emerging.
+- **Mistral Large 4** — Open weights on HF; API available. Fine-tuning via TRL 1.17+ (LoRA on single high-end node). Full inference requires significant multi-node resources; quantized/serving recipes emerging.
 - **Hydrogen-1.0** — Open MIT weights (gated on HF); scientific MoE runnable on multi-GPU (tested on 8 GPUs with SGLang). Quantized variants for Blackwell/AMD.
 - **Pika H3 Flex** — Open weights + Diffusers/ComfyUI support for local video+audio gen. High VRAM needs (H100-class for full). API for lower-cost hosted use.
 - **LFM3 local stacks** — GGUF/MLX/ONNX/FP8 for LiquidAI LFM3 family; single-GPU fine-tune + edge inference (llama.cpp, MLX, vLLM, Transformers). High recent HF activity.
@@ -86,7 +88,7 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - Agent harnesses for Flash models and new teachers; self-hosted options for Mistral Large 4, Kimi K3.1 Pro, Inkling 2 Mini/Small, LongCat-2.5, Ling family, ERNIE, Bonsai
 - MCP, tool-calling, memory systems
 - On-device stacks (LFM3, Flint, Muse Glimmer, Bolt E4B, FreeToken for larger MoEs, Unsloth GGUFs, Inkling Mini, Ternary Bonsai)
-- TRL for post-training; accelerator backends
+- TRL for post-training (v1.19 multi-teacher distillation, faster SFT); accelerator backends
 - Microsoft TokenEconomizer: free tool cutting AI coding token costs by up to 31%
 - DeepMind agent demos and scientific automation
 - GitHub Copilot in Xcode; Google Antigravity agent-first IDE; Cline as top open agentic coding tool; OpenHands
@@ -105,11 +107,12 @@ Living reference for free/low-cost GPUs, hosting, inference stacks, and develope
 - Experimenting with local coding agents (dsh-superagent, Cline, LoopForge, Claude Ship) and decision layers (Drex Max, joey-1) for efficient agent workflows
 - Running large MoEs locally via FreeToken on consumer hardware (GPU+CPU+RAM pooling)
 - Testing open video/image generation stacks (MiniMax H3-Image native 4K via ComfyUI/Diffusers, Pika H3 Flex, LTX-2.5, SenseNova U1.6, Fable brushstroke method, Gemini Omni API) and trending HF models (Inkling, idol, uncensored variants, Qwen, Arete)
-- Leveraging free tiers, NIM, Run:ai self-host, non-NVIDIA options; cost optimization with TokenEconomizer; Shadeform for cheap H100 access
+- Leveraging free tiers, NIM, Run:ai self-host, non-NVIDIA options; cost optimization with TokenEconomizer; Shadeform for cheap H100 access; Together AI preemptible for 50% savings on interruptible jobs
 - Scientific and public-sector agent tools; medical models (LingSante)
 - Robotics world-action models and formal verification agents
 - Evaluating Shirudo for agent-native runtime security on Linux
 - Testing Claude Code / Codex / Cursor rankings for real merge rates and agent workflows
+- Using TRL multi-teacher distillation for efficient post-training
 
 ---
 
