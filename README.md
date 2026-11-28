@@ -24,15 +24,14 @@ Curated AI news, model releases, research, and developer tools — maintained as
 3. **Append** a short dated delta to the current month’s file under `archive/`.
 4. Do **not** create a new dated `.md` for every day.
 
-## Latest highlights (as of 2026-11-26)
+## Latest highlights (as of 2026-11-28)
 
-- **Together AI Preemptible Compute** — GA on GPU Clusters: same hardware at flat 50% of on-demand with 5-min drain for checkpointing. Ideal for interruptible workloads.
-- **Z.ai GLM-5.4** — First Loop Transformer flagship (~750B scale, 28 layers ×2), 1M context, native multimodal, generalized coding. Hosted; weights after safety. Claims 2T-3T-class intelligence.
-- **Baidu ERNIE 5.5 Flash Preview** — Open Apache 280B MoE (14B active), 1M context. Day-0 vLLM/SGLang. On HF.
-- **PrismML Ternary Bonsai 2.5 27B** — Open ternary GGUF (~5.9GB) for long agent runs. SWE gains.
-- **Ant Group Ling-3.2-air** — Open MIT multimodal MoE (124B/5.5B). On HF.
-- **Inkling 2 Mini** (Thinking Machines / HF) — Open Apache looped MoE (~26B/3B active), multimodal 1M context, ~20GB local-friendly. Still #1 trending; leads open <100B on agent benches.
-- **TRL v1.19.0** — Multi-teacher distillation and faster packed SFT.
-- **Free APIs / GPUs** — Kaggle (~30h/week), Modal ($30/mo), E2B ($100), HF ZeroGPU, Colab, Lightning, NVIDIA NIM, Groq, Gemini AI Studio, OpenRouter, Cloudflare. Together AI preemptible at 50%. Shadeform H100 from ~$2.73/hr. Local stacks boosted by Inkling Mini + Ternary Bonsai.
+- **NVIDIA Nemotron-Labs-Image-30B-A3B** — Open autoregressive image model (30B/3B active), non-commercial. Strong on GenEval/LongTextBench.
+- **Sber GigaChat 4** — Open 708B MoE (41B active, MIT, 1M context) + smaller variant.
+- **inclusionAI Ling-3.2-air** — Open MIT multimodal MoE (124B/5.5B). On HF.
+- **Inkling 2 Mini** (Thinking Machines) — Still #1 trending on HF. Open Apache looped MoE, massive GGUF downloads.
+- **prism-ml Ternary-Bonsai-2.5-27B** — Ternary GGUF (~6GB) of Qwen3.8-27B climbing trending; local agent-friendly.
+- **HF Papers**: Stable Gated DeltaNet-2 (recurrent stability) and OS-Omni (cross-platform computer-use agents) leading.
+- **Free APIs / GPUs** — Kaggle (~30h/week), Modal ($30/mo), E2B ($100), HF ZeroGPU, Colab, Lightning, NVIDIA NIM, Groq, Gemini AI Studio, OpenRouter, Cloudflare. Fireworks free training until Nov 30.
 
 See [CURRENT.md](CURRENT.md) for the full snapshot.
